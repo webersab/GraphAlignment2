@@ -1,0 +1,4726 @@
+lambda: 0.15000000596046448 N: 1174
+
+component 0
+(kommen.1,kommen.2)#PERSON#LOCATION
+
+component 1
+(leben.1,leben.2)#PERSON#LOCATION
+
+component 2
+(sein.1,sein.2)#PERSON#LOCATION
+
+component 3
+(kommen_an.1,kommen_an.2)#PERSON#LOCATION
+(ankommen.1,ankommen.2)#LOCATION#PERSON
+(treffen_ein.1,treffen_ein.2)#PERSON#LOCATION
+(ankommen.1,ankommen.2)#PERSON#LOCATION
+ => 0 (kommen.1,kommen.2)#PERSON#LOCATION
+
+component 4
+(sagen.1,sagen.2)#PERSON#LOCATION
+
+component 5
+(reisen.1,reisen.2)#PERSON#LOCATION
+ => 4 (sagen.1,sagen.2)#PERSON#LOCATION
+
+component 6
+(bringen.1,bringen.2)#PERSON#LOCATION
+
+component 7
+(erwarten.1,erwarten.2)#LOCATION#PERSON
+ => 4 (sagen.1,sagen.2)#PERSON#LOCATION
+
+component 8
+(aufnehmen.1,aufnehmen.2)#LOCATION#PERSON
+(aufnehmen.1,aufnehmen.2)#PERSON#LOCATION
+(nehmen_auf.1,nehmen_auf.2)#LOCATION#PERSON
+ => 0 (kommen.1,kommen.2)#PERSON#LOCATION
+ => 3 (kommen_an.1,kommen_an.2)#PERSON#LOCATION
+
+component 9
+(bringen.1,bringen.2)#LOCATION#PERSON
+ => 6 (bringen.1,bringen.2)#PERSON#LOCATION
+
+component 10
+(sterben.1,sterben.2)#PERSON#LOCATION
+(kommen_sein_in.1,kommen_sein_in.2)#PERSON#LOCATION
+(töten.1,töten.2)#LOCATION#PERSON
+(kommen_um_Leben.1,kommen_um_Leben.2)#PERSON#LOCATION
+(verletzen.1,verletzen.2)#LOCATION#PERSON
+
+component 11
+(stammen.1,stammen.2)#PERSON#LOCATION
+ => 0 (kommen.1,kommen.2)#PERSON#LOCATION
+
+component 12
+(haben.1,haben.2)#LOCATION#PERSON
+
+component 13
+(warten.1,warten.2)#PERSON#LOCATION
+ => 3 (kommen_an.1,kommen_an.2)#PERSON#LOCATION
+ => 0 (kommen.1,kommen.2)#PERSON#LOCATION
+
+component 14
+(verbringen.1,verbringen.2)#PERSON#LOCATION
+ => 0 (kommen.1,kommen.2)#PERSON#LOCATION
+
+component 15
+(haben.1,haben.2)#PERSON#LOCATION
+
+component 16
+(gelangen.1,gelangen.2)#PERSON#LOCATION
+ => 0 (kommen.1,kommen.2)#PERSON#LOCATION
+
+component 17
+(versuchen.1,versuchen.gelangen.2)#PERSON#LOCATION
+(wagen.1,wagen.2)#PERSON#LOCATION
+ => 0 (kommen.1,kommen.2)#PERSON#LOCATION
+ => 16 (gelangen.1,gelangen.2)#PERSON#LOCATION
+
+component 18
+(kämen.1,kämen.2)#PERSON#LOCATION
+(kommen_in_Jahr.1,kommen_in_Jahr.2)#PERSON#LOCATION
+ => 0 (kommen.1,kommen.2)#PERSON#LOCATION
+
+component 19
+(geben.1,geben.2)#PERSON#LOCATION
+
+component 20
+(befinden.1,befinden.2)#PERSON#LOCATION
+
+component 21
+(aktualisieren.1,aktualisieren.2)#PERSON#LOCATION
+
+component 22
+(kommen.1,kommen.2)#LOCATION#PERSON
+
+component 23
+(strömen.1,strömen.2)#PERSON#LOCATION
+ => 16 (gelangen.1,gelangen.2)#PERSON#LOCATION
+ => 0 (kommen.1,kommen.2)#PERSON#LOCATION
+
+component 24
+(unterbringen.1,unterbringen.2)#LOCATION#PERSON
+ => 3 (kommen_an.1,kommen_an.2)#PERSON#LOCATION
+ => 0 (kommen.1,kommen.2)#PERSON#LOCATION
+ => 8 (aufnehmen.1,aufnehmen.2)#LOCATION#PERSON
+
+component 25
+(machen.1,machen.2)#PERSON#LOCATION
+ => 15 (haben.1,haben.2)#PERSON#LOCATION
+
+component 26
+(bleiben.1,bleiben.2)#PERSON#LOCATION
+
+component 27
+(holen.1,holen.2)#PERSON#LOCATION
+
+component 28
+(halten_auf.1,halten_auf.2)#PERSON#LOCATION
+
+component 29
+(demonstrieren.1,demonstrieren.2)#PERSON#LOCATION
+(versammeln.1,versammeln.2)#PERSON#LOCATION
+(gehen_auf_Straße.1,gehen_auf_Straße.2)#PERSON#LOCATION
+(protestieren.1,protestieren.2)#PERSON#LOCATION
+(demonstrieren.1,demonstrieren.2)#LOCATION#PERSON
+(kommen_sein.1,kommen_sein.2)#PERSON#LOCATION
+ => 10 (sterben.1,sterben.2)#PERSON#LOCATION
+
+component 30
+(verlieren.1,verlieren.2)#PERSON#LOCATION
+
+component 31
+(kommen_sein_nach.1,kommen_sein_nach.2)#PERSON#LOCATION
+(passieren.1,passieren.2)#PERSON#LOCATION
+(registrieren.1,registrieren.2)#LOCATION#PERSON
+(eingetroffen.1,eingetroffen.2)#LOCATION#PERSON
+(zurückschicken.1,zurückschicken.2)#LOCATION#PERSON
+ => 0 (kommen.1,kommen.2)#PERSON#LOCATION
+ => 3 (kommen_an.1,kommen_an.2)#PERSON#LOCATION
+ => 13 (warten.1,warten.2)#PERSON#LOCATION
+
+component 32
+(gebären.1,gebären.2)#LOCATION#PERSON
+ => 1 (leben.1,leben.2)#PERSON#LOCATION
+
+component 33
+(gehen.1,gehen.2)#PERSON#LOCATION
+
+component 34
+(schicken.1,schicken.2)#PERSON#LOCATION
+
+component 35
+(fliehen.1,fliehen.2)#PERSON#LOCATION
+
+component 36
+(versuchen.1,versuchen.2)#PERSON#LOCATION
+
+component 37
+(kosten.1,kosten.2)#PERSON#LOCATION
+ => 10 (sterben.1,sterben.2)#PERSON#LOCATION
+
+component 38
+NEG__(kommen.1,kommen.2)#PERSON#LOCATION
+
+component 39
+(stellen.1,stellen.2)#PERSON#LOCATION
+
+component 40
+(suchen.1,suchen.2)#PERSON#LOCATION
+
+component 41
+(kommen_nach_Angabe.1,kommen_nach_Angabe.2)#PERSON#LOCATION
+(vermissen.1,vermissen.2)#LOCATION#PERSON
+ => 10 (sterben.1,sterben.2)#PERSON#LOCATION
+ => 37 (kosten.1,kosten.2)#PERSON#LOCATION
+
+component 42
+(erreichen.1,erreichen.2)#PERSON#LOCATION
+
+component 43
+(arbeiten.1,arbeiten.2)#PERSON#LOCATION
+
+component 44
+(treffen.1,treffen.2)#PERSON#LOCATION
+ => 4 (sagen.1,sagen.2)#PERSON#LOCATION
+
+component 45
+(verlassen.1,verlassen.2)#PERSON#LOCATION
+
+component 46
+(verteilen.1,verteilen.2)#LOCATION#PERSON
+NEG__(bringen.1,bringen.2)#LOCATION#PERSON
+ => 3 (kommen_an.1,kommen_an.2)#PERSON#LOCATION
+ => 8 (aufnehmen.1,aufnehmen.2)#LOCATION#PERSON
+ => 0 (kommen.1,kommen.2)#PERSON#LOCATION
+
+component 47
+(erhalten.1,erhalten.2)#PERSON#LOCATION
+
+component 48
+(sehen.1,sehen.2)#PERSON#LOCATION
+
+component 49
+(nehmen.1,nehmen.2)#PERSON#LOCATION
+
+component 50
+(sterben.1,sterben.2)#LOCATION#PERSON
+ => 10 (sterben.1,sterben.2)#PERSON#LOCATION
+
+component 51
+(schicken.1,schicken.2)#LOCATION#PERSON
+ => 12 (haben.1,haben.2)#LOCATION#PERSON
+
+component 52
+(reisen_ein.1,reisen_ein.2)#PERSON#LOCATION
+(gelangten.1,gelangten.2)#PERSON#LOCATION
+(zurückgebrachen.1,zurückgebrachen.2)#LOCATION#PERSON
+(übersetzen.1,übersetzen.2)#PERSON#LOCATION
+(zurückschicken.1,zurückschicken.2)#PERSON#LOCATION
+ => 51 (schicken.1,schicken.2)#LOCATION#PERSON
+ => 12 (haben.1,haben.2)#LOCATION#PERSON
+
+component 53
+(einreisen.1,einreisen.2)#PERSON#LOCATION
+(überqueren.1,überqueren.2)#PERSON#LOCATION
+ => 0 (kommen.1,kommen.2)#PERSON#LOCATION
+ => 3 (kommen_an.1,kommen_an.2)#PERSON#LOCATION
+
+component 54
+(finden.1,finden.2)#PERSON#LOCATION
+
+component 55
+(stehen.1,stehen.2)#PERSON#LOCATION
+
+component 56
+(lassen.1,lassen.2)#LOCATION#PERSON
+
+component 57
+(wählen.1,wählen.2)#PERSON#LOCATION
+
+component 58
+(erwarten.1,erwarten.2)#PERSON#LOCATION
+
+component 59
+(eintreffen.1,eintreffen.2)#LOCATION#PERSON
+ => 0 (kommen.1,kommen.2)#PERSON#LOCATION
+ => 3 (kommen_an.1,kommen_an.2)#PERSON#LOCATION
+
+component 60
+(sitzen.1,sitzen.2)#PERSON#LOCATION
+
+component 61
+(übernehmen.1,übernehmen.2)#LOCATION#PERSON
+
+component 62
+(versorgen.1,versorgen.2)#LOCATION#PERSON
+(versorgen.1,versorgen.2)#PERSON#LOCATION
+ => 0 (kommen.1,kommen.2)#PERSON#LOCATION
+ => 3 (kommen_an.1,kommen_an.2)#PERSON#LOCATION
+
+component 63
+(kommen_zu_Einsatz.1,kommen_zu_Einsatz.2)#PERSON#LOCATION
+NEG__(kommen_zu_Einsatz.1,kommen_zu_Einsatz.2)#PERSON#LOCATION
+
+component 64
+(gelangen_in_Jahr.1,gelangen_in_Jahr.2)#PERSON#LOCATION
+(aufbrechen.1,aufbrechen.2)#PERSON#LOCATION
+(ertrinken.1,ertrinken.2)#LOCATION#PERSON
+(riskieren.1,riskieren.2)#PERSON#LOCATION
+(ertrinken.1,ertrinken.2)#PERSON#LOCATION
+(spüren.1,spüren.2)#PERSON#LOCATION
+(verli.1,verli.2)#PERSON#LOCATION
+ => 17 (versuchen.1,versuchen.gelangen.2)#PERSON#LOCATION
+ => 0 (kommen.1,kommen.2)#PERSON#LOCATION
+ => 16 (gelangen.1,gelangen.2)#PERSON#LOCATION
+
+component 65
+(aufhalten.1,aufhalten.2)#PERSON#LOCATION
+(warten.1,warten.2)#LOCATION#PERSON
+
+component 66
+(retten.1,retten.2)#LOCATION#PERSON
+(retten.1,retten.2)#PERSON#LOCATION
+(bergen.1,bergen.2)#LOCATION#PERSON
+
+component 67
+NEG__(aufnehmen.1,aufnehmen.2)#LOCATION#PERSON
+(versuchen.1,versuchen.kommen.2)#PERSON#LOCATION
+(transportieren.1,transportieren.2)#LOCATION#PERSON
+(befördern.1,befördern.2)#LOCATION#PERSON
+ => 3 (kommen_an.1,kommen_an.2)#PERSON#LOCATION
+ => 13 (warten.1,warten.2)#PERSON#LOCATION
+ => 31 (kommen_sein_nach.1,kommen_sein_nach.2)#PERSON#LOCATION
+ => 0 (kommen.1,kommen.2)#PERSON#LOCATION
+
+component 68
+(besuchen.1,besuchen.2)#PERSON#LOCATION
+
+component 69
+(bleiben.1,bleiben.2)#LOCATION#PERSON
+
+component 70
+(feiern.1,feiern.2)#PERSON#LOCATION
+
+component 71
+(setzen.1,setzen.2)#PERSON#LOCATION
+
+component 72
+(zurückkehren.1,zurückkehren.2)#PERSON#LOCATION
+
+component 73
+(landen.1,landen.2)#PERSON#LOCATION
+
+component 74
+(leiden.1,leiden.2)#PERSON#LOCATION
+(erkranken.1,erkranken.2)#PERSON#LOCATION
+(ertranken.1,ertranken.2)#PERSON#LOCATION
+(registrieren_sein_in.1,registrieren_sein_in.2)#PERSON#LOCATION
+(erkrankt.1,erkrankt.2)#LOCATION#PERSON
+(begraben.1,begraben.2)#LOCATION#PERSON
+ => 10 (sterben.1,sterben.2)#PERSON#LOCATION
+ => 37 (kosten.1,kosten.2)#PERSON#LOCATION
+
+component 75
+(nutzen.1,nutzen.2)#PERSON#LOCATION
+
+component 76
+(bringen_in_Sicherheit.1,bringen_in_Sicherheit.2)#LOCATION#PERSON
+
+component 77
+(festnehmen.1,festnehmen.2)#LOCATION#PERSON
+
+component 78
+(halten.1,halten.2)#PERSON#LOCATION
+
+component 79
+(hoffen.1,hoffen.2)#PERSON#LOCATION
+
+component 80
+(töten.1,töten.2)#PERSON#LOCATION
+ => 10 (sterben.1,sterben.2)#PERSON#LOCATION
+
+component 81
+(beantragen.1,beantragen.2)#PERSON#LOCATION
+ => 47 (erhalten.1,erhalten.2)#PERSON#LOCATION
+
+component 82
+(entdecken.1,entdecken.2)#LOCATION#PERSON
+(eingereisen.1,eingereisen.2)#LOCATION#PERSON
+
+component 83
+(schleppen.1,schleppen.2)#PERSON#LOCATION
+(zurückführen.1,zurückführen.2)#LOCATION#PERSON
+(kommen_in_Nacht.1,kommen_in_Nacht.2)#PERSON#LOCATION
+(ausharren.1,ausharren.2)#PERSON#LOCATION
+ => 53 (einreisen.1,einreisen.2)#PERSON#LOCATION
+ => 0 (kommen.1,kommen.2)#PERSON#LOCATION
+ => 3 (kommen_an.1,kommen_an.2)#PERSON#LOCATION
+
+component 84
+NEG__(bleiben.1,bleiben.2)#PERSON#LOCATION
+ => 3 (kommen_an.1,kommen_an.2)#PERSON#LOCATION
+ => 0 (kommen.1,kommen.2)#PERSON#LOCATION
+ => 13 (warten.1,warten.2)#PERSON#LOCATION
+
+component 85
+(holen.1,holen.2)#LOCATION#PERSON
+
+component 86
+(zählen.1,zählen.2)#LOCATION#PERSON
+(gehören.1,gehören.2)#LOCATION#PERSON
+
+component 87
+(ziehen.1,ziehen.2)#PERSON#LOCATION
+
+component 88
+(nehmen_teil.1,nehmen_teil.2)#PERSON#LOCATION
+
+component 89
+(kommen_zusammen.1,kommen_zusammen.2)#PERSON#LOCATION
+ => 88 (nehmen_teil.1,nehmen_teil.2)#PERSON#LOCATION
+
+component 90
+(kommen_über_Grenze.1,kommen_über_Grenze.2)#PERSON#LOCATION
+(überschreiten.1,überschreiten.2)#PERSON#LOCATION
+
+component 91
+(fordern.1,fordern.2)#PERSON#LOCATION
+ => 4 (sagen.1,sagen.2)#PERSON#LOCATION
+
+component 92
+(spielen.1,spielen.2)#PERSON#LOCATION
+
+component 93
+(lassen.1,lassen.2)#PERSON#LOCATION
+ => 15 (haben.1,haben.2)#PERSON#LOCATION
+
+component 94
+(beteiligen.1,beteiligen.2)#PERSON#LOCATION
+ => 10 (sterben.1,sterben.2)#PERSON#LOCATION
+ => 29 (demonstrieren.1,demonstrieren.2)#PERSON#LOCATION
+
+component 95
+(sprechen.1,sprechen.2)#PERSON#LOCATION
+ => 4 (sagen.1,sagen.2)#PERSON#LOCATION
+
+component 96
+(fahren.1,fahren.2)#PERSON#LOCATION
+
+component 97
+(registrieren.1,registrieren.2)#PERSON#LOCATION
+
+component 98
+(eingereisen.1,eingereisen.2)#PERSON#LOCATION
+(stellt.1,stellt.2)#PERSON#LOCATION
+ => 97 (registrieren.1,registrieren.2)#PERSON#LOCATION
+
+component 99
+(wohnen.1,wohnen.2)#PERSON#LOCATION
+(studieren.1,studieren.2)#PERSON#LOCATION
+
+component 100
+(angereist.1,angereist.2)#PERSON#LOCATION
+(schlagen.1,schlagen.geben.2)#PERSON#LOCATION
+
+component 101
+(benötigen.1,benötigen.2)#PERSON#LOCATION
+
+component 102
+(kommen_um_Leben.1,kommen_um_Leben.2)#LOCATION#PERSON
+ => 10 (sterben.1,sterben.2)#PERSON#LOCATION
+
+component 103
+(abschieben.1,abschieben.2)#LOCATION#PERSON
+ => 26 (bleiben.1,bleiben.2)#PERSON#LOCATION
+
+component 104
+(fassen.1,fassen.2)#PERSON#LOCATION
+(rufen_zusammen.1,rufen_zusammen.2)#PERSON#LOCATION
+
+component 105
+(übernehmen.1,übernehmen.2)#PERSON#LOCATION
+
+component 106
+(reisen.1,reisen.2)#LOCATION#PERSON
+
+component 107
+(sitzen_fest.1,sitzen_fest.2)#PERSON#LOCATION
+ => 28 (halten_auf.1,halten_auf.2)#PERSON#LOCATION
+
+component 108
+(präsentieren.1,präsentieren.2)#PERSON#LOCATION
+
+component 109
+(übernachten.1,übernachten.2)#PERSON#LOCATION
+(transportieren.1,transportieren.2)#PERSON#LOCATION
+(stammen.1,stammen.2)#LOCATION#PERSON
+(befördern.1,befördern.2)#PERSON#LOCATION
+
+component 110
+(präsentieren.1,präsentieren.2)#LOCATION#PERSON
+
+component 111
+(locken.1,locken.2)#PERSON#LOCATION
+ => 110 (präsentieren.1,präsentieren.2)#LOCATION#PERSON
+
+component 112
+(kommen_nach_Schätzung.1,kommen_nach_Schätzung.2)#PERSON#LOCATION
+ => 66 (retten.1,retten.2)#LOCATION#PERSON
+
+component 113
+(sein.1,sein.2)#LOCATION#PERSON
+
+component 114
+(flüchten.1,flüchten.2)#LOCATION#PERSON
+ => 0 (kommen.1,kommen.2)#PERSON#LOCATION
+
+component 115
+(untergebrachen.1,untergebrachen.2)#LOCATION#PERSON
+(verteilen.1,verteilen.2)#PERSON#LOCATION
+(hoffen.1,hoffen.gelangen.2)#PERSON#LOCATION
+ => 17 (versuchen.1,versuchen.gelangen.2)#PERSON#LOCATION
+ => 0 (kommen.1,kommen.2)#PERSON#LOCATION
+ => 16 (gelangen.1,gelangen.2)#PERSON#LOCATION
+
+component 116
+(zeigen.1,zeigen.2)#PERSON#LOCATION
+
+component 117
+(angesuchen.1,angesuchen.2)#PERSON#LOCATION
+ => 0 (kommen.1,kommen.2)#PERSON#LOCATION
+ => 31 (kommen_sein_nach.1,kommen_sein_nach.2)#PERSON#LOCATION
+ => 3 (kommen_an.1,kommen_an.2)#PERSON#LOCATION
+ => 13 (warten.1,warten.2)#PERSON#LOCATION
+
+component 118
+(aufgreifen.1,aufgreifen.2)#LOCATION#PERSON
+(setzen_über.1,setzen_über.2)#PERSON#LOCATION
+ => 3 (kommen_an.1,kommen_an.2)#PERSON#LOCATION
+ => 13 (warten.1,warten.2)#PERSON#LOCATION
+ => 31 (kommen_sein_nach.1,kommen_sein_nach.2)#PERSON#LOCATION
+ => 0 (kommen.1,kommen.2)#PERSON#LOCATION
+ => 117 (angesuchen.1,angesuchen.2)#PERSON#LOCATION
+
+component 119
+(verlieren.1,verlieren.2)#LOCATION#PERSON
+
+component 120
+(Thema_sein_in.1,Thema_sein_in.2)#PERSON#LOCATION
+(stehen_an_Start.1,stehen_an_Start.2)#PERSON#LOCATION
+
+component 121
+(folgen.1,folgen.2)#PERSON#LOCATION
+
+component 122
+(eintreffen.1,eintreffen.2)#PERSON#LOCATION
+
+component 123
+(reisen_an.1,reisen_an.2)#PERSON#LOCATION
+
+component 124
+(Ziel_sein.1,Ziel_sein.2)#LOCATION#PERSON
+ => 3 (kommen_an.1,kommen_an.2)#PERSON#LOCATION
+ => 0 (kommen.1,kommen.2)#PERSON#LOCATION
+ => 46 (verteilen.1,verteilen.2)#LOCATION#PERSON
+ => 8 (aufnehmen.1,aufnehmen.2)#LOCATION#PERSON
+
+component 125
+(liegen.1,liegen.2)#LOCATION#PERSON
+
+component 126
+(einladen.1,einladen.2)#LOCATION#PERSON
+
+component 127
+(tätig_sein_in.1,tätig_sein_in.2)#PERSON#LOCATION
+
+component 128
+(fortsetzen.1,fortsetzen.2)#PERSON#LOCATION
+
+component 129
+(setzen_durch.1,setzen_durch.2)#PERSON#LOCATION
+
+component 130
+(sein_kommen.1,sein_kommen.2)#PERSON#LOCATION
+ => 0 (kommen.1,kommen.2)#PERSON#LOCATION
+ => 18 (kämen.1,kämen.2)#PERSON#LOCATION
+
+component 131
+(bringen_mit_Bus.1,bringen_mit_Bus.2)#LOCATION#PERSON
+ => 14 (verbringen.1,verbringen.2)#PERSON#LOCATION
+ => 0 (kommen.1,kommen.2)#PERSON#LOCATION
+
+component 132
+(kommen_aus_Ausland.1,kommen_aus_Ausland.2)#PERSON#LOCATION
+(rekrutieren.1,rekrutieren.2)#LOCATION#PERSON
+ => 85 (holen.1,holen.2)#LOCATION#PERSON
+
+component 133
+(verpassen.1,verpassen.2)#PERSON#LOCATION
+
+component 134
+(weiterreisen.1,weiterreisen.2)#PERSON#LOCATION
+
+component 135
+(aktiv_sein_in.1,aktiv_sein_in.2)#PERSON#LOCATION
+
+component 136
+(drängen.1,drängen.2)#PERSON#LOCATION
+
+component 137
+(empfangen.1,empfangen.2)#LOCATION#PERSON
+
+component 138
+(überzählig_sein_bei.1,überzählig_sein_bei.2)#PERSON#LOCATION
+(glänzen.1,glänzen.2)#PERSON#LOCATION
+
+component 139
+(gelangen|gelingen.1,gelangen|gelingen.2)#PERSON#LOCATION
+ => 56 (lassen.1,lassen.2)#LOCATION#PERSON
+
+component 140
+(kommen_an_Wochenende.1,kommen_an_Wochenende.2)#PERSON#LOCATION
+(gehen_in_Rennen.1,gehen_in_Rennen.2)#PERSON#LOCATION
+
+component 141
+(verfügen.1,verfügen.2)#PERSON#LOCATION
+
+component 142
+(abhalten.1,abhalten.2)#PERSON#LOCATION
+(stellen_in_Jahr.1,stellen_in_Jahr.2)#PERSON#LOCATION
+ => 141 (verfügen.1,verfügen.2)#PERSON#LOCATION
+
+component 143
+(begleiten.1,begleiten.2)#PERSON#LOCATION
+
+component 144
+(brechen_auf.1,brechen_auf.2)#PERSON#LOCATION
+ => 143 (begleiten.1,begleiten.2)#PERSON#LOCATION
+
+component 145
+(betreffen_sein_in.1,betreffen_sein_in.2)#PERSON#LOCATION
+ => 43 (arbeiten.1,arbeiten.2)#PERSON#LOCATION
+
+component 146
+(kassieren.1,kassieren.2)#PERSON#LOCATION
+ => 30 (verlieren.1,verlieren.2)#PERSON#LOCATION
+
+component 147
+(stehen_auf_Eis.1,stehen_auf_Eis.2)#PERSON#LOCATION
+(vorbereiten.1,vorbereiten.2)#PERSON#LOCATION
+(ebnen.1,ebnen.2)#PERSON#LOCATION
+ => 63 (kommen_zu_Einsatz.1,kommen_zu_Einsatz.2)#PERSON#LOCATION
+
+component 148
+(teilen.1,teilen.2)#PERSON#LOCATION
+
+component 149
+(reisen_weiter.1,reisen_weiter.2)#PERSON#LOCATION
+ => 68 (besuchen.1,besuchen.2)#PERSON#LOCATION
+
+component 150
+(gehen_zu_Schule.1,gehen_zu_Schule.2)#PERSON#LOCATION
+ => 1 (leben.1,leben.2)#PERSON#LOCATION
+ => 32 (gebären.1,gebären.2)#LOCATION#PERSON
+
+component 151
+(flüchten.1,flüchten.2)#PERSON#LOCATION
+ => 35 (fliehen.1,fliehen.2)#PERSON#LOCATION
+
+component 152
+(schieben.1,schieben.2)#PERSON#LOCATION
+
+component 153
+(gewinnen.1,gewinnen.2)#PERSON#LOCATION
+ => 15 (haben.1,haben.2)#PERSON#LOCATION
+
+component 154
+(erklären.1,erklären.2)#PERSON#LOCATION
+ => 4 (sagen.1,sagen.2)#PERSON#LOCATION
+
+component 155
+(fliegen.1,fliegen.2)#PERSON#LOCATION
+
+component 156
+(erschlagen.1,erschlagen.2)#LOCATION#PERSON
+(gefloh_sein_in.1,gefloh_sein_in.2)#PERSON#LOCATION
+ => 35 (fliehen.1,fliehen.2)#PERSON#LOCATION
+
+component 157
+(entfernen.1,entfernen.2)#PERSON#LOCATION
+ => 0 (kommen.1,kommen.2)#PERSON#LOCATION
+ => 16 (gelangen.1,gelangen.2)#PERSON#LOCATION
+ => 17 (versuchen.1,versuchen.gelangen.2)#PERSON#LOCATION
+
+component 158
+(beschränken.1,beschränken.2)#LOCATION#PERSON
+(überwachen.1,überwachen.2)#LOCATION#PERSON
+ => 131 (bringen_mit_Bus.1,bringen_mit_Bus.2)#LOCATION#PERSON
+ => 14 (verbringen.1,verbringen.2)#PERSON#LOCATION
+ => 0 (kommen.1,kommen.2)#PERSON#LOCATION
+
+component 159
+(beginnen.1,beginnen.2)#PERSON#LOCATION
+
+component 160
+(liegen.1,liegen.2)#PERSON#LOCATION
+
+component 161
+(machen.1,machen.2)#LOCATION#PERSON
+
+component 162
+(drohen.1,drohen.2)#LOCATION#PERSON
+ => 12 (haben.1,haben.2)#LOCATION#PERSON
+
+component 163
+(zählen.1,zählen.2)#PERSON#LOCATION
+
+component 164
+(erschießen.1,erschießen.2)#LOCATION#PERSON
+(ermorden.1,ermorden.2)#LOCATION#PERSON
+ => 10 (sterben.1,sterben.2)#PERSON#LOCATION
+ => 80 (töten.1,töten.2)#PERSON#LOCATION
+
+component 165
+(treten_an.1,treten_an.2)#PERSON#LOCATION
+
+component 166
+(werden.1,werden.2)#PERSON#LOCATION
+
+component 167
+(entfallen.1,entfallen.2)#LOCATION#PERSON
+(infizieren.1,infizieren.2)#PERSON#LOCATION
+(aufmachen.1,aufmachen.2)#PERSON#LOCATION
+(abschieben.1,abschieben.2)#PERSON#LOCATION
+ => 102 (kommen_um_Leben.1,kommen_um_Leben.2)#LOCATION#PERSON
+ => 10 (sterben.1,sterben.2)#PERSON#LOCATION
+
+component 168
+(gelten.1,gelten.2)#PERSON#LOCATION
+
+component 169
+(übergeben.1,übergeben.2)#LOCATION#PERSON
+ => 161 (machen.1,machen.2)#LOCATION#PERSON
+
+component 170
+(erzielen.1,erzielen.2)#PERSON#LOCATION
+
+component 171
+(gehen_vor.1,gehen_vor.2)#LOCATION#PERSON
+
+component 172
+(erwägen.1,erwägen.2)#LOCATION#PERSON
+ => 171 (gehen_vor.1,gehen_vor.2)#LOCATION#PERSON
+
+component 173
+(lehnen.1,lehnen.2)#LOCATION#PERSON
+
+component 174
+(entscheiden.1,entscheiden.2)#LOCATION#PERSON
+ => 173 (lehnen.1,lehnen.2)#LOCATION#PERSON
+
+component 175
+(kommen_in_Vorjahr.1,kommen_in_Vorjahr.2)#PERSON#LOCATION
+(besteigen.1,besteigen.2)#PERSON#LOCATION
+(weggebrachen.1,weggebrachen.2)#PERSON#LOCATION
+ => 75 (nutzen.1,nutzen.2)#PERSON#LOCATION
+
+component 176
+(unterliegen.1,unterliegen.2)#PERSON#LOCATION
+ => 129 (setzen_durch.1,setzen_durch.2)#PERSON#LOCATION
+
+component 177
+(beherbergen.1,beherbergen.2)#LOCATION#PERSON
+(kommen_seit_Anfang.1,kommen_seit_Anfang.2)#PERSON#LOCATION
+ => 0 (kommen.1,kommen.2)#PERSON#LOCATION
+ => 3 (kommen_an.1,kommen_an.2)#PERSON#LOCATION
+ => 8 (aufnehmen.1,aufnehmen.2)#LOCATION#PERSON
+ => 24 (unterbringen.1,unterbringen.2)#LOCATION#PERSON
+
+component 178
+NEG__(sein.1,sein.2)#PERSON#LOCATION
+
+component 179
+(behandeln.1,behandeln.2)#LOCATION#PERSON
+
+component 180
+(geben_aus.1,geben_aus.2)#PERSON#LOCATION
+(kommen_aus.1,kommen_aus.2)#PERSON#LOCATION
+
+component 181
+(fordern.1,fordern.2)#LOCATION#PERSON
+
+component 182
+(schaffen.1,schaffen.kommen.2)#PERSON#LOCATION
+(stranden.1,stranden.2)#PERSON#LOCATION
+ => 3 (kommen_an.1,kommen_an.2)#PERSON#LOCATION
+ => 0 (kommen.1,kommen.2)#PERSON#LOCATION
+
+component 183
+(befragen.1,befragen.2)#LOCATION#PERSON
+(fürchten.1,fürchten.2)#PERSON#LOCATION
+(ausliefern.1,ausliefern.2)#LOCATION#PERSON
+
+component 184
+(kontrollieren.1,kontrollieren.2)#PERSON#LOCATION
+
+component 185
+(ausbilden.1,ausbilden.2)#LOCATION#PERSON
+(erobern.1,erobern.2)#PERSON#LOCATION
+ => 184 (kontrollieren.1,kontrollieren.2)#PERSON#LOCATION
+
+component 186
+(wollen.1,wollen.2)#PERSON#LOCATION
+
+component 187
+(überzeugen.1,überzeugen.2)#PERSON#LOCATION
+
+component 188
+(kennenlernen.1,kennenlernen.2)#PERSON#LOCATION
+ => 187 (überzeugen.1,überzeugen.2)#PERSON#LOCATION
+
+component 189
+(verschieben.1,verschieben.2)#PERSON#LOCATION
+
+component 190
+(fühlen.1,fühlen.2)#PERSON#LOCATION
+
+component 191
+(fürchen.1,fürchen.2)#PERSON#LOCATION
+
+component 192
+(melden.1,melden.2)#PERSON#LOCATION
+
+component 193
+(kommen_in_Monat.1,kommen_in_Monat.2)#PERSON#LOCATION
+ => 97 (registrieren.1,registrieren.2)#PERSON#LOCATION
+
+component 194
+(niederlassen.1,niederlassen.2)#PERSON#LOCATION
+
+component 195
+(annehmen.1,annehmen.2)#PERSON#LOCATION
+ => 194 (niederlassen.1,niederlassen.2)#PERSON#LOCATION
+
+component 196
+(unterzeichnen.1,unterzeichnen.2)#PERSON#LOCATION
+ => 4 (sagen.1,sagen.2)#PERSON#LOCATION
+
+component 197
+(unternehmen.1,unternehmen.2)#PERSON#LOCATION
+(zusammensetzen.1,zusammensetzen.2)#PERSON#LOCATION
+
+component 198
+(stehen.1,stehen.2)#LOCATION#PERSON
+
+component 199
+(fehlen.1,fehlen.2)#PERSON#LOCATION
+
+component 200
+(kommen_zu_Sieg.1,kommen_zu_Sieg.2)#PERSON#LOCATION
+ => 199 (fehlen.1,fehlen.2)#PERSON#LOCATION
+
+component 201
+(beziehen.1,beziehen.2)#PERSON#LOCATION
+
+component 202
+(werten.1,werten.2)#PERSON#LOCATION
+
+component 203
+(entsenden.1,entsenden.2)#PERSON#LOCATION
+ => 34 (schicken.1,schicken.2)#PERSON#LOCATION
+
+component 204
+(lernen.1,lernen.2)#PERSON#LOCATION
+
+component 205
+(treffen.1,treffen.2)#LOCATION#PERSON
+
+component 206
+(ziehen.1,ziehen.2)#LOCATION#PERSON
+(locken.1,locken.2)#LOCATION#PERSON
+
+component 207
+(betreuen.1,betreuen.2)#LOCATION#PERSON
+ => 20 (befinden.1,befinden.2)#PERSON#LOCATION
+
+component 208
+(nehmen.1,nehmen.2)#LOCATION#PERSON
+
+component 209
+(verpflichten.1,verpflichten.2)#LOCATION#PERSON
+(verstärken.1,verstärken.2)#LOCATION#PERSON
+ => 208 (nehmen.1,nehmen.2)#LOCATION#PERSON
+
+component 210
+(brauchen.1,brauchen.2)#LOCATION#PERSON
+
+component 211
+(gereist.1,gereist.2)#LOCATION#PERSON
+(binden.1,binden.2)#PERSON#LOCATION
+
+component 212
+(verlegen.1,verlegen.2)#PERSON#LOCATION
+
+component 213
+(dringen|drängen.1,dringen|drängen.2)#PERSON#LOCATION
+
+component 214
+(geben.1,geben.2)#LOCATION#PERSON
+
+component 215
+(zurückkehren.1,zurückkehren.2)#LOCATION#PERSON
+ => 214 (geben.1,geben.2)#LOCATION#PERSON
+
+component 216
+(zurückweisen.1,zurückweisen.2)#PERSON#LOCATION
+ => 40 (suchen.1,suchen.2)#PERSON#LOCATION
+
+component 217
+(bestreiten.1,bestreiten.2)#LOCATION#PERSON
+(erkämpfen.1,erkämpfen.2)#PERSON#LOCATION
+
+component 218
+NEG__(geben.1,geben.2)#PERSON#LOCATION
+
+component 219
+(einführen.1,einführen.2)#LOCATION#PERSON
+ => 218 NEG__(geben.1,geben.2)#PERSON#LOCATION
+
+component 220
+(verlegen.1,verlegen.2)#LOCATION#PERSON
+(stationieren.1,stationieren.2)#LOCATION#PERSON
+
+component 221
+(zurückweisen.1,zurückweisen.2)#LOCATION#PERSON
+ => 220 (verlegen.1,verlegen.2)#LOCATION#PERSON
+
+component 222
+(antreten.1,antreten.2)#PERSON#LOCATION
+
+component 223
+(gedachten.1,gedachten.2)#PERSON#LOCATION
+(gehen_nach.1,gehen_nach.2)#PERSON#LOCATION
+(unterzeichnen.1,unterzeichnen.2)#LOCATION#PERSON
+ => 77 (festnehmen.1,festnehmen.2)#LOCATION#PERSON
+
+component 224
+(unterstützen.1,unterstützen.2)#LOCATION#PERSON
+
+component 225
+(unterbringen.1,unterbringen.2)#PERSON#LOCATION
+
+component 226
+(spielen_durch.1,spielen_durch.2)#PERSON#LOCATION
+(durchspieln.1,durchspieln.2)#PERSON#LOCATION
+ => 92 (spielen.1,spielen.2)#PERSON#LOCATION
+
+component 227
+(staren.1,staren.2)#PERSON#LOCATION
+
+component 228
+(werfen_vor.1,werfen_vor.2)#PERSON#LOCATION
+ => 4 (sagen.1,sagen.2)#PERSON#LOCATION
+
+component 229
+(behandeln.1,behandeln.2)#PERSON#LOCATION
+(testen.1,testen.2)#LOCATION#PERSON
+
+component 230
+(einladen.1,einladen.2)#PERSON#LOCATION
+
+component 231
+(leben.1,leben.2)#LOCATION#PERSON
+NEG__(verlassen.1,verlassen.2)#LOCATION#PERSON
+
+component 232
+(triumphieren.1,triumphieren.2)#PERSON#LOCATION
+
+component 233
+(planen.1,planen.2)#LOCATION#PERSON
+ => 51 (schicken.1,schicken.2)#LOCATION#PERSON
+ => 12 (haben.1,haben.2)#LOCATION#PERSON
+
+component 234
+(festnehmen.1,festnehmen.2)#PERSON#LOCATION
+ => 77 (festnehmen.1,festnehmen.2)#LOCATION#PERSON
+
+component 235
+(agieren.1,agieren.2)#PERSON#LOCATION
+
+component 236
+(zurücknehmen.1,zurücknehmen.2)#LOCATION#PERSON
+ => 12 (haben.1,haben.2)#LOCATION#PERSON
+ => 52 (reisen_ein.1,reisen_ein.2)#PERSON#LOCATION
+ => 51 (schicken.1,schicken.2)#LOCATION#PERSON
+
+component 237
+(erklären.1,erklären.2)#LOCATION#PERSON
+
+component 238
+(umgehen.1,umgehen.2)#PERSON#LOCATION
+(aufzeigen.1,aufzeigen.2)#PERSON#LOCATION
+
+component 239
+(steigen.1,steigen.2)#PERSON#LOCATION
+
+component 240
+(hundert.1,hundert.2)#PERSON#LOCATION
+(skandieren.1,skandieren.2)#PERSON#LOCATION
+ => 239 (steigen.1,steigen.2)#PERSON#LOCATION
+
+component 241
+(fixieren.1,fixieren.2)#PERSON#LOCATION
+(ausgeschieden.1,ausgeschieden.2)#PERSON#LOCATION
+
+component 242
+(reduzieren.1,reduzieren.2)#LOCATION#PERSON
+(stationiert.1,stationiert.2)#LOCATION#PERSON
+ => 220 (verlegen.1,verlegen.2)#LOCATION#PERSON
+
+component 243
+(angegriffen.1,angegriffen.2)#PERSON#LOCATION
+
+component 244
+(schützen.1,schützen.2)#PERSON#LOCATION
+(veranlassen.1,veranlassen.2)#PERSON#LOCATION
+(zurückziehen.1,zurückziehen.2)#LOCATION#PERSON
+(warnt.1,warnt.vorgehen.2)#PERSON#LOCATION
+(vollziehen.1,vollziehen.2)#LOCATION#PERSON
+(ausweiten.1,ausweiten.2)#PERSON#LOCATION
+(verabschieden.1,verabschieden.2)#LOCATION#PERSON
+ => 243 (angegriffen.1,angegriffen.2)#PERSON#LOCATION
+
+component 245
+(unterstützen.1,unterstützen.2)#PERSON#LOCATION
+ => 224 (unterstützen.1,unterstützen.2)#LOCATION#PERSON
+
+component 246
+(stellen.1,stellen.2)#LOCATION#PERSON
+
+component 247
+(heißen.1,heißen.2)#LOCATION#PERSON
+
+component 248
+(versuchen.1,versuchen.reisen.2)#PERSON#LOCATION
+ => 247 (heißen.1,heißen.2)#LOCATION#PERSON
+
+component 249
+(vergiften.1,vergiften.2)#PERSON#LOCATION
+(reißen.1,reißen.2)#LOCATION#PERSON
+ => 10 (sterben.1,sterben.2)#PERSON#LOCATION
+
+component 250
+(kommen_um.1,kommen_um.2)#PERSON#LOCATION
+(fallen|gefallen.1,fallen|gefallen.2)#LOCATION#PERSON
+ => 10 (sterben.1,sterben.2)#PERSON#LOCATION
+ => 249 (vergiften.1,vergiften.2)#PERSON#LOCATION
+
+component 251
+(harren_aus.1,harren_aus.2)#PERSON#LOCATION
+(stranden.1,stranden.2)#LOCATION#PERSON
+ => 36 (versuchen.1,versuchen.2)#PERSON#LOCATION
+
+component 252
+(bekommen.1,bekommen.2)#PERSON#LOCATION
+
+component 253
+(tun.1,tun.2)#LOCATION#PERSON
+(spielen_an.1,spielen_an.2)#PERSON#LOCATION
+
+component 254
+(nehmen_in_Anspruch.1,nehmen_in_Anspruch.2)#PERSON#LOCATION
+(fehlen.1,fehlen.2)#LOCATION#PERSON
+
+component 255
+(kehren_zurück.1,kehren_zurück.2)#PERSON#LOCATION
+
+component 256
+(führen.1,führen.2)#PERSON#LOCATION
+
+component 257
+(verfolgen.1,verfolgen.2)#PERSON#LOCATION
+
+component 258
+(betreiben.1,betreiben.2)#LOCATION#PERSON
+(transferieren.1,transferieren.2)#LOCATION#PERSON
+
+component 259
+(wechseln.1,wechseln.2)#PERSON#LOCATION
+(wechseln_sein_nach.1,wechseln_sein_nach.2)#PERSON#LOCATION
+
+component 260
+NEG__(aufnehmen.1,aufnehmen.2)#PERSON#LOCATION
+ => 143 (begleiten.1,begleiten.2)#PERSON#LOCATION
+ => 144 (brechen_auf.1,brechen_auf.2)#PERSON#LOCATION
+
+component 261
+(vorgehen.1,vorgehen.2)#LOCATION#PERSON
+(kämpfen.1,kämpfen.2)#LOCATION#PERSON
+
+component 262
+(wünschen.1,wünschen.2)#PERSON#LOCATION
+
+component 263
+(ankündigen.1,ankündigen.2)#LOCATION#PERSON
+
+component 264
+(bremsen.1,bremsen.2)#LOCATION#PERSON
+ => 263 (ankündigen.1,ankündigen.2)#LOCATION#PERSON
+
+component 265
+(unterdessen.1,unterdessen.2)#PERSON#LOCATION
+
+component 266
+(zurückzuschicken.1,zurückzuschicken.2)#PERSON#LOCATION
+(passieren.1,passieren.2)#LOCATION#PERSON
+(machen_auf.1,machen_auf.2)#PERSON#LOCATION
+(lassen.1,lassen.einreisen.2)#LOCATION#PERSON
+ => 31 (kommen_sein_nach.1,kommen_sein_nach.2)#PERSON#LOCATION
+ => 3 (kommen_an.1,kommen_an.2)#PERSON#LOCATION
+ => 13 (warten.1,warten.2)#PERSON#LOCATION
+ => 0 (kommen.1,kommen.2)#PERSON#LOCATION
+ => 67 NEG__(aufnehmen.1,aufnehmen.2)#LOCATION#PERSON
+
+component 267
+(abgeben.1,abgeben.2)#PERSON#LOCATION
+
+component 268
+(begeben.1,begeben.2)#PERSON#LOCATION
+
+component 269
+(akzeptiert.1,akzeptiert.2)#LOCATION#PERSON
+(leisten.1,leisten.2)#LOCATION#PERSON
+(zahlen.1,zahlen.2)#LOCATION#PERSON
+(bezahlen.1,bezahlen.2)#LOCATION#PERSON
+(erfüllen.1,erfüllen.2)#LOCATION#PERSON
+ => 208 (nehmen.1,nehmen.2)#LOCATION#PERSON
+
+component 270
+(berichten.1,berichten.2)#PERSON#LOCATION
+ => 4 (sagen.1,sagen.2)#PERSON#LOCATION
+
+component 271
+(stecken.1,stecken.2)#PERSON#LOCATION
+
+component 272
+(haben_protestieren.1,haben_protestieren.2)#PERSON#LOCATION
+(gehen_auf_Straße.1,gehen_auf_Straße.2)#LOCATION#PERSON
+(begingen.1,begingen.2)#PERSON#LOCATION
+(solidarisieren.1,solidarisieren.2)#PERSON#LOCATION
+(gehen_nach_Angabe.1,gehen_nach_Angabe.2)#PERSON#LOCATION
+ => 10 (sterben.1,sterben.2)#PERSON#LOCATION
+ => 29 (demonstrieren.1,demonstrieren.2)#PERSON#LOCATION
+ => 94 (beteiligen.1,beteiligen.2)#PERSON#LOCATION
+
+component 273
+(schätzen.1,schätzen.2)#PERSON#LOCATION
+
+component 274
+(heißen.1,heißen.2)#PERSON#LOCATION
+
+component 275
+(landen.1,landen.2)#LOCATION#PERSON
+ => 38 NEG__(kommen.1,kommen.2)#PERSON#LOCATION
+
+component 276
+(ankündigen.1,ankündigen.2)#PERSON#LOCATION
+
+component 277
+(bestätigen.1,bestätigen.2)#PERSON#LOCATION
+(mitteilen.1,mitteilen.2)#PERSON#LOCATION
+(teilen_mit.1,teilen_mit.2)#PERSON#LOCATION
+ => 4 (sagen.1,sagen.2)#PERSON#LOCATION
+ => 154 (erklären.1,erklären.2)#PERSON#LOCATION
+
+component 278
+(festhalten.1,festhalten.2)#PERSON#LOCATION
+
+component 279
+(gelingen.1,gelingen.2)#LOCATION#PERSON
+
+component 280
+(besorgt.1,besorgt.2)#PERSON#LOCATION
+ => 279 (gelingen.1,gelingen.2)#LOCATION#PERSON
+
+component 281
+(wandern_ein.1,wandern_ein.2)#PERSON#LOCATION
+(angestecken.1,angestecken.2)#PERSON#LOCATION
+(ziehen_an.1,ziehen_an.2)#LOCATION#PERSON
+ => 1 (leben.1,leben.2)#PERSON#LOCATION
+
+component 282
+(fallen.1,fallen.2)#PERSON#LOCATION
+
+component 283
+(freuen.1,freuen.2)#PERSON#LOCATION
+
+component 284
+(verwandeln.1,verwandeln.2)#PERSON#LOCATION
+ => 283 (freuen.1,freuen.2)#PERSON#LOCATION
+
+component 285
+(treten.1,treten.2)#PERSON#LOCATION
+
+component 286
+(sammeln.1,sammeln.2)#PERSON#LOCATION
+
+component 287
+(verteidigen.1,verteidigen.2)#PERSON#LOCATION
+
+component 288
+(kommen_bei_Absturz.1,kommen_bei_Absturz.2)#LOCATION#PERSON
+(kommen_seit_Beginn.1,kommen_seit_Beginn.2)#PERSON#LOCATION
+ => 10 (sterben.1,sterben.2)#PERSON#LOCATION
+
+component 289
+(erkranken.1,erkranken.2)#LOCATION#PERSON
+ => 10 (sterben.1,sterben.2)#PERSON#LOCATION
+ => 50 (sterben.1,sterben.2)#LOCATION#PERSON
+
+component 290
+(zurückgebrachen.1,zurückgebrachen.2)#PERSON#LOCATION
+ => 50 (sterben.1,sterben.2)#LOCATION#PERSON
+ => 10 (sterben.1,sterben.2)#PERSON#LOCATION
+ => 289 (erkranken.1,erkranken.2)#LOCATION#PERSON
+
+component 291
+(angreifen.1,angreifen.2)#LOCATION#PERSON
+
+component 292
+(zusammenkommen.1,zusammenkommen.2)#LOCATION#PERSON
+ => 291 (angreifen.1,angreifen.2)#LOCATION#PERSON
+
+component 293
+(aufrufen.1,aufrufen.2)#LOCATION#PERSON
+
+component 294
+(ermorden.1,ermorden.2)#PERSON#LOCATION
+
+component 295
+(behaupten.1,behaupten.2)#PERSON#LOCATION
+
+component 296
+(benötigen.1,benötigen.2)#LOCATION#PERSON
+ => 295 (behaupten.1,behaupten.2)#PERSON#LOCATION
+
+component 297
+(währen.1,währen.2)#LOCATION#PERSON
+(ausgesuchen.1,ausgesuchen.2)#LOCATION#PERSON
+
+component 298
+(profitieren.1,profitieren.2)#PERSON#LOCATION
+
+component 299
+(anmelden.1,anmelden.2)#PERSON#LOCATION
+ => 298 (profitieren.1,profitieren.2)#PERSON#LOCATION
+
+component 300
+(treffen|triefen.1,treffen|triefen.2)#PERSON#LOCATION
+ => 4 (sagen.1,sagen.2)#PERSON#LOCATION
+
+component 301
+(erkrankt_sein_in.1,erkrankt_sein_in.2)#PERSON#LOCATION
+(Besuch_sein_in.1,Besuch_sein_in.2)#PERSON#LOCATION
+(kommen_in_Sommer.1,kommen_in_Sommer.2)#PERSON#LOCATION
+
+component 302
+(genießen.1,genießen.2)#PERSON#LOCATION
+(gastieren.1,gastieren.2)#PERSON#LOCATION
+ => 295 (behaupten.1,behaupten.2)#PERSON#LOCATION
+
+component 303
+(stehen_auf_Bühne.1,stehen_auf_Bühne.2)#PERSON#LOCATION
+
+component 304
+(bieten.1,bieten.2)#PERSON#LOCATION
+
+component 305
+(stehen_unter_Hausarrest.1,stehen_unter_Hausarrest.2)#PERSON#LOCATION
+(empfinden.1,empfinden.2)#PERSON#LOCATION
+ => 304 (bieten.1,bieten.2)#PERSON#LOCATION
+
+component 306
+NEG__(reisen.1,reisen.2)#PERSON#LOCATION
+
+component 307
+(erhöhen.1,erhöhen.2)#LOCATION#PERSON
+(arbeiten.1,arbeiten.2)#LOCATION#PERSON
+(bekämpfen.1,bekämpfen.2)#LOCATION#PERSON
+(prüfen.1,prüfen.2)#LOCATION#PERSON
+
+component 308
+(versprechen.1,versprechen.2)#PERSON#LOCATION
+
+component 309
+(gelangen.1,gelangen.2)#LOCATION#PERSON
+ => 56 (lassen.1,lassen.2)#LOCATION#PERSON
+ => 139 (gelangen|gelingen.1,gelangen|gelingen.2)#PERSON#LOCATION
+
+component 310
+(einschleusen.1,einschleusen.2)#LOCATION#PERSON
+ => 56 (lassen.1,lassen.2)#LOCATION#PERSON
+ => 139 (gelangen|gelingen.1,gelangen|gelingen.2)#PERSON#LOCATION
+
+component 311
+(sperren.1,sperren.2)#PERSON#LOCATION
+(sperren.1,sperren.2)#LOCATION#PERSON
+
+component 312
+(auswandern.1,auswandern.2)#PERSON#LOCATION
+ => 72 (zurückkehren.1,zurückkehren.2)#PERSON#LOCATION
+
+component 313
+(teilnehmen.1,teilnehmen.2)#PERSON#LOCATION
+
+component 314
+(halten_ab.1,halten_ab.2)#PERSON#LOCATION
+ => 313 (teilnehmen.1,teilnehmen.2)#PERSON#LOCATION
+
+component 315
+(verzichten.1,verzichten.2)#PERSON#LOCATION
+
+component 316
+(lieben.1,lieben.2)#PERSON#LOCATION
+ => 315 (verzichten.1,verzichten.2)#PERSON#LOCATION
+
+component 317
+(erblicken.1,erblicken.2)#PERSON#LOCATION
+(kommen_zu_Welt.1,kommen_zu_Welt.2)#PERSON#LOCATION
+(wachsen_auf.1,wachsen_auf.2)#PERSON#LOCATION
+
+component 318
+(bescheren.1,bescheren.2)#LOCATION#PERSON
+ => 205 (treffen.1,treffen.2)#LOCATION#PERSON
+
+component 319
+(buchen.1,buchen.2)#LOCATION#PERSON
+(pausieren.1,pausieren.2)#PERSON#LOCATION
+
+component 320
+(verurteilen.1,verurteilen.2)#LOCATION#PERSON
+
+component 321
+(betreffen.1,betreffen.2)#PERSON#LOCATION
+ => 0 (kommen.1,kommen.2)#PERSON#LOCATION
+ => 117 (angesuchen.1,angesuchen.2)#PERSON#LOCATION
+ => 31 (kommen_sein_nach.1,kommen_sein_nach.2)#PERSON#LOCATION
+ => 3 (kommen_an.1,kommen_an.2)#PERSON#LOCATION
+ => 13 (warten.1,warten.2)#PERSON#LOCATION
+
+component 322
+(bezeichnen.1,bezeichnen.2)#PERSON#LOCATION
+ => 4 (sagen.1,sagen.2)#PERSON#LOCATION
+
+component 323
+(wählen.1,wählen.2)#LOCATION#PERSON
+
+component 324
+(setzen_ein.1,setzen_ein.2)#LOCATION#PERSON
+(stellen_vor.1,stellen_vor.2)#LOCATION#PERSON
+
+component 325
+(demonstriert.1,demonstriert.2)#PERSON#LOCATION
+ => 10 (sterben.1,sterben.2)#PERSON#LOCATION
+ => 50 (sterben.1,sterben.2)#LOCATION#PERSON
+
+component 326
+(zwingen.1,zwingen.2)#PERSON#LOCATION
+
+component 327
+(ausgeforschen.1,ausgeforschen.2)#PERSON#LOCATION
+ => 326 (zwingen.1,zwingen.2)#PERSON#LOCATION
+
+component 328
+(kommen_in_Tag.1,kommen_in_Tag.2)#PERSON#LOCATION
+ => 31 (kommen_sein_nach.1,kommen_sein_nach.2)#PERSON#LOCATION
+ => 117 (angesuchen.1,angesuchen.2)#PERSON#LOCATION
+ => 3 (kommen_an.1,kommen_an.2)#PERSON#LOCATION
+ => 13 (warten.1,warten.2)#PERSON#LOCATION
+ => 0 (kommen.1,kommen.2)#PERSON#LOCATION
+ => 321 (betreffen.1,betreffen.2)#PERSON#LOCATION
+
+component 329
+(einstellen.1,einstellen.2)#LOCATION#PERSON
+(werfen_vor.1,werfen_vor.2)#LOCATION#PERSON
+ => 224 (unterstützen.1,unterstützen.2)#LOCATION#PERSON
+ => 245 (unterstützen.1,unterstützen.2)#PERSON#LOCATION
+
+component 330
+(kommen_aus_Land.1,kommen_aus_Land.2)#PERSON#LOCATION
+(kaufen.1,kaufen.2)#PERSON#LOCATION
+
+component 331
+(siegen.1,siegen.2)#PERSON#LOCATION
+
+component 332
+(empfehlen.1,empfehlen.2)#PERSON#LOCATION
+
+component 333
+(stehen_auf_Platz.1,stehen_auf_Platz.2)#PERSON#LOCATION
+
+component 334
+(haben.1,haben.verlassen.2)#PERSON#LOCATION
+ => 333 (stehen_auf_Platz.1,stehen_auf_Platz.2)#PERSON#LOCATION
+
+component 335
+(verunglückt_sein_in.1,verunglückt_sein_in.2)#PERSON#LOCATION
+NEG__(lassen.1,lassen.2)#LOCATION#PERSON
+(tragen.1,tragen.2)#LOCATION#PERSON
+
+component 336
+(übersiedeln.1,übersiedeln.2)#PERSON#LOCATION
+
+component 337
+(ersetzen.1,ersetzen.2)#LOCATION#PERSON
+ => 336 (übersiedeln.1,übersiedeln.2)#PERSON#LOCATION
+
+component 338
+(verlassen.1,verlassen.2)#LOCATION#PERSON
+
+component 339
+(gegen.1,gegen.2)#PERSON#LOCATION
+
+component 340
+(erinnern.1,erinnern.2)#PERSON#LOCATION
+
+component 341
+(gehören_an.1,gehören_an.2)#PERSON#LOCATION
+ => 340 (erinnern.1,erinnern.2)#PERSON#LOCATION
+
+component 342
+(lenken.1,lenken.2)#PERSON#LOCATION
+(angehalten.1,angehalten.2)#LOCATION#PERSON
+
+component 343
+(ausüben.1,ausüben.2)#PERSON#LOCATION
+(angeschlagen.1,angeschlagen.2)#PERSON#LOCATION
+(fordern_auf.1,fordern_auf.nehmen.2)#PERSON#LOCATION
+
+component 344
+(versuchen.1,versuchen.erreichen.2)#PERSON#LOCATION
+ => 31 (kommen_sein_nach.1,kommen_sein_nach.2)#PERSON#LOCATION
+ => 3 (kommen_an.1,kommen_an.2)#PERSON#LOCATION
+ => 13 (warten.1,warten.2)#PERSON#LOCATION
+ => 0 (kommen.1,kommen.2)#PERSON#LOCATION
+ => 321 (betreffen.1,betreffen.2)#PERSON#LOCATION
+ => 117 (angesuchen.1,angesuchen.2)#PERSON#LOCATION
+
+component 345
+(erstechen.1,erstechen.2)#PERSON#LOCATION
+NEG__(schicken.1,schicken.2)#PERSON#LOCATION
+(bringen_zu_Welt.1,bringen_zu_Welt.2)#PERSON#LOCATION
+(versetzen.1,versetzen.2)#LOCATION#PERSON
+
+component 346
+(warnen.1,warnen.2)#PERSON#LOCATION
+ => 4 (sagen.1,sagen.2)#PERSON#LOCATION
+
+component 347
+(betrachten.1,betrachten.2)#LOCATION#PERSON
+ => 136 (drängen.1,drängen.2)#PERSON#LOCATION
+
+component 348
+(unterstützt.1,unterstützt.2)#PERSON#LOCATION
+ => 224 (unterstützen.1,unterstützen.2)#LOCATION#PERSON
+ => 245 (unterstützen.1,unterstützen.2)#PERSON#LOCATION
+
+component 349
+(stehen_vor_Gericht.1,stehen_vor_Gericht.2)#PERSON#LOCATION
+
+component 350
+(geben_an.1,geben_an.2)#PERSON#LOCATION
+ => 349 (stehen_vor_Gericht.1,stehen_vor_Gericht.2)#PERSON#LOCATION
+
+component 351
+(treten_auf.1,treten_auf.2)#PERSON#LOCATION
+(kommen_in_Jahr.1,kommen_in_Jahr.2)#LOCATION#PERSON
+
+component 352
+(geraten.1,geraten.2)#PERSON#LOCATION
+
+component 353
+(fallen_auf.1,fallen_auf.2)#PERSON#LOCATION
+ => 352 (geraten.1,geraten.2)#PERSON#LOCATION
+
+component 354
+(verhandeln.1,verhandeln.2)#PERSON#LOCATION
+
+component 355
+(melden.1,melden.2)#LOCATION#PERSON
+
+component 356
+(gewagt.1,gewagt.2)#PERSON#LOCATION
+ => 17 (versuchen.1,versuchen.gelangen.2)#PERSON#LOCATION
+ => 0 (kommen.1,kommen.2)#PERSON#LOCATION
+ => 16 (gelangen.1,gelangen.2)#PERSON#LOCATION
+ => 64 (gelangen_in_Jahr.1,gelangen_in_Jahr.2)#PERSON#LOCATION
+
+component 357
+(vertreten_sein_in.1,vertreten_sein_in.2)#PERSON#LOCATION
+(legen_zu.1,legen_zu.2)#PERSON#LOCATION
+ => 135 (aktiv_sein_in.1,aktiv_sein_in.2)#PERSON#LOCATION
+
+component 358
+(bitten.1,bitten.2)#PERSON#LOCATION
+
+component 359
+(erwischen.1,erwischen.2)#PERSON#LOCATION
+
+component 360
+(gefloh.1,gefloh.2)#LOCATION#PERSON
+
+component 361
+(siegen.1,siegen.2)#LOCATION#PERSON
+(fixieren.1,fixieren.2)#LOCATION#PERSON
+
+component 362
+(kündigen.1,kündigen.2)#PERSON#LOCATION
+ => 4 (sagen.1,sagen.2)#PERSON#LOCATION
+
+component 363
+(beschließen.1,beschließen.2)#PERSON#LOCATION
+
+component 364
+(sprinten.1,sprinten.2)#PERSON#LOCATION
+(schließen_ab.1,schließen_ab.2)#PERSON#LOCATION
+ => 333 (stehen_auf_Platz.1,stehen_auf_Platz.2)#PERSON#LOCATION
+
+component 365
+(reagieren.1,reagieren.2)#PERSON#LOCATION
+
+component 366
+(geben_ab.1,geben_ab.2)#PERSON#LOCATION
+(vergeben.1,vergeben.2)#PERSON#LOCATION
+
+component 367
+(gefloh.1,gefloh.2)#PERSON#LOCATION
+(fielen.1,fielen.2)#PERSON#LOCATION
+
+component 368
+(stellen_in_Monat.1,stellen_in_Monat.2)#PERSON#LOCATION
+(fallen|fällen.1,fallen|fällen.2)#PERSON#LOCATION
+ => 101 (benötigen.1,benötigen.2)#PERSON#LOCATION
+
+component 369
+NEG__(antreten.1,antreten.2)#PERSON#LOCATION
+(festigen.1,festigen.2)#PERSON#LOCATION
+
+component 370
+(besichtigen.1,besichtigen.2)#PERSON#LOCATION
+(abgestatten.1,abgestatten.2)#LOCATION#PERSON
+
+component 371
+(bauen.1,bauen.2)#PERSON#LOCATION
+(erhöhen.1,erhöhen.2)#PERSON#LOCATION
+
+component 372
+(denken|gedenken.1,denken|gedenken.2)#PERSON#LOCATION
+(denken.1,denken.2)#PERSON#LOCATION
+
+component 373
+(scheinen.1,scheinen.2)#LOCATION#PERSON
+(unterdessen.1,unterdessen.2)#LOCATION#PERSON
+
+component 374
+(zeihen|ziehen.1,zeihen|ziehen.2)#PERSON#LOCATION
+(suspendieren.1,suspendieren.2)#LOCATION#PERSON
+
+component 375
+(umsteigen.1,umsteigen.2)#PERSON#LOCATION
+ => 3 (kommen_an.1,kommen_an.2)#PERSON#LOCATION
+ => 0 (kommen.1,kommen.2)#PERSON#LOCATION
+ => 53 (einreisen.1,einreisen.2)#PERSON#LOCATION
+
+component 376
+(erleiden.1,erleiden.2)#PERSON#LOCATION
+
+component 377
+(stoßen.1,stoßen.2)#PERSON#LOCATION
+ => 376 (erleiden.1,erleiden.2)#PERSON#LOCATION
+
+component 378
+(gereist.1,gereist.2)#PERSON#LOCATION
+
+component 379
+(schleppen.1,schleppen.2)#LOCATION#PERSON
+(schlafen.1,schlafen.2)#PERSON#LOCATION
+ => 239 (steigen.1,steigen.2)#PERSON#LOCATION
+
+component 380
+(halten.1,halten.2)#LOCATION#PERSON
+
+component 381
+(sichern.1,sichern.2)#PERSON#LOCATION
+
+component 382
+(loben.1,loben.2)#PERSON#LOCATION
+ => 4 (sagen.1,sagen.2)#PERSON#LOCATION
+
+component 383
+(absitzen.1,absitzen.2)#PERSON#LOCATION
+ => 60 (sitzen.1,sitzen.2)#PERSON#LOCATION
+
+component 384
+(erhoffen.1,erhoffen.2)#PERSON#LOCATION
+
+component 385
+(reist.1,reist.2)#PERSON#LOCATION
+
+component 386
+(absolvieren.1,absolvieren.2)#PERSON#LOCATION
+
+component 387
+(glauben.1,glauben.2)#PERSON#LOCATION
+(rasen.1,rasen.2)#PERSON#LOCATION
+
+component 388
+NEG__(spielen.1,spielen.2)#PERSON#LOCATION
+(positionieren.1,positionieren.2)#PERSON#LOCATION
+
+component 389
+(angreifen.1,angreifen.2)#PERSON#LOCATION
+
+component 390
+(greifen_an.1,greifen_an.2)#PERSON#LOCATION
+ => 389 (angreifen.1,angreifen.2)#PERSON#LOCATION
+
+component 391
+(treten_an.1,treten_an.2)#LOCATION#PERSON
+
+component 392
+(sagen_zu.1,sagen_zu.2)#PERSON#LOCATION
+
+component 393
+(verraten.1,verraten.2)#PERSON#LOCATION
+ => 392 (sagen_zu.1,sagen_zu.2)#PERSON#LOCATION
+
+component 394
+(fallen_zurück.1,fallen_zurück.2)#PERSON#LOCATION
+(verbessern.1,verbessern.2)#PERSON#LOCATION
+
+component 395
+(weilen.1,weilen.2)#PERSON#LOCATION
+
+component 396
+(stehen_unter_Druck.1,stehen_unter_Druck.2)#PERSON#LOCATION
+ => 395 (weilen.1,weilen.2)#PERSON#LOCATION
+
+component 397
+(Woche_sein_in.1,Woche_sein_in.2)#PERSON#LOCATION
+ => 315 (verzichten.1,verzichten.2)#PERSON#LOCATION
+
+component 398
+(aktualisieren.1,aktualisieren.2)#LOCATION#PERSON
+
+component 399
+(geloben|loben.1,geloben|loben.2)#PERSON#LOCATION
+(erneuern.1,erneuern.2)#PERSON#LOCATION
+(aufgeben.1,aufgeben.2)#PERSON#LOCATION
+
+component 400
+(legen.1,legen.2)#PERSON#LOCATION
+
+component 401
+(entdecken.1,entdecken.2)#PERSON#LOCATION
+(analysieren.1,analysieren.2)#PERSON#LOCATION
+ => 400 (legen.1,legen.2)#PERSON#LOCATION
+
+component 402
+(verfügen.1,verfügen.2)#LOCATION#PERSON
+
+component 403
+(fahren.1,fahren.2)#LOCATION#PERSON
+(sichern.1,sichern.2)#LOCATION#PERSON
+
+component 404
+(verkürzen.1,verkürzen.2)#PERSON#LOCATION
+(wirken.1,wirken.2)#PERSON#LOCATION
+
+component 405
+(rechnen.1,rechnen.2)#PERSON#LOCATION
+
+component 406
+(unterliegen.1,unterliegen.2)#LOCATION#PERSON
+(vergeben.1,vergeben.2)#LOCATION#PERSON
+ => 119 (verlieren.1,verlieren.2)#LOCATION#PERSON
+
+component 407
+NEG__(einreisen.1,einreisen.2)#PERSON#LOCATION
+(verweisen.1,verweisen.2)#LOCATION#PERSON
+ => 191 (fürchen.1,fürchen.2)#PERSON#LOCATION
+
+component 408
+(bringen_in_Spiel.1,bringen_in_Spiel.2)#PERSON#LOCATION
+
+component 409
+(erklärt.1,erklärt.2)#PERSON#LOCATION
+ => 408 (bringen_in_Spiel.1,bringen_in_Spiel.2)#PERSON#LOCATION
+
+component 410
+(verteidigen.1,verteidigen.2)#LOCATION#PERSON
+
+component 411
+(stufen_ein.1,stufen_ein.2)#LOCATION#PERSON
+ => 410 (verteidigen.1,verteidigen.2)#LOCATION#PERSON
+
+component 412
+(nützen.1,nützen.2)#PERSON#LOCATION
+(ziehen_gleich.1,ziehen_gleich.2)#PERSON#LOCATION
+(halten_mit.1,halten_mit.2)#PERSON#LOCATION
+
+component 413
+(kehren.1,kehren.2)#PERSON#LOCATION
+(einstufen.1,einstufen.2)#PERSON#LOCATION
+
+component 414
+(werden.1,werden.2)#LOCATION#PERSON
+
+component 415
+(peilen.1,peilen.2)#PERSON#LOCATION
+(brechen_ab.1,brechen_ab.2)#PERSON#LOCATION
+ => 42 (erreichen.1,erreichen.2)#PERSON#LOCATION
+
+component 416
+(erscheinen.1,erscheinen.2)#PERSON#LOCATION
+
+component 417
+(zuziehen.1,zuziehen.2)#PERSON#LOCATION
+
+component 418
+(treffen|triefen.1,treffen|triefen.2)#LOCATION#PERSON
+
+component 419
+(bereiten_vor.1,bereiten_vor.2)#LOCATION#PERSON
+ => 418 (treffen|triefen.1,treffen|triefen.2)#LOCATION#PERSON
+
+component 420
+(Präsident_sein.1,Präsident_sein.2)#PERSON#LOCATION
+ => 287 (verteidigen.1,verteidigen.2)#PERSON#LOCATION
+
+component 421
+(klassieren.1,klassieren.2)#PERSON#LOCATION
+
+component 422
+(zufriedengeben.1,zufriedengeben.2)#PERSON#LOCATION
+ => 421 (klassieren.1,klassieren.2)#PERSON#LOCATION
+
+component 423
+(inhaftieren.1,inhaftieren.2)#LOCATION#PERSON
+(entlassen.1,entlassen.2)#LOCATION#PERSON
+ => 45 (verlassen.1,verlassen.2)#PERSON#LOCATION
+
+component 424
+(geben_aus.1,geben_aus.2)#LOCATION#PERSON
+(streichen.1,streichen.2)#LOCATION#PERSON
+
+component 425
+(nehmen_auf_Platz.1,nehmen_auf_Platz.2)#PERSON#LOCATION
+ => 63 (kommen_zu_Einsatz.1,kommen_zu_Einsatz.2)#PERSON#LOCATION
+
+component 426
+(hoffen.1,hoffen.2)#LOCATION#PERSON
+
+component 427
+(punkten.1,punkten.2)#PERSON#LOCATION
+ => 426 (hoffen.1,hoffen.2)#LOCATION#PERSON
+
+component 428
+(nehmen_auf.1,nehmen_auf.2)#PERSON#LOCATION
+(bekennen_sein_in.1,bekennen_sein_in.2)#PERSON#LOCATION
+(bedrohen.1,bedrohen.2)#LOCATION#PERSON
+
+component 429
+(empfangen.1,empfangen.2)#PERSON#LOCATION
+ => 4 (sagen.1,sagen.2)#PERSON#LOCATION
+
+component 430
+(betonen.1,betonen.2)#PERSON#LOCATION
+ => 4 (sagen.1,sagen.2)#PERSON#LOCATION
+
+component 431
+(legen_ein.1,legen_ein.2)#PERSON#LOCATION
+(dementieren.1,dementieren.2)#PERSON#LOCATION
+
+component 432
+(verdanken.1,verdanken.2)#LOCATION#PERSON
+ => 355 (melden.1,melden.2)#LOCATION#PERSON
+
+component 433
+(belegen.1,belegen.2)#PERSON#LOCATION
+
+component 434
+(kommen_auf_Platz.1,kommen_auf_Platz.2)#PERSON#LOCATION
+ => 433 (belegen.1,belegen.2)#PERSON#LOCATION
+
+component 435
+NEG__(leben.1,leben.2)#PERSON#LOCATION
+(befürchten.1,befürchten.2)#PERSON#LOCATION
+
+component 436
+(schaffen.1,schaffen.2)#LOCATION#PERSON
+
+component 437
+(streben_an.1,streben_an.2)#LOCATION#PERSON
+(verpassen.1,verpassen.2)#LOCATION#PERSON
+ => 436 (schaffen.1,schaffen.2)#LOCATION#PERSON
+
+component 438
+(identifizieren.1,identifizieren.2)#LOCATION#PERSON
+(beschäftigen_sein_in.1,beschäftigen_sein_in.2)#PERSON#LOCATION
+ => 43 (arbeiten.1,arbeiten.2)#PERSON#LOCATION
+
+component 439
+(drohen.1,drohen.2)#PERSON#LOCATION
+ => 15 (haben.1,haben.2)#PERSON#LOCATION
+
+component 440
+(tragen.1,tragen.2)#PERSON#LOCATION
+
+component 441
+(setzen.1,setzen.2)#LOCATION#PERSON
+
+component 442
+(setzen_ein.1,setzen_ein.2)#PERSON#LOCATION
+
+component 443
+(besiegen.1,besiegen.2)#PERSON#LOCATION
+
+component 444
+(gestehen|stehen.1,gestehen|stehen.2)#PERSON#LOCATION
+ => 97 (registrieren.1,registrieren.2)#PERSON#LOCATION
+
+component 445
+(bereiten.1,bereiten.2)#LOCATION#PERSON
+ => 181 (fordern.1,fordern.2)#LOCATION#PERSON
+
+component 446
+(durchsetzen.1,durchsetzen.2)#PERSON#LOCATION
+
+component 447
+(gehen_aus.1,gehen_aus.2)#PERSON#LOCATION
+ => 405 (rechnen.1,rechnen.2)#PERSON#LOCATION
+
+component 448
+(häufig_sein_in.1,häufig_sein_in.2)#PERSON#LOCATION
+NEG__(rechnen.1,rechnen.2)#PERSON#LOCATION
+ => 405 (rechnen.1,rechnen.2)#PERSON#LOCATION
+ => 447 (gehen_aus.1,gehen_aus.2)#PERSON#LOCATION
+
+component 449
+(bekräftigen.1,bekräftigen.2)#PERSON#LOCATION
+ => 4 (sagen.1,sagen.2)#PERSON#LOCATION
+ => 91 (fordern.1,fordern.2)#PERSON#LOCATION
+
+component 450
+(plädieren.1,plädieren.2)#PERSON#LOCATION
+(ausrichten.1,ausrichten.2)#PERSON#LOCATION
+(gehen_auf_Distanz.1,gehen_auf_Distanz.2)#PERSON#LOCATION
+
+component 451
+(bedeuten.1,bedeuten.2)#LOCATION#PERSON
+(aushandeln.1,aushandeln.2)#PERSON#LOCATION
+ => 126 (einladen.1,einladen.2)#LOCATION#PERSON
+
+component 452
+(erhalten.1,erhalten.2)#LOCATION#PERSON
+
+component 453
+(überstellen.1,überstellen.2)#LOCATION#PERSON
+
+component 454
+(gründen.1,gründen.2)#PERSON#LOCATION
+
+component 455
+NEG__(zurückkehren.1,zurückkehren.2)#PERSON#LOCATION
+ => 454 (gründen.1,gründen.2)#PERSON#LOCATION
+
+component 456
+(gewinnen.1,gewinnen.2)#LOCATION#PERSON
+
+component 457
+(absetzen.1,absetzen.2)#PERSON#LOCATION
+
+component 458
+(verletzen.1,verletzen.2)#PERSON#LOCATION
+
+component 459
+(teilnehmen.1,teilnehmen.2)#LOCATION#PERSON
+
+component 460
+(bedeuten.1,bedeuten.2)#PERSON#LOCATION
+ => 459 (teilnehmen.1,teilnehmen.2)#LOCATION#PERSON
+
+component 461
+(begleichen.1,begleichen.2)#PERSON#LOCATION
+ => 194 (niederlassen.1,niederlassen.2)#PERSON#LOCATION
+
+component 462
+(führen.1,führen.2)#LOCATION#PERSON
+
+component 463
+(verurteilen.1,verurteilen.2)#PERSON#LOCATION
+
+component 464
+(bestreiten.1,bestreiten.2)#PERSON#LOCATION
+ => 15 (haben.1,haben.2)#PERSON#LOCATION
+
+component 465
+(suchen.1,suchen.2)#LOCATION#PERSON
+
+component 466
+(schneiden_ab.1,schneiden_ab.2)#PERSON#LOCATION
+(nominieren.1,nominieren.2)#PERSON#LOCATION
+(weiterreisen.1,weiterreisen.2)#LOCATION#PERSON
+ => 159 (beginnen.1,beginnen.2)#PERSON#LOCATION
+
+component 467
+(bilden.1,bilden.2)#PERSON#LOCATION
+
+component 468
+(armutsgefährden_sein_in.1,armutsgefährden_sein_in.2)#PERSON#LOCATION
+(belasten.1,belasten.2)#PERSON#LOCATION
+ => 467 (bilden.1,bilden.2)#PERSON#LOCATION
+
+component 469
+(kommen_hinzu.1,kommen_hinzu.2)#PERSON#LOCATION
+ => 12 (haben.1,haben.2)#LOCATION#PERSON
+ => 52 (reisen_ein.1,reisen_ein.2)#PERSON#LOCATION
+ => 51 (schicken.1,schicken.2)#LOCATION#PERSON
+
+component 470
+(kommen_in_Spiel.1,kommen_in_Spiel.2)#PERSON#LOCATION
+(finden_in_Spiel.1,finden_in_Spiel.2)#PERSON#LOCATION
+(bleiben_in_Spiel.1,bleiben_in_Spiel.2)#PERSON#LOCATION
+
+component 471
+(stehen_in_Spiel.1,stehen_in_Spiel.2)#PERSON#LOCATION
+(tragen_bei.1,tragen_bei.2)#PERSON#LOCATION
+ => 470 (kommen_in_Spiel.1,kommen_in_Spiel.2)#PERSON#LOCATION
+
+component 472
+(festhalten.1,festhalten.2)#LOCATION#PERSON
+ => 20 (befinden.1,befinden.2)#PERSON#LOCATION
+
+component 473
+(vertreten.1,vertreten.2)#PERSON#LOCATION
+(vertreten_sein_durch.1,vertreten_sein_durch.2)#LOCATION#PERSON
+ => 88 (nehmen_teil.1,nehmen_teil.2)#PERSON#LOCATION
+
+component 474
+(einsetzen.1,einsetzen.2)#LOCATION#PERSON
+
+component 475
+(ehren.1,ehren.2)#LOCATION#PERSON
+
+component 476
+(absagen.1,absagen.2)#PERSON#LOCATION
+
+component 477
+(bekanntgeben.1,bekanntgeben.2)#PERSON#LOCATION
+ => 476 (absagen.1,absagen.2)#PERSON#LOCATION
+
+component 478
+(legen_nieder.1,legen_nieder.2)#PERSON#LOCATION
+ => 363 (beschließen.1,beschließen.2)#PERSON#LOCATION
+
+component 479
+(steigen.1,steigen.2)#LOCATION#PERSON
+(brillieren.1,brillieren.2)#PERSON#LOCATION
+(springen.1,springen.2)#PERSON#LOCATION
+
+component 480
+(besitzen.1,besitzen.2)#PERSON#LOCATION
+
+component 481
+(stoppen.1,stoppen.2)#PERSON#LOCATION
+
+component 482
+(hinrichten.1,hinrichten.2)#LOCATION#PERSON
+ => 10 (sterben.1,sterben.2)#PERSON#LOCATION
+
+component 483
+(feiern.1,feiern.2)#LOCATION#PERSON
+
+component 484
+(umsiedeln.1,umsiedeln.2)#LOCATION#PERSON
+ => 218 NEG__(geben.1,geben.2)#PERSON#LOCATION
+
+component 485
+(treffen_an.1,treffen_an.2)#PERSON#LOCATION
+ => 9 (bringen.1,bringen.2)#LOCATION#PERSON
+ => 6 (bringen.1,bringen.2)#PERSON#LOCATION
+
+component 486
+(sprechen.1,sprechen.2)#LOCATION#PERSON
+
+component 487
+(ausweisen.1,ausweisen.2)#LOCATION#PERSON
+ => 486 (sprechen.1,sprechen.2)#LOCATION#PERSON
+
+component 488
+(vorlegen.1,vorlegen.2)#PERSON#LOCATION
+
+component 489
+(abstimmen.1,abstimmen.2)#PERSON#LOCATION
+
+component 490
+(aufbrechen.1,aufbrechen.2)#LOCATION#PERSON
+ => 489 (abstimmen.1,abstimmen.2)#PERSON#LOCATION
+
+component 491
+(scheitern.1,scheitern.2)#PERSON#LOCATION
+
+component 492
+NEG__(erreichen.1,erreichen.2)#PERSON#LOCATION
+ => 491 (scheitern.1,scheitern.2)#PERSON#LOCATION
+
+component 493
+(forschen.1,forschen.2)#PERSON#LOCATION
+
+component 494
+(verdanken.1,verdanken.2)#PERSON#LOCATION
+(kommen_auf_Prozent.1,kommen_auf_Prozent.2)#PERSON#LOCATION
+(angehen.1,angehen.2)#PERSON#LOCATION
+(eingreifen.1,eingreifen.2)#PERSON#LOCATION
+ => 493 (forschen.1,forschen.2)#PERSON#LOCATION
+
+component 495
+(ergänzen.1,ergänzen.2)#PERSON#LOCATION
+(fahren|führen.1,fahren|führen.2)#PERSON#LOCATION
+ => 467 (bilden.1,bilden.2)#PERSON#LOCATION
+
+component 496
+(gehören.1,gehören.2)#PERSON#LOCATION
+
+component 497
+(sagen.1,sagen.2)#LOCATION#PERSON
+
+component 498
+(antworten.1,antworten.2)#PERSON#LOCATION
+ => 497 (sagen.1,sagen.2)#LOCATION#PERSON
+
+component 499
+(befreien.1,befreien.2)#PERSON#LOCATION
+(verabreden.1,verabreden.2)#PERSON#LOCATION
+(sagen.1,sagen.tun.2)#PERSON#LOCATION
+(unternehmen.1,unternehmen.2)#LOCATION#PERSON
+ => 497 (sagen.1,sagen.2)#LOCATION#PERSON
+ => 498 (antworten.1,antworten.2)#PERSON#LOCATION
+
+component 500
+(beantworten.1,beantworten.2)#PERSON#LOCATION
+(entkommen.1,entkommen.2)#PERSON#LOCATION
+
+component 501
+(erzielen.1,erzielen.2)#LOCATION#PERSON
+(einigen.1,einigen.2)#LOCATION#PERSON
+(einhalten.1,einhalten.2)#LOCATION#PERSON
+(verhandeln.1,verhandeln.2)#LOCATION#PERSON
+(diskutieren.1,diskutieren.2)#LOCATION#PERSON
+
+component 502
+(steuern_bei.1,steuern_bei.2)#PERSON#LOCATION
+ => 285 (treten.1,treten.2)#PERSON#LOCATION
+
+component 503
+(ziehen_ein.1,ziehen_ein.2)#PERSON#LOCATION
+(stehen_gegenüber.1,stehen_gegenüber.2)#PERSON#LOCATION
+(liegen_zurück.1,liegen_zurück.2)#PERSON#LOCATION
+
+component 504
+(rufen.1,rufen.2)#LOCATION#PERSON
+(laufen.1,laufen.2)#PERSON#LOCATION
+(sassen.1,sassen.2)#PERSON#LOCATION
+
+component 505
+(begeistern.1,begeistern.2)#PERSON#LOCATION
+ => 206 (ziehen.1,ziehen.2)#LOCATION#PERSON
+
+component 506
+(attackieren.1,attackieren.2)#PERSON#LOCATION
+
+component 507
+(beschäftigen.1,beschäftigen.2)#PERSON#LOCATION
+
+component 508
+NEG__(kämen.1,kämen.2)#PERSON#LOCATION
+(müssen.1,müssen.2)#LOCATION#PERSON
+ => 493 (forschen.1,forschen.2)#PERSON#LOCATION
+
+component 509
+(starten.1,starten.2)#PERSON#LOCATION
+
+component 510
+(zahlen.1,zahlen.2)#PERSON#LOCATION
+
+component 511
+(leiten.1,leiten.2)#PERSON#LOCATION
+
+component 512
+(einstellen.1,einstellen.2)#PERSON#LOCATION
+
+component 513
+(werben.1,werben.2)#LOCATION#PERSON
+ => 512 (einstellen.1,einstellen.2)#PERSON#LOCATION
+
+component 514
+(anbieten.1,anbieten.2)#PERSON#LOCATION
+
+component 515
+(bedrohen_sein_in.1,bedrohen_sein_in.2)#PERSON#LOCATION
+(geraten|raten.1,geraten|raten.2)#PERSON#LOCATION
+
+component 516
+(kündigen_an.1,kündigen_an.2)#PERSON#LOCATION
+ => 4 (sagen.1,sagen.2)#PERSON#LOCATION
+
+component 517
+(stellen_vor_Herausforderung.1,stellen_vor_Herausforderung.2)#PERSON#LOCATION
+(rufen_an.1,rufen_an.2)#PERSON#LOCATION
+(zusammengetroffen.1,zusammengetroffen.2)#LOCATION#PERSON
+
+component 518
+(einsetzen.1,einsetzen.2)#PERSON#LOCATION
+
+component 519
+(warnen.1,warnen.2)#LOCATION#PERSON
+
+component 520
+(vereidigen.1,vereidigen.2)#LOCATION#PERSON
+(prominent.1,prominent.2)#LOCATION#PERSON
+ => 519 (warnen.1,warnen.2)#LOCATION#PERSON
+
+component 521
+(lehnen.1,lehnen.2)#PERSON#LOCATION
+
+component 522
+(untersuchen.1,untersuchen.2)#LOCATION#PERSON
+(gönnen.1,gönnen.2)#PERSON#LOCATION
+
+component 523
+(rufen_auf.1,rufen_auf.2)#PERSON#LOCATION
+ => 4 (sagen.1,sagen.2)#PERSON#LOCATION
+
+component 524
+(kritisieren.1,kritisieren.2)#PERSON#LOCATION
+ => 4 (sagen.1,sagen.2)#PERSON#LOCATION
+ => 91 (fordern.1,fordern.2)#PERSON#LOCATION
+
+component 525
+(auffinden.1,auffinden.2)#LOCATION#PERSON
+ => 82 (entdecken.1,entdecken.2)#LOCATION#PERSON
+
+component 526
+(ablehnen.1,ablehnen.2)#LOCATION#PERSON
+ => 293 (aufrufen.1,aufrufen.2)#LOCATION#PERSON
+
+component 527
+(vermissen.1,vermissen.2)#PERSON#LOCATION
+(verschwinden.1,verschwinden.2)#PERSON#LOCATION
+
+component 528
+(hunderen.1,hunderen.2)#LOCATION#PERSON
+ => 87 (ziehen.1,ziehen.2)#PERSON#LOCATION
+
+component 529
+(drängt.1,drängt.2)#PERSON#LOCATION
+(kommen_mit_Familie.1,kommen_mit_Familie.2)#PERSON#LOCATION
+(kommen_zurück.1,kommen_zurück.2)#PERSON#LOCATION
+ => 255 (kehren_zurück.1,kehren_zurück.2)#PERSON#LOCATION
+
+component 530
+(zusammenkommen.1,zusammenkommen.2)#PERSON#LOCATION
+
+component 531
+(anerkennen.1,anerkennen.2)#PERSON#LOCATION
+
+component 532
+(entwickeln.1,entwickeln.2)#LOCATION#PERSON
+(beweisen.1,beweisen.2)#LOCATION#PERSON
+(wahrnehmen.1,wahrnehmen.2)#LOCATION#PERSON
+ => 531 (anerkennen.1,anerkennen.2)#PERSON#LOCATION
+
+component 533
+(anbieten.1,anbieten.2)#LOCATION#PERSON
+
+component 534
+(nutzt.1,nutzt.2)#PERSON#LOCATION
+(präsentiert.1,präsentiert.2)#PERSON#LOCATION
+ => 108 (präsentieren.1,präsentieren.2)#PERSON#LOCATION
+
+component 535
+(besuchen.1,besuchen.2)#LOCATION#PERSON
+(empfängen.1,empfängen.2)#PERSON#LOCATION
+
+component 536
+(zwingen.1,zwingen.2)#LOCATION#PERSON
+(bringen_in_Sicherheit.1,bringen_in_Sicherheit.2)#PERSON#LOCATION
+ => 191 (fürchen.1,fürchen.2)#PERSON#LOCATION
+
+component 537
+(beenden.1,beenden.2)#PERSON#LOCATION
+
+component 538
+(aufrufen.1,aufrufen.2)#PERSON#LOCATION
+
+component 539
+(bekennen.1,bekennen.2)#PERSON#LOCATION
+NEG__(lassen.1,lassen.2)#PERSON#LOCATION
+
+component 540
+(behalten.1,behalten.2)#PERSON#LOCATION
+
+component 541
+(haben_verlieren.1,haben_verlieren.2)#PERSON#LOCATION
+
+component 542
+(haben.1,haben.verteidigen.2)#PERSON#LOCATION
+ => 541 (haben_verlieren.1,haben_verlieren.2)#PERSON#LOCATION
+
+component 543
+(wahrn.1,wahrn.2)#PERSON#LOCATION
+(bleiben_in_Jahr.1,bleiben_in_Jahr.2)#PERSON#LOCATION
+ => 542 (haben.1,haben.verteidigen.2)#PERSON#LOCATION
+ => 541 (haben_verlieren.1,haben_verlieren.2)#PERSON#LOCATION
+
+component 544
+(stürmen.1,stürmen.2)#PERSON#LOCATION
+
+component 545
+(marschieren.1,marschieren.2)#PERSON#LOCATION
+ => 544 (stürmen.1,stürmen.2)#PERSON#LOCATION
+
+component 546
+(planen.1,planen.2)#PERSON#LOCATION
+
+component 547
+(gehen_in_Jahr.1,gehen_in_Jahr.2)#PERSON#LOCATION
+ => 400 (legen.1,legen.2)#PERSON#LOCATION
+
+component 548
+(rufen.1,rufen.2)#PERSON#LOCATION
+
+component 549
+(werfen.1,werfen.2)#PERSON#LOCATION
+ => 548 (rufen.1,rufen.2)#PERSON#LOCATION
+
+component 550
+(mitnehmen.1,mitnehmen.2)#PERSON#LOCATION
+(unterbrechen.1,unterbrechen.2)#PERSON#LOCATION
+
+component 551
+NEG__(stehen.1,stehen.2)#PERSON#LOCATION
+
+component 552
+(verknüpfen.1,verknüpfen.2)#PERSON#LOCATION
+(ansprechen.1,ansprechen.2)#PERSON#LOCATION
+(beobachten.1,beobachten.2)#PERSON#LOCATION
+ => 551 NEG__(stehen.1,stehen.2)#PERSON#LOCATION
+
+component 553
+(überleben.1,überleben.2)#PERSON#LOCATION
+(beteiligen.1,beteiligen.2)#LOCATION#PERSON
+
+component 554
+(sollen.1,sollen.2)#PERSON#LOCATION
+(trennen.1,trennen.2)#LOCATION#PERSON
+
+component 555
+(treiben.1,treiben.2)#PERSON#LOCATION
+
+component 556
+(schauen.1,schauen.2)#PERSON#LOCATION
+(verunsichern.1,verunsichern.2)#PERSON#LOCATION
+(Jahr_sein_in.1,Jahr_sein_in.2)#PERSON#LOCATION
+(zeihen|ziehen_zurück.1,zeihen|ziehen_zurück.2)#PERSON#LOCATION
+ => 555 (treiben.1,treiben.2)#PERSON#LOCATION
+
+component 557
+(öffnen.1,öffnen.2)#LOCATION#PERSON
+ => 56 (lassen.1,lassen.2)#LOCATION#PERSON
+
+component 558
+(liefern.1,liefern.2)#PERSON#LOCATION
+
+component 559
+(bewegen.1,bewegen.2)#PERSON#LOCATION
+
+component 560
+(bieten_an.1,bieten_an.2)#PERSON#LOCATION
+
+component 561
+(ausrufen.1,ausrufen.2)#PERSON#LOCATION
+(unterzeichnet.1,unterzeichnet.2)#PERSON#LOCATION
+ => 560 (bieten_an.1,bieten_an.2)#PERSON#LOCATION
+
+component 562
+(anreisen.1,anreisen.2)#PERSON#LOCATION
+(verschaffen.1,verschaffen.2)#PERSON#LOCATION
+
+component 563
+(bezahlen.1,bezahlen.2)#PERSON#LOCATION
+(verdoppeln.1,verdoppeln.2)#PERSON#LOCATION
+
+component 564
+(aufnehm.1,aufnehm.2)#PERSON#LOCATION
+(senken.1,senken.2)#PERSON#LOCATION
+ => 73 (landen.1,landen.2)#PERSON#LOCATION
+
+component 565
+(erringen.1,erringen.2)#PERSON#LOCATION
+(verletzt.1,verletzt.2)#LOCATION#PERSON
+ => 222 (antreten.1,antreten.2)#PERSON#LOCATION
+
+component 566
+(kontrollieren.1,kontrollieren.2)#LOCATION#PERSON
+
+component 567
+(vollziehen.1,vollziehen.2)#PERSON#LOCATION
+ => 127 (tätig_sein_in.1,tätig_sein_in.2)#PERSON#LOCATION
+
+component 568
+(kommen_nach_Polizeiangabe.1,kommen_nach_Polizeiangabe.2)#PERSON#LOCATION
+ => 3 (kommen_an.1,kommen_an.2)#PERSON#LOCATION
+ => 13 (warten.1,warten.2)#PERSON#LOCATION
+ => 0 (kommen.1,kommen.2)#PERSON#LOCATION
+ => 31 (kommen_sein_nach.1,kommen_sein_nach.2)#PERSON#LOCATION
+ => 67 NEG__(aufnehmen.1,aufnehmen.2)#LOCATION#PERSON
+
+component 569
+(revanchieren.1,revanchieren.2)#PERSON#LOCATION
+ => 476 (absagen.1,absagen.2)#PERSON#LOCATION
+
+component 570
+(bekunden.1,bekunden.2)#PERSON#LOCATION
+(lassen.1,lassen.behandeln.2)#PERSON#LOCATION
+
+component 571
+(aufheben.1,aufheben.2)#PERSON#LOCATION
+(übermitteln.1,übermitteln.2)#PERSON#LOCATION
+
+component 572
+(bestimmen.1,bestimmen.2)#LOCATION#PERSON
+(küren.1,küren.2)#LOCATION#PERSON
+ => 465 (suchen.1,suchen.2)#LOCATION#PERSON
+
+component 573
+(werben.1,werben.2)#PERSON#LOCATION
+
+component 574
+(vorschlagen.1,vorschlagen.2)#LOCATION#PERSON
+ => 573 (werben.1,werben.2)#PERSON#LOCATION
+
+component 575
+(zeigen.1,zeigen.2)#LOCATION#PERSON
+
+component 576
+(versammeln.1,versammeln.2)#LOCATION#PERSON
+(mischen.1,mischen.2)#PERSON#LOCATION
+ => 575 (zeigen.1,zeigen.2)#LOCATION#PERSON
+
+component 577
+(lanciert.1,lanciert.2)#PERSON#LOCATION
+(stellen_in_Aussicht.1,stellen_in_Aussicht.2)#PERSON#LOCATION
+
+component 578
+(kritisieren.1,kritisieren.2)#LOCATION#PERSON
+(bewegen.1,bewegen.2)#LOCATION#PERSON
+ => 224 (unterstützen.1,unterstützen.2)#LOCATION#PERSON
+
+component 579
+(vorwerfen.1,vorwerfen.2)#LOCATION#PERSON
+ => 578 (kritisieren.1,kritisieren.2)#LOCATION#PERSON
+ => 224 (unterstützen.1,unterstützen.2)#LOCATION#PERSON
+
+component 580
+(brechen.1,brechen.2)#PERSON#LOCATION
+
+component 581
+NEG__(behandeln.1,behandeln.2)#LOCATION#PERSON
+ => 358 (bitten.1,bitten.2)#PERSON#LOCATION
+
+component 582
+(befragen.1,befragen.2)#PERSON#LOCATION
+(prüfen.1,prüfen.2)#PERSON#LOCATION
+
+component 583
+(anschließen.1,anschließen.2)#PERSON#LOCATION
+(wachsen.1,wachsen.2)#LOCATION#PERSON
+
+component 584
+NEG__(sagen.1,sagen.2)#PERSON#LOCATION
+ => 4 (sagen.1,sagen.2)#PERSON#LOCATION
+
+component 585
+NEG__(haben.1,haben.2)#LOCATION#PERSON
+ => 514 (anbieten.1,anbieten.2)#PERSON#LOCATION
+
+component 586
+(trauern.1,trauern.2)#LOCATION#PERSON
+(krönen.1,krönen.2)#LOCATION#PERSON
+ => 56 (lassen.1,lassen.2)#LOCATION#PERSON
+
+component 587
+(begrüßen.1,begrüßen.2)#LOCATION#PERSON
+ => 230 (einladen.1,einladen.2)#PERSON#LOCATION
+
+component 588
+(nehmen_in_Jahr.1,nehmen_in_Jahr.2)#PERSON#LOCATION
+(melden_sein_in.1,melden_sein_in.2)#PERSON#LOCATION
+(reihen.1,reihen.2)#PERSON#LOCATION
+ => 355 (melden.1,melden.2)#LOCATION#PERSON
+
+component 589
+(schaffen.1,schaffen.2)#PERSON#LOCATION
+
+component 590
+(bleiben_zu_Mal.1,bleiben_zu_Mal.2)#PERSON#LOCATION
+ => 146 (kassieren.1,kassieren.2)#PERSON#LOCATION
+ => 30 (verlieren.1,verlieren.2)#PERSON#LOCATION
+
+component 591
+NEG__(sein.1,sein.2)#LOCATION#PERSON
+
+component 592
+(stehen_in_Jahr.1,stehen_in_Jahr.2)#PERSON#LOCATION
+
+component 593
+(erreichen.1,erreichen.2)#LOCATION#PERSON
+
+component 594
+(ermöglichen.1,ermöglichen.2)#PERSON#LOCATION
+
+component 595
+(beraten.1,beraten.2)#PERSON#LOCATION
+ => 4 (sagen.1,sagen.2)#PERSON#LOCATION
+ => 44 (treffen.1,treffen.2)#PERSON#LOCATION
+
+component 596
+(besiegen.1,besiegen.2)#LOCATION#PERSON
+ => 176 (unterliegen.1,unterliegen.2)#PERSON#LOCATION
+ => 129 (setzen_durch.1,setzen_durch.2)#PERSON#LOCATION
+
+component 597
+(ignorieren.1,ignorieren.2)#PERSON#LOCATION
+ => 506 (attackieren.1,attackieren.2)#PERSON#LOCATION
+
+component 598
+(bitten.1,bitten.2)#LOCATION#PERSON
+ => 225 (unterbringen.1,unterbringen.2)#PERSON#LOCATION
+
+component 599
+(wenden.1,wenden.2)#PERSON#LOCATION
+
+component 600
+(wandern_aus.1,wandern_aus.2)#PERSON#LOCATION
+
+component 601
+(erlauben.1,erlauben.2)#LOCATION#PERSON
+ => 600 (wandern_aus.1,wandern_aus.2)#PERSON#LOCATION
+
+component 602
+(auszeichnen.1,auszeichnen.2)#LOCATION#PERSON
+
+component 603
+(geben_in_Jahr.1,geben_in_Jahr.2)#PERSON#LOCATION
+ => 602 (auszeichnen.1,auszeichnen.2)#LOCATION#PERSON
+
+component 604
+(schießen.1,schießen.2)#PERSON#LOCATION
+
+component 605
+(behalten.1,behalten.2)#LOCATION#PERSON
+(revanchieren.1,revanchieren.2)#LOCATION#PERSON
+ => 604 (schießen.1,schießen.2)#PERSON#LOCATION
+
+component 606
+(bekommen.1,bekommen.2)#LOCATION#PERSON
+ => 12 (haben.1,haben.2)#LOCATION#PERSON
+
+component 607
+(verzeichnen.1,verzeichnen.2)#LOCATION#PERSON
+(trennen.1,trennen.2)#PERSON#LOCATION
+
+component 608
+(zurückführen.1,zurückführen.2)#PERSON#LOCATION
+(freigegeben.1,freigegeben.2)#LOCATION#PERSON
+
+component 609
+(erzwingen.1,erzwingen.2)#LOCATION#PERSON
+(erleben.1,erleben.2)#LOCATION#PERSON
+
+component 610
+NEG__(halten.1,halten.2)#PERSON#LOCATION
+(untermauern.1,untermauern.2)#PERSON#LOCATION
+
+component 611
+(meinen.1,meinen.2)#PERSON#LOCATION
+ => 4 (sagen.1,sagen.2)#PERSON#LOCATION
+
+component 612
+(fliegen.1,fliegen.2)#LOCATION#PERSON
+
+component 613
+(gehen_in_Tag.1,gehen_in_Tag.2)#PERSON#LOCATION
+(abschießen.1,abschießen.2)#PERSON#LOCATION
+ => 600 (wandern_aus.1,wandern_aus.2)#PERSON#LOCATION
+
+component 614
+(begrüßen.1,begrüßen.2)#PERSON#LOCATION
+
+component 615
+(finden.1,finden.2)#LOCATION#PERSON
+ => 110 (präsentieren.1,präsentieren.2)#LOCATION#PERSON
+
+component 616
+(beklagen.1,beklagen.2)#LOCATION#PERSON
+(klassieren.1,klassieren.2)#LOCATION#PERSON
+
+component 617
+(haben_verlieren.1,haben_verlieren.2)#LOCATION#PERSON
+ => 35 (fliehen.1,fliehen.2)#PERSON#LOCATION
+
+component 618
+(zeihen|ziehen_an.1,zeihen|ziehen_an.2)#PERSON#LOCATION
+ => 36 (versuchen.1,versuchen.2)#PERSON#LOCATION
+
+component 619
+(betreten.1,betreten.2)#PERSON#LOCATION
+(stahlen.1,stahlen.2)#PERSON#LOCATION
+(schlagen_zu.1,schlagen_zu.2)#PERSON#LOCATION
+
+component 620
+(Verbündete_sein.1,Verbündete_sein.2)#LOCATION#PERSON
+ => 224 (unterstützen.1,unterstützen.2)#LOCATION#PERSON
+
+component 621
+(bereit.1,bereit.2)#LOCATION#PERSON
+(bekämpfen.1,bekämpfen.2)#PERSON#LOCATION
+ => 620 (Verbündete_sein.1,Verbündete_sein.2)#LOCATION#PERSON
+ => 224 (unterstützen.1,unterstützen.2)#LOCATION#PERSON
+
+component 622
+(kündigen.1,kündigen.2)#LOCATION#PERSON
+ => 300 (treffen|triefen.1,treffen|triefen.2)#PERSON#LOCATION
+ => 4 (sagen.1,sagen.2)#PERSON#LOCATION
+
+component 623
+(erleben.1,erleben.2)#PERSON#LOCATION
+
+component 624
+(verweigern.1,verweigern.2)#LOCATION#PERSON
+
+component 625
+(sprengen.1,sprengen.2)#PERSON#LOCATION
+(rissen.1,rissen.2)#PERSON#LOCATION
+
+component 626
+(bereiten_vor.1,bereiten_vor.2)#PERSON#LOCATION
+
+component 627
+(beantragen.1,beantragen.2)#LOCATION#PERSON
+ => 134 (weiterreisen.1,weiterreisen.2)#PERSON#LOCATION
+
+component 628
+(rechnen.1,rechnen.2)#LOCATION#PERSON
+
+component 629
+(verständigen.1,verständigen.2)#PERSON#LOCATION
+NEG__(äußern.1,äußern.2)#PERSON#LOCATION
+
+component 630
+(gehen.1,gehen.2)#LOCATION#PERSON
+
+component 631
+NEG__(nehmen.1,nehmen.2)#PERSON#LOCATION
+ => 201 (beziehen.1,beziehen.2)#PERSON#LOCATION
+
+component 632
+(scheinen.1,scheinen.2)#PERSON#LOCATION
+
+component 633
+(fragen.1,fragen.2)#PERSON#LOCATION
+
+component 634
+(bringen_in_Jahr.1,bringen_in_Jahr.2)#PERSON#LOCATION
+
+component 635
+(befinden.1,befinden.2)#LOCATION#PERSON
+ => 634 (bringen_in_Jahr.1,bringen_in_Jahr.2)#PERSON#LOCATION
+
+component 636
+(verweigern.1,verweigern.2)#PERSON#LOCATION
+(verwehren.1,verwehren.2)#PERSON#LOCATION
+
+component 637
+(senden.1,senden.2)#LOCATION#PERSON
+ => 69 (bleiben.1,bleiben.2)#LOCATION#PERSON
+
+component 638
+(informieren.1,informieren.2)#LOCATION#PERSON
+ => 75 (nutzen.1,nutzen.2)#PERSON#LOCATION
+
+component 639
+(entscheiden.1,entscheiden.2)#PERSON#LOCATION
+
+component 640
+(rücken_vor.1,rücken_vor.2)#PERSON#LOCATION
+
+component 641
+(beschließen.1,beschließen.2)#LOCATION#PERSON
+ => 640 (rücken_vor.1,rücken_vor.2)#PERSON#LOCATION
+
+component 642
+(eröffnen.1,eröffnen.2)#LOCATION#PERSON
+(erwischen.1,erwischen.2)#LOCATION#PERSON
+
+component 643
+(Verbündete_sein.1,Verbündete_sein.2)#PERSON#LOCATION
+(vorgeworfen.1,vorgeworfen.2)#PERSON#LOCATION
+ => 224 (unterstützen.1,unterstützen.2)#LOCATION#PERSON
+
+component 644
+(aufgeben.1,aufgeben.2)#LOCATION#PERSON
+(Verbündete_sein_von.1,Verbündete_sein_von.2)#LOCATION#PERSON
+(auswechseln.1,auswechseln.2)#LOCATION#PERSON
+ => 224 (unterstützen.1,unterstützen.2)#LOCATION#PERSON
+
+component 645
+(vorgehen.1,vorgehen.2)#PERSON#LOCATION
+(stärken.1,stärken.2)#PERSON#LOCATION
+ => 538 (aufrufen.1,aufrufen.2)#PERSON#LOCATION
+
+component 646
+(richten.1,richten.2)#PERSON#LOCATION
+
+component 647
+(beschuldigen.1,beschuldigen.2)#PERSON#LOCATION
+
+component 648
+(streben_an.1,streben_an.2)#PERSON#LOCATION
+(treffen_aufeinander.1,treffen_aufeinander.2)#PERSON#LOCATION
+(überstehen.1,überstehen.2)#PERSON#LOCATION
+
+component 649
+(streben.1,streben.2)#PERSON#LOCATION
+
+component 650
+(ein_sein.1,ein_sein.2)#LOCATION#PERSON
+
+component 651
+(belegen.1,belegen.2)#LOCATION#PERSON
+ => 650 (ein_sein.1,ein_sein.2)#LOCATION#PERSON
+
+component 652
+(weisen_zurück.1,weisen_zurück.2)#PERSON#LOCATION
+ => 4 (sagen.1,sagen.2)#PERSON#LOCATION
+
+component 653
+(auffordern.1,auffordern.2)#PERSON#LOCATION
+
+component 654
+(stoppen.1,stoppen.2)#LOCATION#PERSON
+(erschweren.1,erschweren.2)#LOCATION#PERSON
+ => 224 (unterstützen.1,unterstützen.2)#LOCATION#PERSON
+
+component 655
+(anordnen.1,anordnen.2)#PERSON#LOCATION
+
+component 656
+(werfen.1,werfen.2)#LOCATION#PERSON
+ => 655 (anordnen.1,anordnen.2)#PERSON#LOCATION
+
+component 657
+(schließen.1,schließen.2)#PERSON#LOCATION
+
+component 658
+(vergleichen.1,vergleichen.2)#PERSON#LOCATION
+(stellen_fest.1,stellen_fest.2)#PERSON#LOCATION
+
+component 659
+(kümmern.1,kümmern.2)#PERSON#LOCATION
+ => 658 (vergleichen.1,vergleichen.2)#PERSON#LOCATION
+
+component 660
+(sitzen_ein.1,sitzen_ein.2)#PERSON#LOCATION
+(einsperren.1,einsperren.2)#PERSON#LOCATION
+ => 612 (fliegen.1,fliegen.2)#LOCATION#PERSON
+
+component 661
+(vorwerfen.1,vorwerfen.2)#PERSON#LOCATION
+ => 4 (sagen.1,sagen.2)#PERSON#LOCATION
+ => 228 (werfen_vor.1,werfen_vor.2)#PERSON#LOCATION
+
+component 662
+(sorgen.1,sorgen.2)#PERSON#LOCATION
+
+component 663
+(schlagen.1,schlagen.2)#PERSON#LOCATION
+
+component 664
+(gehen_um.1,gehen_um.2)#LOCATION#PERSON
+(etablieren.1,etablieren.2)#PERSON#LOCATION
+
+component 665
+(sehen.1,sehen.2)#LOCATION#PERSON
+
+component 666
+(weisen.1,weisen.2)#PERSON#LOCATION
+
+component 667
+NEG__(bieten.1,bieten.2)#PERSON#LOCATION
+(erlassen.1,erlassen.2)#PERSON#LOCATION
+ => 68 (besuchen.1,besuchen.2)#PERSON#LOCATION
+
+component 668
+(interessieren.1,interessieren.2)#PERSON#LOCATION
+(ändern.1,ändern.2)#PERSON#LOCATION
+
+component 669
+(erwerben.1,erwerben.2)#PERSON#LOCATION
+ => 355 (melden.1,melden.2)#LOCATION#PERSON
+
+component 670
+(veröffentlichen.1,veröffentlichen.2)#PERSON#LOCATION
+
+component 671
+(handeln.1,handeln.2)#PERSON#LOCATION
+(ausdehnen.1,ausdehnen.2)#PERSON#LOCATION
+ => 670 (veröffentlichen.1,veröffentlichen.2)#PERSON#LOCATION
+
+component 672
+(würdigen.1,würdigen.2)#PERSON#LOCATION
+
+component 673
+(zelebrieren.1,zelebrieren.2)#PERSON#LOCATION
+ => 68 (besuchen.1,besuchen.2)#PERSON#LOCATION
+
+component 674
+(beschäftigen.1,beschäftigen.2)#LOCATION#PERSON
+ => 512 (einstellen.1,einstellen.2)#PERSON#LOCATION
+
+component 675
+(verstärken.1,verstärken.2)#PERSON#LOCATION
+
+component 676
+(informieren.1,informieren.2)#PERSON#LOCATION
+
+component 677
+(verhängen.1,verhängen.2)#PERSON#LOCATION
+
+component 678
+(ablehnen.1,ablehnen.2)#PERSON#LOCATION
+(ausschließen.1,ausschließen.2)#PERSON#LOCATION
+
+component 679
+(nennen.1,nennen.2)#PERSON#LOCATION
+ => 4 (sagen.1,sagen.2)#PERSON#LOCATION
+
+component 680
+(bemühten.1,bemühten.2)#PERSON#LOCATION
+ => 86 (zählen.1,zählen.2)#LOCATION#PERSON
+
+component 681
+(kennen.1,kennen.2)#PERSON#LOCATION
+(verabschieden.1,verabschieden.2)#PERSON#LOCATION
+
+component 682
+(kämpfen.1,kämpfen.2)#PERSON#LOCATION
+
+component 683
+(verdienen.1,verdienen.2)#PERSON#LOCATION
+
+component 684
+(greifen.1,greifen.2)#PERSON#LOCATION
+
+component 685
+(zunehmen.1,zunehmen.2)#PERSON#LOCATION
+(überdenken.1,überdenken.2)#PERSON#LOCATION
+ => 675 (verstärken.1,verstärken.2)#PERSON#LOCATION
+
+component 686
+(qualifizieren.1,qualifizieren.2)#PERSON#LOCATION
+
+component 687
+(lösen.1,lösen.2)#PERSON#LOCATION
+ => 686 (qualifizieren.1,qualifizieren.2)#PERSON#LOCATION
+
+component 688
+(spielen.1,spielen.2)#LOCATION#PERSON
+
+component 689
+NEG__(erfüllen.1,erfüllen.2)#LOCATION#PERSON
+ => 489 (abstimmen.1,abstimmen.2)#PERSON#LOCATION
+
+component 690
+(alt_sein.1,alt_sein.2)#PERSON#LOCATION
+(alt.1,alt.2)#PERSON#LOCATION
+
+component 691
+(zurückwerfen.1,zurückwerfen.2)#LOCATION#PERSON
+(verpaßt.1,verpaßt.2)#PERSON#LOCATION
+(leidet.1,leidet.2)#PERSON#LOCATION
+
+component 692
+(beweisen.1,beweisen.2)#PERSON#LOCATION
+
+component 693
+(verzichten.1,verzichten.2)#LOCATION#PERSON
+
+component 694
+(scheiden_aus.1,scheiden_aus.2)#LOCATION#PERSON
+(deklassieren.1,deklassieren.2)#PERSON#LOCATION
+ => 693 (verzichten.1,verzichten.2)#LOCATION#PERSON
+
+component 695
+(rücken.1,rücken.2)#PERSON#LOCATION
+
+component 696
+(nehmen_ein.1,nehmen_ein.2)#PERSON#LOCATION
+ => 695 (rücken.1,rücken.2)#PERSON#LOCATION
+
+component 697
+(erleiden.1,erleiden.2)#LOCATION#PERSON
+ => 119 (verlieren.1,verlieren.2)#LOCATION#PERSON
+
+component 698
+NEG__(halten.1,halten.2)#LOCATION#PERSON
+ => 329 (einstellen.1,einstellen.2)#LOCATION#PERSON
+ => 224 (unterstützen.1,unterstützen.2)#LOCATION#PERSON
+ => 245 (unterstützen.1,unterstützen.2)#PERSON#LOCATION
+
+component 699
+(zusagen.1,zusagen.2)#PERSON#LOCATION
+(zugesichern.1,zugesichern.2)#PERSON#LOCATION
+
+component 700
+(verlängern.1,verlängern.2)#LOCATION#PERSON
+ => 693 (verzichten.1,verzichten.2)#LOCATION#PERSON
+
+component 701
+(lehnen_ab.1,lehnen_ab.2)#LOCATION#PERSON
+ => 224 (unterstützen.1,unterstützen.2)#LOCATION#PERSON
+
+component 702
+(verpflichten.1,verpflichten.2)#PERSON#LOCATION
+ => 208 (nehmen.1,nehmen.2)#LOCATION#PERSON
+
+component 703
+(entlassen.1,entlassen.2)#PERSON#LOCATION
+
+component 704
+(vorlegen.1,vorlegen.2)#LOCATION#PERSON
+ => 501 (erzielen.1,erzielen.2)#LOCATION#PERSON
+
+component 705
+(beschuldigen.1,beschuldigen.2)#LOCATION#PERSON
+ => 630 (gehen.1,gehen.2)#LOCATION#PERSON
+
+component 706
+(winnen.1,winnen.2)#LOCATION#PERSON
+ => 483 (feiern.1,feiern.2)#LOCATION#PERSON
+
+component 707
+(bangen.1,bangen.2)#PERSON#LOCATION
+
+component 708
+(vereinbaren.1,vereinbaren.2)#LOCATION#PERSON
+ => 707 (bangen.1,bangen.2)#PERSON#LOCATION
+
+component 709
+(sondieren.1,sondieren.2)#PERSON#LOCATION
+ => 476 (absagen.1,absagen.2)#PERSON#LOCATION
+
+component 710
+(beantworten.1,beantworten.2)#LOCATION#PERSON
+(verbünden.1,verbünden.2)#PERSON#LOCATION
+ => 224 (unterstützen.1,unterstützen.2)#LOCATION#PERSON
+ => 245 (unterstützen.1,unterstützen.2)#PERSON#LOCATION
+
+component 711
+(beenden.1,beenden.2)#LOCATION#PERSON
+ => 224 (unterstützen.1,unterstützen.2)#LOCATION#PERSON
+
+component 712
+(nutzen.1,nutzen.2)#LOCATION#PERSON
+(aufstocken.1,aufstocken.2)#LOCATION#PERSON
+ => 220 (verlegen.1,verlegen.2)#LOCATION#PERSON
+
+component 713
+(berufen_ein.1,berufen_ein.2)#PERSON#LOCATION
+(besiegeln.1,besiegeln.2)#PERSON#LOCATION
+
+component 714
+(betreiben.1,betreiben.2)#PERSON#LOCATION
+
+component 715
+(testen.1,testen.2)#PERSON#LOCATION
+ => 714 (betreiben.1,betreiben.2)#PERSON#LOCATION
+
+component 716
+(einstecken.1,einstecken.2)#PERSON#LOCATION
+ => 591 NEG__(sein.1,sein.2)#LOCATION#PERSON
+
+component 717
+(zustimmen.1,zustimmen.2)#PERSON#LOCATION
+(vertreten_sein_mit.1,vertreten_sein_mit.2)#LOCATION#PERSON
+ => 575 (zeigen.1,zeigen.2)#LOCATION#PERSON
+
+component 718
+(ehren.1,ehren.2)#PERSON#LOCATION
+
+component 719
+(zusammentreffen.1,zusammentreffen.2)#PERSON#LOCATION
+
+component 720
+(äusseren.1,äusseren.2)#PERSON#LOCATION
+ => 719 (zusammentreffen.1,zusammentreffen.2)#PERSON#LOCATION
+
+component 721
+(ordnen.1,ordnen.2)#PERSON#LOCATION
+
+component 722
+(beklagen.1,beklagen.2)#PERSON#LOCATION
+
+component 723
+(vereinbaren.1,vereinbaren.2)#PERSON#LOCATION
+ => 4 (sagen.1,sagen.2)#PERSON#LOCATION
+ => 196 (unterzeichnen.1,unterzeichnen.2)#PERSON#LOCATION
+
+component 724
+(erörtern.1,erörtern.2)#PERSON#LOCATION
+
+component 725
+(sprechen_aus.1,sprechen_aus.2)#PERSON#LOCATION
+NEG__(aufgeben.1,aufgeben.2)#PERSON#LOCATION
+
+component 726
+(eröffnen.1,eröffnen.2)#PERSON#LOCATION
+
+component 727
+(verkünden.1,verkünden.2)#PERSON#LOCATION
+
+component 728
+(verlangen.1,verlangen.2)#PERSON#LOCATION
+
+component 729
+(äußern.1,äußern.2)#PERSON#LOCATION
+ => 4 (sagen.1,sagen.2)#PERSON#LOCATION
+
+component 730
+(heben.1,heben.2)#PERSON#LOCATION
+(haben.1,haben.aufrufen.2)#PERSON#LOCATION
+
+component 731
+(verkaufen.1,verkaufen.2)#LOCATION#PERSON
+ => 257 (verfolgen.1,verfolgen.2)#PERSON#LOCATION
+
+component 732
+(vorstellen.1,vorstellen.2)#LOCATION#PERSON
+ => 224 (unterstützen.1,unterstützen.2)#LOCATION#PERSON
+ => 578 (kritisieren.1,kritisieren.2)#LOCATION#PERSON
+
+component 733
+(freuen.1,freuen.2)#LOCATION#PERSON
+ => 614 (begrüßen.1,begrüßen.2)#PERSON#LOCATION
+
+component 734
+NEG__(anheizen.1,anheizen.2)#PERSON#LOCATION
+(spalten.1,spalten.2)#PERSON#LOCATION
+(Gast_sein_in.1,Gast_sein_in.2)#PERSON#LOCATION
+
+component 735
+(beten.1,beten.2)#PERSON#LOCATION
+(erinnern.1,erinnern.2)#LOCATION#PERSON
+
+component 736
+(brennen.1,brennen.2)#PERSON#LOCATION
+ => 363 (beschließen.1,beschließen.2)#PERSON#LOCATION
+
+component 737
+(versichern.1,versichern.2)#PERSON#LOCATION
+
+component 738
+(klagen.1,klagen.2)#PERSON#LOCATION
+
+component 739
+(fordern_auf.1,fordern_auf.2)#PERSON#LOCATION
+
+component 740
+(erzählen.1,erzählen.2)#PERSON#LOCATION
+ => 142 (abhalten.1,abhalten.2)#PERSON#LOCATION
+ => 141 (verfügen.1,verfügen.2)#PERSON#LOCATION
+
+component 741
+(mahnen.1,mahnen.2)#PERSON#LOCATION
+
+component 742
+(begrüssen.1,begrüssen.2)#PERSON#LOCATION
+ => 741 (mahnen.1,mahnen.2)#PERSON#LOCATION
+
+component 743
+(danken.1,danken.2)#PERSON#LOCATION
+
+component 744
+(brachte.1,brachte.2)#PERSON#LOCATION
+(appellieren.1,appellieren.2)#PERSON#LOCATION
+
+component 745
+(versichern.1,versichern.schicken.2)#PERSON#LOCATION
+ => 4 (sagen.1,sagen.2)#PERSON#LOCATION
+ => 228 (werfen_vor.1,werfen_vor.2)#PERSON#LOCATION
+
+component 746
+(eingehen.1,eingehen.2)#PERSON#LOCATION
+(nehmen_in_Pflicht.1,nehmen_in_Pflicht.2)#PERSON#LOCATION
+ => 728 (verlangen.1,verlangen.2)#PERSON#LOCATION
+
+component 747
+(akzeptieren.1,akzeptieren.2)#PERSON#LOCATION
+(auskommen.1,auskommen.2)#LOCATION#PERSON
+
+component 748
+(mißbrauchen.1,mißbrauchen.2)#PERSON#LOCATION
+(erfahren.1,erfahren.2)#PERSON#LOCATION
+(integrieren.1,integrieren.2)#PERSON#LOCATION
+
+component 749
+(befohlen.1,befohlen.2)#PERSON#LOCATION
+ => 655 (anordnen.1,anordnen.2)#PERSON#LOCATION
+
+component 750
+(fordern_auf.1,fordern_auf.2)#LOCATION#PERSON
+(zusagen.1,zusagen.2)#LOCATION#PERSON
+(drangen.1,drangen.2)#LOCATION#PERSON
+ => 161 (machen.1,machen.2)#LOCATION#PERSON
+
+component 751
+(unterhalten.1,unterhalten.2)#PERSON#LOCATION
+
+component 752
+(bieten.1,bieten.2)#LOCATION#PERSON
+
+component 753
+(folgen.1,folgen.2)#LOCATION#PERSON
+ => 121 (folgen.1,folgen.2)#PERSON#LOCATION
+
+component 754
+(begründen.1,begründen.2)#PERSON#LOCATION
+
+component 755
+(treffen_zusammen.1,treffen_zusammen.2)#PERSON#LOCATION
+ => 4 (sagen.1,sagen.2)#PERSON#LOCATION
+ => 44 (treffen.1,treffen.2)#PERSON#LOCATION
+ => 595 (beraten.1,beraten.2)#PERSON#LOCATION
+
+component 756
+(verweisen.1,verweisen.2)#PERSON#LOCATION
+
+component 757
+(schreiben.1,schreiben.2)#PERSON#LOCATION
+
+component 758
+(vorstellen.1,vorstellen.2)#PERSON#LOCATION
+
+component 759
+(betont.1,betont.2)#PERSON#LOCATION
+ => 4 (sagen.1,sagen.2)#PERSON#LOCATION
+
+component 760
+(einigen.1,einigen.2)#PERSON#LOCATION
+ => 354 (verhandeln.1,verhandeln.2)#PERSON#LOCATION
+
+component 761
+(twitteren.1,twitteren.2)#PERSON#LOCATION
+(schrieb.1,schrieb.2)#PERSON#LOCATION
+ => 703 (entlassen.1,entlassen.2)#PERSON#LOCATION
+
+component 762
+(leisten.1,leisten.2)#PERSON#LOCATION
+
+component 763
+(legen_ab.1,legen_ab.2)#PERSON#LOCATION
+ => 762 (leisten.1,leisten.2)#PERSON#LOCATION
+
+component 764
+(erläutern.1,erläutern.2)#PERSON#LOCATION
+ => 4 (sagen.1,sagen.2)#PERSON#LOCATION
+
+component 765
+(deuten.1,deuten.2)#PERSON#LOCATION
+(führen_aus.1,führen_aus.2)#PERSON#LOCATION
+
+component 766
+(sagen_weiter.1,sagen_weiter.2)#PERSON#LOCATION
+ => 4 (sagen.1,sagen.2)#PERSON#LOCATION
+
+component 767
+(besprechen.1,besprechen.2)#PERSON#LOCATION
+
+component 768
+(telefonieren.1,telefonieren.2)#PERSON#LOCATION
+
+component 769
+(reisen_weit.1,reisen_weit.2)#PERSON#LOCATION
+ => 134 (weiterreisen.1,weiterreisen.2)#PERSON#LOCATION
+
+component 770
+(vorschlagen.1,vorschlagen.2)#PERSON#LOCATION
+
+component 771
+(zusammengetroffen_sein_in.1,zusammengetroffen_sein_in.2)#PERSON#LOCATION
+(halten_fest.1,halten_fest.2)#PERSON#LOCATION
+ => 770 (vorschlagen.1,vorschlagen.2)#PERSON#LOCATION
+
+component 772
+(berien.1,berien.2)#PERSON#LOCATION
+ => 354 (verhandeln.1,verhandeln.2)#PERSON#LOCATION
+ => 760 (einigen.1,einigen.2)#PERSON#LOCATION
+
+component 773
+(bestätigen.1,bestätigen.2)#LOCATION#PERSON
+
+component 774
+(räumen_ein.1,räumen_ein.2)#PERSON#LOCATION
+ => 523 (rufen_auf.1,rufen_auf.2)#PERSON#LOCATION
+ => 4 (sagen.1,sagen.2)#PERSON#LOCATION
+
+component 775
+(üben.1,üben.2)#PERSON#LOCATION
+
+component 776
+(bereiten.1,bereiten.2)#PERSON#LOCATION
+
+component 777
+(sagen_weit.1,sagen_weit.2)#PERSON#LOCATION
+ => 765 (deuten.1,deuten.2)#PERSON#LOCATION
+
+component 778
+(winnen.1,winnen.2)#PERSON#LOCATION
+
+component 779
+(verkaufen.1,verkaufen.2)#PERSON#LOCATION
+
+component 780
+(regieren.1,regieren.2)#PERSON#LOCATION
+
+component 781
+NEG__(durchsetzen.1,durchsetzen.2)#PERSON#LOCATION
+(kommen_in_Saison.1,kommen_in_Saison.2)#PERSON#LOCATION
+
+component 782
+(zurückfliegen.1,zurückfliegen.2)#PERSON#LOCATION
+ => 781 NEG__(durchsetzen.1,durchsetzen.2)#PERSON#LOCATION
+
+component 783
+(nominieren.1,nominieren.2)#LOCATION#PERSON
+
+component 784
+(erteilen.1,erteilen.2)#PERSON#LOCATION
+NEG__(setzen.1,setzen.2)#PERSON#LOCATION
+(grosse.1,grosse.2)#PERSON#LOCATION
+ => 308 (versprechen.1,versprechen.2)#PERSON#LOCATION
+
+component 785
+(empfehen.1,empfehen.2)#PERSON#LOCATION
+(legt.1,legt.2)#PERSON#LOCATION
+ => 703 (entlassen.1,entlassen.2)#PERSON#LOCATION
+
+component 786
+(fügen_hinzu.1,fügen_hinzu.2)#PERSON#LOCATION
+(anerkennen.1,anerkennen.2)#LOCATION#PERSON
+
+component 787
+(beraten.1,beraten.2)#LOCATION#PERSON
+
+component 788
+(signalisieren.1,signalisieren.2)#PERSON#LOCATION
+ => 653 (auffordern.1,auffordern.2)#PERSON#LOCATION
+
+component 789
+NEG__(schließen.1,schließen.2)#PERSON#LOCATION
+
+component 790
+(auftreten.1,auftreten.2)#PERSON#LOCATION
+
+component 791
+(sagen_zufolge.1,sagen_zufolge.2)#PERSON#LOCATION
+(bringen_in_Gespräch.1,bringen_in_Gespräch.2)#PERSON#LOCATION
+
+component 792
+(bemühen.1,bemühen.2)#PERSON#LOCATION
+(bezeichnet.1,bezeichnet.2)#PERSON#LOCATION
+
+component 793
+(zusammentreffen.1,zusammentreffen.2)#LOCATION#PERSON
+ => 446 (durchsetzen.1,durchsetzen.2)#PERSON#LOCATION
+
+component 794
+(setzen_fort.1,setzen_fort.2)#PERSON#LOCATION
+
+component 795
+(rufen_auf.1,rufen_auf.stehen.2)#PERSON#LOCATION
+ => 4 (sagen.1,sagen.2)#PERSON#LOCATION
+ => 346 (warnen.1,warnen.2)#PERSON#LOCATION
+
+component 796
+(brauchen.1,brauchen.2)#PERSON#LOCATION
+
+component 797
+(abschließen.1,abschließen.2)#PERSON#LOCATION
+(übergeben.1,übergeben.2)#PERSON#LOCATION
+(öffnen.1,öffnen.2)#PERSON#LOCATION
+ => 779 (verkaufen.1,verkaufen.2)#PERSON#LOCATION
+
+component 798
+(beschreiben.1,beschreiben.2)#PERSON#LOCATION
+
+component 799
+(verfolgen.1,verfolgen.2)#LOCATION#PERSON
+
+component 800
+(schaffen.1,schaffen.ermöglichen.2)#PERSON#LOCATION
+(aufstocken.1,aufstocken.2)#PERSON#LOCATION
+(Land.1,Land.2)#LOCATION#PERSON
+
+component 801
+(stellen_vor.1,stellen_vor.2)#PERSON#LOCATION
+(veröffentlichen.1,veröffentlichen.2)#LOCATION#PERSON
+
+component 802
+(mahnt.1,mahnt.2)#PERSON#LOCATION
+(laden.1,laden.2)#PERSON#LOCATION
+
+component 803
+(stimmen.1,stimmen.2)#PERSON#LOCATION
+
+component 804
+(votieren.1,votieren.2)#PERSON#LOCATION
+ => 803 (stimmen.1,stimmen.2)#PERSON#LOCATION
+
+component 805
+(geflog.1,geflog.2)#PERSON#LOCATION
+ => 286 (sammeln.1,sammeln.2)#PERSON#LOCATION
+
+component 806
+(antreten.1,antreten.2)#LOCATION#PERSON
+
+component 807
+(einreichen.1,einreichen.2)#PERSON#LOCATION
+ => 267 (abgeben.1,abgeben.2)#PERSON#LOCATION
+
+component 808
+(verhindern.1,verhindern.2)#PERSON#LOCATION
+ => 476 (absagen.1,absagen.2)#PERSON#LOCATION
+
+component 809
+NEG__(machen.1,machen.2)#PERSON#LOCATION
+ => 630 (gehen.1,gehen.2)#LOCATION#PERSON
+
+component 810
+(blicken.1,blicken.2)#PERSON#LOCATION
+
+component 811
+(stellen_für_Jahr.1,stellen_für_Jahr.2)#PERSON#LOCATION
+ => 810 (blicken.1,blicken.2)#PERSON#LOCATION
+
+component 812
+(tun.1,tun.2)#PERSON#LOCATION
+
+component 813
+(versprach.1,versprach.2)#PERSON#LOCATION
+ => 812 (tun.1,tun.2)#PERSON#LOCATION
+
+component 814
+(scherzen.1,scherzen.2)#PERSON#LOCATION
+(rei.1,rei.besichtigen.2)#PERSON#LOCATION
+
+component 815
+(zufrieden_sein_mit.1,zufrieden_sein_mit.2)#PERSON#LOCATION
+
+component 816
+(eingereicht.1,eingereicht.2)#PERSON#LOCATION
+ => 815 (zufrieden_sein_mit.1,zufrieden_sein_mit.2)#PERSON#LOCATION
+
+component 817
+(lockern.1,lockern.2)#PERSON#LOCATION
+(vereidigen.1,vereidigen.2)#PERSON#LOCATION
+
+component 818
+(zitieren.1,zitieren.2)#PERSON#LOCATION
+ => 144 (brechen_auf.1,brechen_auf.2)#PERSON#LOCATION
+ => 143 (begleiten.1,begleiten.2)#PERSON#LOCATION
+
+component 819
+(berufen.1,berufen.2)#PERSON#LOCATION
+(enthüllen.1,enthüllen.2)#PERSON#LOCATION
+(stufen.1,stufen.2)#PERSON#LOCATION
+(weihen.1,weihen.2)#PERSON#LOCATION
+
+component 820
+(orten.1,orten.2)#PERSON#LOCATION
+(stellen_ein.1,stellen_ein.2)#PERSON#LOCATION
+
+component 821
+NEG__(fahren.1,fahren.2)#PERSON#LOCATION
+
+component 822
+(ernennen.1,ernennen.2)#LOCATION#PERSON
+ => 821 NEG__(fahren.1,fahren.2)#PERSON#LOCATION
+
+component 823
+(rangieren.1,rangieren.2)#PERSON#LOCATION
+
+component 824
+(stellen_auf.1,stellen_auf.2)#LOCATION#PERSON
+ => 823 (rangieren.1,rangieren.2)#PERSON#LOCATION
+
+component 825
+(vermuten.1,vermuten.2)#PERSON#LOCATION
+ => 181 (fordern.1,fordern.2)#LOCATION#PERSON
+
+component 826
+(meint.1,meint.2)#PERSON#LOCATION
+
+component 827
+(brechen.1,brechen.2)#LOCATION#PERSON
+ => 520 (vereidigen.1,vereidigen.2)#LOCATION#PERSON
+ => 519 (warnen.1,warnen.2)#LOCATION#PERSON
+
+component 828
+(bekanntgeben.1,bekanntgeben.2)#LOCATION#PERSON
+ => 520 (vereidigen.1,vereidigen.2)#LOCATION#PERSON
+ => 827 (brechen.1,brechen.2)#LOCATION#PERSON
+ => 519 (warnen.1,warnen.2)#LOCATION#PERSON
+
+component 829
+(helfen.1,helfen.2)#PERSON#LOCATION
+
+component 830
+(aussprechen.1,aussprechen.2)#PERSON#LOCATION
+ => 580 (brechen.1,brechen.2)#PERSON#LOCATION
+
+component 831
+(raten.1,raten.2)#PERSON#LOCATION
+(benennen.1,benennen.2)#PERSON#LOCATION
+ => 718 (ehren.1,ehren.2)#PERSON#LOCATION
+
+component 832
+(lehnen_ab.1,lehnen_ab.2)#PERSON#LOCATION
+
+component 833
+(gehen_zu_Beginn.1,gehen_zu_Beginn.2)#PERSON#LOCATION
+ => 570 (bekunden.1,bekunden.2)#PERSON#LOCATION
+
+component 834
+(sichern_zu.1,sichern_zu.2)#PERSON#LOCATION
+(kritisiert.1,kritisiert.2)#PERSON#LOCATION
+ => 655 (anordnen.1,anordnen.2)#PERSON#LOCATION
+
+component 835
+(diskutieren.1,diskutieren.2)#PERSON#LOCATION
+
+component 836
+(Regierungschef_sein_in.1,Regierungschef_sein_in.2)#PERSON#LOCATION
+ => 287 (verteidigen.1,verteidigen.2)#PERSON#LOCATION
+
+component 837
+(verlängern.1,verlängern.2)#PERSON#LOCATION
+
+component 838
+(angemahnen.1,angemahnen.2)#PERSON#LOCATION
+ => 408 (bringen_in_Spiel.1,bringen_in_Spiel.2)#PERSON#LOCATION
+
+component 839
+NEG__(schließen_aus.1,schließen_aus.2)#PERSON#LOCATION
+ => 821 NEG__(fahren.1,fahren.2)#PERSON#LOCATION
+
+component 840
+(verhängen.1,verhängen.2)#LOCATION#PERSON
+ => 530 (zusammenkommen.1,zusammenkommen.2)#PERSON#LOCATION
+
+component 841
+(reden.1,reden.2)#PERSON#LOCATION
+ => 295 (behaupten.1,behaupten.2)#PERSON#LOCATION
+
+component 842
+(unterstreichen.1,unterstreichen.2)#PERSON#LOCATION
+(abschließen.1,abschließen.2)#LOCATION#PERSON
+
+component 843
+(appellieren.1,appellieren.2)#LOCATION#PERSON
+(streichen.1,streichen.2)#PERSON#LOCATION
+ => 410 (verteidigen.1,verteidigen.2)#LOCATION#PERSON
+
+component 844
+(eingelade.1,eingelade.2)#PERSON#LOCATION
+(rufen_aus.1,rufen_aus.2)#PERSON#LOCATION
+ => 779 (verkaufen.1,verkaufen.2)#PERSON#LOCATION
+
+component 845
+(prägen.1,prägen.2)#PERSON#LOCATION
+ => 591 NEG__(sein.1,sein.2)#LOCATION#PERSON
+
+component 846
+(geben_bekennen.1,geben_bekennen.2)#PERSON#LOCATION
+ => 683 (verdienen.1,verdienen.2)#PERSON#LOCATION
+
+component 847
+(steuern_zu.1,steuern_zu.2)#PERSON#LOCATION
+
+component 848
+(bedaueren.1,bedaueren.2)#PERSON#LOCATION
+NEG__(betonen.1,betonen.2)#PERSON#LOCATION
+(verschärfen.1,verschärfen.2)#PERSON#LOCATION
+(pochen.1,pochen.2)#PERSON#LOCATION
+ => 847 (steuern_zu.1,steuern_zu.2)#PERSON#LOCATION
+
+component 849
+(posieren.1,posieren.2)#PERSON#LOCATION
+
+component 850
+(wiederholen.1,wiederholen.2)#PERSON#LOCATION
+
+component 851
+(angesagen.1,angesagen.2)#PERSON#LOCATION
+ => 247 (heißen.1,heißen.2)#LOCATION#PERSON
+
+component 852
+(finden_zu_Spiel.1,finden_zu_Spiel.2)#PERSON#LOCATION
+ => 470 (kommen_in_Spiel.1,kommen_in_Spiel.2)#PERSON#LOCATION
+
+component 853
+(auslösen.1,auslösen.2)#PERSON#LOCATION
+(warf_vor.1,warf_vor.2)#PERSON#LOCATION
+
+component 854
+(entsenden.1,entsenden.2)#LOCATION#PERSON
+
+component 855
+(blockieren.1,blockieren.2)#LOCATION#PERSON
+ => 224 (unterstützen.1,unterstützen.2)#LOCATION#PERSON
+
+component 856
+(aufgehalten.1,aufgehalten.2)#PERSON#LOCATION
+ => 224 (unterstützen.1,unterstützen.2)#LOCATION#PERSON
+ => 855 (blockieren.1,blockieren.2)#LOCATION#PERSON
+
+component 857
+(sagen_ab.1,sagen_ab.2)#PERSON#LOCATION
+ => 810 (blicken.1,blicken.2)#PERSON#LOCATION
+
+component 858
+(vermitteln.1,vermitteln.2)#PERSON#LOCATION
+ => 351 (treten_auf.1,treten_auf.2)#PERSON#LOCATION
+
+component 859
+(starten.1,starten.2)#LOCATION#PERSON
+
+component 860
+(verantworten.1,verantworten.2)#PERSON#LOCATION
+(freisprechen.1,freisprechen.2)#LOCATION#PERSON
+
+component 861
+(erheben.1,erheben.2)#PERSON#LOCATION
+(ermitteln.1,ermitteln.2)#LOCATION#PERSON
+
+component 862
+(erhoffen.1,erhoffen.2)#LOCATION#PERSON
+ => 185 (ausbilden.1,ausbilden.2)#LOCATION#PERSON
+ => 184 (kontrollieren.1,kontrollieren.2)#PERSON#LOCATION
+
+component 863
+(aufstellen.1,aufstellen.2)#PERSON#LOCATION
+ => 480 (besitzen.1,besitzen.2)#PERSON#LOCATION
+
+component 864
+NEG__(ausschließen.1,ausschließen.2)#PERSON#LOCATION
+(haben.1,haben.einlenken.2)#PERSON#LOCATION
+ => 661 (vorwerfen.1,vorwerfen.2)#PERSON#LOCATION
+ => 228 (werfen_vor.1,werfen_vor.2)#PERSON#LOCATION
+ => 4 (sagen.1,sagen.2)#PERSON#LOCATION
+
+component 865
+(lancieren.1,lancieren.2)#PERSON#LOCATION
+ => 634 (bringen_in_Jahr.1,bringen_in_Jahr.2)#PERSON#LOCATION
+
+component 866
+(zugefügen.1,zugefügen.2)#PERSON#LOCATION
+(fügen_zu.1,fügen_zu.2)#PERSON#LOCATION
+ => 541 (haben_verlieren.1,haben_verlieren.2)#PERSON#LOCATION
+
+component 867
+(eindämmen.1,eindämmen.2)#PERSON#LOCATION
+ => 668 (interessieren.1,interessieren.2)#PERSON#LOCATION
+
+component 868
+NEG__(kommentieren.1,kommentieren.2)#PERSON#LOCATION
+ => 530 (zusammenkommen.1,zusammenkommen.2)#PERSON#LOCATION
+
+component 869
+(äussern.1,äussern.2)#PERSON#LOCATION
+(geben_zu.1,geben_zu.2)#PERSON#LOCATION
+
+component 870
+(treten.1,treten.2)#LOCATION#PERSON
+
+component 871
+(begehen.1,begehen.2)#PERSON#LOCATION
+
+component 872
+(eintreten.1,eintreten.2)#PERSON#LOCATION
+(treten_ein.1,treten_ein.2)#PERSON#LOCATION
+
+component 873
+(ausgesprochen.1,ausgesprochen.2)#PERSON#LOCATION
+ => 872 (eintreten.1,eintreten.2)#PERSON#LOCATION
+
+component 874
+(bezwingen.1,bezwingen.2)#PERSON#LOCATION
+
+component 875
+(einziehen.1,einziehen.2)#PERSON#LOCATION
+ => 27 (holen.1,holen.2)#PERSON#LOCATION
+
+component 876
+(legen.1,legen.2)#LOCATION#PERSON
+ => 675 (verstärken.1,verstärken.2)#PERSON#LOCATION
+
+component 877
+(verzeichnen.1,verzeichnen.2)#PERSON#LOCATION
+
+component 878
+(schlug.1,schlug.2)#PERSON#LOCATION
+ => 738 (klagen.1,klagen.2)#PERSON#LOCATION
+
+component 879
+(zurückgekehrt_sein_in.1,zurückgekehrt_sein_in.2)#PERSON#LOCATION
+ => 255 (kehren_zurück.1,kehren_zurück.2)#PERSON#LOCATION
+
+component 880
+(benutzen.1,benutzen.2)#PERSON#LOCATION
+
+component 881
+(bekennen.1,bekennen.2)#LOCATION#PERSON
+(kündigen_an.1,kündigen_an.2)#LOCATION#PERSON
+ => 880 (benutzen.1,benutzen.2)#PERSON#LOCATION
+
+component 882
+(bescheinigen.1,bescheinigen.2)#PERSON#LOCATION
+ => 229 (behandeln.1,behandeln.2)#PERSON#LOCATION
+
+component 883
+(versammelt.1,versammelt.2)#PERSON#LOCATION
+ => 295 (behaupten.1,behaupten.2)#PERSON#LOCATION
+
+component 884
+(niedergelegen.1,niedergelegen.2)#PERSON#LOCATION
+ => 787 (beraten.1,beraten.2)#LOCATION#PERSON
+
+component 885
+(befürchtet.1,befürchtet.2)#PERSON#LOCATION
+
+component 886
+(kritisiern.1,kritisiern.2)#PERSON#LOCATION
+ => 885 (befürchtet.1,befürchtet.2)#PERSON#LOCATION
+
+component 887
+(freilassen.1,freilassen.2)#LOCATION#PERSON
+(entführen.1,entführen.2)#LOCATION#PERSON
+(verschleppen.1,verschleppen.2)#PERSON#LOCATION
+
+component 888
+(beklagt.1,beklagt.2)#PERSON#LOCATION
+
+component 889
+(haben.1,haben.beraten.2)#PERSON#LOCATION
+ => 888 (beklagt.1,beklagt.2)#PERSON#LOCATION
+
+component 890
+(versterben.1,versterben.2)#PERSON#LOCATION
+ => 1 (leben.1,leben.2)#PERSON#LOCATION
+
+component 891
+(erheben.1,erheben.2)#LOCATION#PERSON
+
+component 892
+(befassen.1,befassen.2)#PERSON#LOCATION
+(entschieden.1,entschieden.2)#PERSON#LOCATION
+
+component 893
+(qualifizieren.1,qualifizieren.2)#LOCATION#PERSON
+(kehren_zurück.1,kehren_zurück.2)#LOCATION#PERSON
+ => 693 (verzichten.1,verzichten.2)#LOCATION#PERSON
+
+component 894
+(finden_zurück.1,finden_zurück.2)#PERSON#LOCATION
+ => 893 (qualifizieren.1,qualifizieren.2)#LOCATION#PERSON
+ => 693 (verzichten.1,verzichten.2)#LOCATION#PERSON
+
+component 895
+(führen_durch.1,führen_durch.2)#PERSON#LOCATION
+ => 493 (forschen.1,forschen.2)#PERSON#LOCATION
+
+component 896
+(übergaben.1,übergaben.2)#PERSON#LOCATION
+(unterkommen.1,unterkommen.2)#PERSON#LOCATION
+
+component 897
+(zurückziehen.1,zurückziehen.2)#PERSON#LOCATION
+
+component 898
+(flog.1,flog.2)#PERSON#LOCATION
+(zurückerobern.1,zurückerobern.2)#PERSON#LOCATION
+ => 897 (zurückziehen.1,zurückziehen.2)#PERSON#LOCATION
+
+component 899
+(fassen.1,fassen.2)#LOCATION#PERSON
+(helfen.1,helfen.2)#LOCATION#PERSON
+
+component 900
+(besetzen.1,besetzen.2)#PERSON#LOCATION
+(befürchen.1,befürchen.2)#PERSON#LOCATION
+
+component 901
+(erwähnen.1,erwähnen.2)#PERSON#LOCATION
+ => 392 (sagen_zu.1,sagen_zu.2)#PERSON#LOCATION
+
+component 902
+(befürworten.1,befürworten.2)#PERSON#LOCATION
+ => 480 (besitzen.1,besitzen.2)#PERSON#LOCATION
+
+component 903
+(verursachen.1,verursachen.2)#PERSON#LOCATION
+ => 96 (fahren.1,fahren.2)#PERSON#LOCATION
+
+component 904
+(unterziehen.1,unterziehen.2)#PERSON#LOCATION
+ => 903 (verursachen.1,verursachen.2)#PERSON#LOCATION
+ => 96 (fahren.1,fahren.2)#PERSON#LOCATION
+
+component 905
+(arbeiten_zusammen.1,arbeiten_zusammen.2)#LOCATION#PERSON
+ => 899 (fassen.1,fassen.2)#LOCATION#PERSON
+
+component 906
+(kassieren.1,kassieren.2)#LOCATION#PERSON
+ => 456 (gewinnen.1,gewinnen.2)#LOCATION#PERSON
+
+component 907
+(stehen_seit_Jahr.1,stehen_seit_Jahr.2)#PERSON#LOCATION
+ => 320 (verurteilen.1,verurteilen.2)#LOCATION#PERSON
+
+component 908
+(reichen.1,reichen.2)#PERSON#LOCATION
+
+component 909
+(klären.1,klären.2)#PERSON#LOCATION
+(reichen.1,reichen.2)#LOCATION#PERSON
+ => 908 (reichen.1,reichen.2)#PERSON#LOCATION
+
+component 910
+(spielen_auf.1,spielen_auf.2)#PERSON#LOCATION
+ => 366 (geben_ab.1,geben_ab.2)#PERSON#LOCATION
+
+component 911
+(erarbeiten.1,erarbeiten.2)#PERSON#LOCATION
+(holn.1,holn.2)#PERSON#LOCATION
+(egalisieren.1,egalisieren.2)#PERSON#LOCATION
+(wehren_ab.1,wehren_ab.2)#PERSON#LOCATION
+ => 910 (spielen_auf.1,spielen_auf.2)#PERSON#LOCATION
+ => 366 (geben_ab.1,geben_ab.2)#PERSON#LOCATION
+
+component 912
+(kommen_vor_Jahr.1,kommen_vor_Jahr.2)#PERSON#LOCATION
+
+component 913
+(rutschen_ab.1,rutschen_ab.2)#PERSON#LOCATION
+(bleiben_auf_Platz.1,bleiben_auf_Platz.2)#PERSON#LOCATION
+ => 160 (liegen.1,liegen.2)#PERSON#LOCATION
+
+component 914
+(überreichen.1,überreichen.2)#PERSON#LOCATION
+ => 230 (einladen.1,einladen.2)#PERSON#LOCATION
+
+component 915
+(rei.1,rei.2)#PERSON#LOCATION
+ => 49 (nehmen.1,nehmen.2)#PERSON#LOCATION
+
+component 916
+(koordinieren.1,koordinieren.2)#PERSON#LOCATION
+ => 75 (nutzen.1,nutzen.2)#PERSON#LOCATION
+
+component 917
+(niederlegen.1,niederlegen.2)#PERSON#LOCATION
+ => 212 (verlegen.1,verlegen.2)#PERSON#LOCATION
+
+component 918
+(Tag_sein_für.1,Tag_sein_für.2)#PERSON#LOCATION
+ => 765 (deuten.1,deuten.2)#PERSON#LOCATION
+
+component 919
+(gehen_ein.1,gehen_ein.2)#PERSON#LOCATION
+
+component 920
+(gutmachen.1,gutmachen.2)#PERSON#LOCATION
+ => 286 (sammeln.1,sammeln.2)#PERSON#LOCATION
+
+component 921
+(enden.1,enden.2)#LOCATION#PERSON
+(bieten_auf.1,bieten_auf.2)#LOCATION#PERSON
+ => 752 (bieten.1,bieten.2)#LOCATION#PERSON
+
+component 922
+(vertreten.1,vertreten.2)#LOCATION#PERSON
+ => 214 (geben.1,geben.2)#LOCATION#PERSON
+ => 215 (zurückkehren.1,zurückkehren.2)#LOCATION#PERSON
+
+component 923
+(scheiden.1,scheiden.2)#PERSON#LOCATION
+(gesetzt.1,gesetzt.2)#PERSON#LOCATION
+ => 283 (freuen.1,freuen.2)#PERSON#LOCATION
+
+component 924
+NEG__(haben.1,haben.2)#PERSON#LOCATION
+
+component 925
+(abgeben.1,abgeben.2)#LOCATION#PERSON
+ => 591 NEG__(sein.1,sein.2)#LOCATION#PERSON
+
+component 926
+(herrschen.1,herrschen.2)#PERSON#LOCATION
+
+component 927
+(drehen.1,drehen.2)#PERSON#LOCATION
+
+component 928
+(feststellen.1,feststellen.2)#PERSON#LOCATION
+ => 927 (drehen.1,drehen.2)#PERSON#LOCATION
+
+component 929
+(fortsetzen.1,fortsetzen.2)#LOCATION#PERSON
+(gestehen.1,gestehen.2)#LOCATION#PERSON
+ => 113 (sein.1,sein.2)#LOCATION#PERSON
+
+component 930
+NEG__(verlassen.1,verlassen.2)#PERSON#LOCATION
+ => 929 (fortsetzen.1,fortsetzen.2)#LOCATION#PERSON
+ => 113 (sein.1,sein.2)#LOCATION#PERSON
+
+component 931
+(auflösen.1,auflösen.2)#PERSON#LOCATION
+(zitieren.1,zitieren.2)#LOCATION#PERSON
+
+component 932
+(prophezeien.1,prophezeien.2)#PERSON#LOCATION
+ => 826 (meint.1,meint.2)#PERSON#LOCATION
+
+component 933
+(warnt.1,warnt.2)#PERSON#LOCATION
+ => 380 (halten.1,halten.2)#LOCATION#PERSON
+
+component 934
+(beginnen.1,beginnen.2)#LOCATION#PERSON
+
+component 935
+NEG__(sehen.1,sehen.2)#PERSON#LOCATION
+
+component 936
+(entschuldigen.1,entschuldigen.2)#PERSON#LOCATION
+(einleiten.1,einleiten.2)#LOCATION#PERSON
+(ernennen.1,ernennen.2)#PERSON#LOCATION
+
+component 937
+(aussetzen.1,aussetzen.2)#LOCATION#PERSON
+(darstellen.1,darstellen.2)#PERSON#LOCATION
+
+component 938
+(denken|gedenken.1,denken|gedenken.2)#LOCATION#PERSON
+(treiben.1,treiben.2)#LOCATION#PERSON
+ => 530 (zusammenkommen.1,zusammenkommen.2)#PERSON#LOCATION
+
+component 939
+(vorangetrieben.1,vorangetrieben.2)#PERSON#LOCATION
+(vermelden.1,vermelden.2)#PERSON#LOCATION
+ => 339 (gegen.1,gegen.2)#PERSON#LOCATION
+
+component 940
+(stehen_zu_Verfügung.1,stehen_zu_Verfügung.2)#PERSON#LOCATION
+(vorantreiben.1,vorantreiben.2)#PERSON#LOCATION
+
+component 941
+(müssen.1,müssen.2)#PERSON#LOCATION
+ => 632 (scheinen.1,scheinen.2)#PERSON#LOCATION
+
+component 942
+(gelingen.1,gelingen.2)#PERSON#LOCATION
+
+component 943
+(nehmen_ab.1,nehmen_ab.2)#PERSON#LOCATION
+(dominieren.1,dominieren.2)#PERSON#LOCATION
+ => 942 (gelingen.1,gelingen.2)#PERSON#LOCATION
+
+component 944
+(thematisieren.1,thematisieren.2)#PERSON#LOCATION
+(formulieren.1,formulieren.2)#PERSON#LOCATION
+ => 789 NEG__(schließen.1,schließen.2)#PERSON#LOCATION
+
+component 945
+(räumen.1,räumen.2)#PERSON#LOCATION
+
+component 946
+NEG__(gewinnen.1,gewinnen.2)#PERSON#LOCATION
+(haben.1,haben.gewinnen.2)#PERSON#LOCATION
+
+component 947
+(begleiten.1,begleiten.2)#LOCATION#PERSON
+ => 179 (behandeln.1,behandeln.2)#LOCATION#PERSON
+
+component 948
+(anstreben.1,anstreben.2)#PERSON#LOCATION
+ => 727 (verkünden.1,verkünden.2)#PERSON#LOCATION
+
+component 949
+(bezifferen.1,bezifferen.2)#PERSON#LOCATION
+ => 262 (wünschen.1,wünschen.2)#PERSON#LOCATION
+
+component 950
+(blockieren.1,blockieren.2)#PERSON#LOCATION
+
+component 951
+(gehen_in_Spiel.1,gehen_in_Spiel.2)#PERSON#LOCATION
+
+component 952
+(ein_sein_mit.1,ein_sein_mit.2)#PERSON#LOCATION
+ => 511 (leiten.1,leiten.2)#PERSON#LOCATION
+
+component 953
+(reisen_zurück.1,reisen_zurück.2)#PERSON#LOCATION
+ => 192 (melden.1,melden.2)#PERSON#LOCATION
+
+component 954
+(fertigen_ab.1,fertigen_ab.2)#PERSON#LOCATION
+ => 541 (haben_verlieren.1,haben_verlieren.2)#PERSON#LOCATION
+
+component 955
+(unterschreiben.1,unterschreiben.2)#PERSON#LOCATION
+
+component 956
+NEG__(erwarten.1,erwarten.2)#PERSON#LOCATION
+NEG__(bestreiten.1,bestreiten.2)#PERSON#LOCATION
+(versenken.1,versenken.2)#PERSON#LOCATION
+ => 509 (starten.1,starten.2)#PERSON#LOCATION
+
+component 957
+(setzen_ab.1,setzen_ab.2)#PERSON#LOCATION
+ => 35 (fliehen.1,fliehen.2)#PERSON#LOCATION
+
+component 958
+(dringen.1,dringen.2)#PERSON#LOCATION
+ => 787 (beraten.1,beraten.2)#LOCATION#PERSON
+
+component 959
+(geben_in_Spiel.1,geben_in_Spiel.2)#PERSON#LOCATION
+ => 874 (bezwingen.1,bezwingen.2)#PERSON#LOCATION
+
+component 960
+(meiden.1,meiden.2)#PERSON#LOCATION
+ => 856 (aufgehalten.1,aufgehalten.2)#PERSON#LOCATION
+ => 224 (unterstützen.1,unterstützen.2)#LOCATION#PERSON
+ => 855 (blockieren.1,blockieren.2)#LOCATION#PERSON
+
+component 961
+(liegen_vorn.1,liegen_vorn.2)#PERSON#LOCATION
+(führen_an.1,führen_an.2)#PERSON#LOCATION
+
+component 962
+(einleiten.1,einleiten.2)#PERSON#LOCATION
+(haben.1,haben.bekommen.2)#PERSON#LOCATION
+ => 278 (festhalten.1,festhalten.2)#PERSON#LOCATION
+
+component 963
+(preisen.1,preisen.2)#PERSON#LOCATION
+ => 278 (festhalten.1,festhalten.2)#PERSON#LOCATION
+ => 962 (einleiten.1,einleiten.2)#PERSON#LOCATION
+
+component 964
+(ausgeben.1,ausgeben.2)#PERSON#LOCATION
+ => 454 (gründen.1,gründen.2)#PERSON#LOCATION
+
+component 965
+(drücken.1,drücken.2)#PERSON#LOCATION
+ => 720 (äusseren.1,äusseren.2)#PERSON#LOCATION
+ => 719 (zusammentreffen.1,zusammentreffen.2)#PERSON#LOCATION
+
+component 966
+(überraschen.1,überraschen.2)#PERSON#LOCATION
+
+component 967
+(sprechen_an.1,sprechen_an.2)#PERSON#LOCATION
+(Einsatz_sein_in.1,Einsatz_sein_in.2)#PERSON#LOCATION
+ => 966 (überraschen.1,überraschen.2)#PERSON#LOCATION
+
+component 968
+(zurückgerufen.1,zurückgerufen.2)#LOCATION#PERSON
+ => 803 (stimmen.1,stimmen.2)#PERSON#LOCATION
+
+component 969
+(fahren_ein.1,fahren_ein.2)#PERSON#LOCATION
+ => 127 (tätig_sein_in.1,tätig_sein_in.2)#PERSON#LOCATION
+
+component 970
+(heben_hervor.1,heben_hervor.2)#PERSON#LOCATION
+(hervorgehieben.1,hervorgehieben.2)#PERSON#LOCATION
+ => 730 (heben.1,heben.2)#PERSON#LOCATION
+
+component 971
+(duellieren.1,duellieren.2)#PERSON#LOCATION
+ => 826 (meint.1,meint.2)#PERSON#LOCATION
+
+component 972
+(angekündigen.1,angekündigen.2)#PERSON#LOCATION
+ => 728 (verlangen.1,verlangen.2)#PERSON#LOCATION
+
+component 973
+(feueren.1,feueren.2)#PERSON#LOCATION
+ => 767 (besprechen.1,besprechen.2)#PERSON#LOCATION
+
+component 974
+(stürzen.1,stürzen.2)#LOCATION#PERSON
+(stürzen.1,stürzen.2)#PERSON#LOCATION
+
+component 975
+(drängte.1,drängte.2)#PERSON#LOCATION
+ => 719 (zusammentreffen.1,zusammentreffen.2)#PERSON#LOCATION
+
+component 976
+(schildern.1,schildern.2)#PERSON#LOCATION
+NEG__(verlieren.1,verlieren.2)#PERSON#LOCATION
+ => 79 (hoffen.1,hoffen.2)#PERSON#LOCATION
+
+component 977
+(berief.1,berief.2)#PERSON#LOCATION
+ => 463 (verurteilen.1,verurteilen.2)#PERSON#LOCATION
+
+component 978
+(steuern.1,steuern.2)#PERSON#LOCATION
+ => 849 (posieren.1,posieren.2)#PERSON#LOCATION
+
+component 979
+(bedanken.1,bedanken.2)#PERSON#LOCATION
+ => 678 (ablehnen.1,ablehnen.2)#PERSON#LOCATION
+
+component 980
+(absagen.1,absagen.2)#LOCATION#PERSON
+(zurückgenommen.1,zurückgenommen.2)#LOCATION#PERSON
+ => 497 (sagen.1,sagen.2)#LOCATION#PERSON
+
+component 981
+(hervorheben.1,hervorheben.2)#PERSON#LOCATION
+ => 718 (ehren.1,ehren.2)#PERSON#LOCATION
+
+component 982
+(schließen_aus.1,schließen_aus.2)#PERSON#LOCATION
+ => 657 (schließen.1,schließen.2)#PERSON#LOCATION
+
+component 983
+(verlagern.1,verlagern.2)#PERSON#LOCATION
+(fokussieren.1,fokussieren.2)#PERSON#LOCATION
+ => 558 (liefern.1,liefern.2)#PERSON#LOCATION
+
+component 984
+(einnehmen.1,einnehmen.2)#PERSON#LOCATION
+(bringen_unter_Kontrolle.1,bringen_unter_Kontrolle.2)#PERSON#LOCATION
+
+component 985
+(leitet.1,leitet.2)#PERSON#LOCATION
+ => 984 (einnehmen.1,einnehmen.2)#PERSON#LOCATION
+
+component 986
+(ordnen_an.1,ordnen_an.2)#PERSON#LOCATION
+
+component 987
+(hob.1,hob.2)#PERSON#LOCATION
+(dämpfen.1,dämpfen.2)#PERSON#LOCATION
+ => 741 (mahnen.1,mahnen.2)#PERSON#LOCATION
+ => 742 (begrüssen.1,begrüssen.2)#PERSON#LOCATION
+
+component 988
+(verändern.1,verändern.2)#PERSON#LOCATION
+ => 371 (bauen.1,bauen.2)#PERSON#LOCATION
+
+component 989
+(verschärfen.1,verschärfen.2)#LOCATION#PERSON
+(abstimmen.1,abstimmen.2)#LOCATION#PERSON
+ => 173 (lehnen.1,lehnen.2)#LOCATION#PERSON
+
+component 990
+(siehen.1,siehen.2)#PERSON#LOCATION
+ => 649 (streben.1,streben.2)#PERSON#LOCATION
+
+component 991
+(stationieren.1,stationieren.2)#PERSON#LOCATION
+ => 212 (verlegen.1,verlegen.2)#PERSON#LOCATION
+
+component 992
+(ausschließen.1,ausschließen.2)#LOCATION#PERSON
+ => 298 (profitieren.1,profitieren.2)#PERSON#LOCATION
+
+component 993
+(klettern.1,klettern.2)#PERSON#LOCATION
+(büssen_ein.1,büssen_ein.2)#PERSON#LOCATION
+ => 239 (steigen.1,steigen.2)#PERSON#LOCATION
+
+component 994
+(ziehen_ab.1,ziehen_ab.2)#LOCATION#PERSON
+(abziehen.1,abziehen.2)#LOCATION#PERSON
+ => 212 (verlegen.1,verlegen.2)#PERSON#LOCATION
+
+component 995
+(abziehen.1,abziehen.2)#PERSON#LOCATION
+ => 994 (ziehen_ab.1,ziehen_ab.2)#LOCATION#PERSON
+ => 212 (verlegen.1,verlegen.2)#PERSON#LOCATION
+
+component 996
+(drangen.1,drangen.2)#PERSON#LOCATION
+ => 144 (brechen_auf.1,brechen_auf.2)#PERSON#LOCATION
+ => 143 (begleiten.1,begleiten.2)#PERSON#LOCATION
+
+component 997
+(ärgern.1,ärgern.2)#PERSON#LOCATION
+ => 815 (zufrieden_sein_mit.1,zufrieden_sein_mit.2)#PERSON#LOCATION
+
+component 998
+(äußert.1,äußert.2)#PERSON#LOCATION
+ => 984 (einnehmen.1,einnehmen.2)#PERSON#LOCATION
+
+component 999
+(finden_vor.1,finden_vor.2)#PERSON#LOCATION
+ => 152 (schieben.1,schieben.2)#PERSON#LOCATION
+
+component 1000
+(rechtfertigen.1,rechtfertigen.2)#PERSON#LOCATION
+ => 108 (präsentieren.1,präsentieren.2)#PERSON#LOCATION
+
+component 1001
+(untersagen.1,untersagen.2)#PERSON#LOCATION
+(verehren.1,verehren.2)#PERSON#LOCATION
+
+component 1002
+(entmachten.1,entmachten.2)#LOCATION#PERSON
+(Macht_sein_in.1,Macht_sein_in.2)#PERSON#LOCATION
+ => 926 (herrschen.1,herrschen.2)#PERSON#LOCATION
+
+component 1003
+NEG__(holen.1,holen.2)#PERSON#LOCATION
+ => 832 (lehnen_ab.1,lehnen_ab.2)#PERSON#LOCATION
+
+component 1004
+(haben_kreieren.1,haben_kreieren.2)#PERSON#LOCATION
+ => 121 (folgen.1,folgen.2)#PERSON#LOCATION
+
+component 1005
+(eingemischen.1,eingemischen.verhelfen.2)#LOCATION#PERSON
+ => 961 (liegen_vorn.1,liegen_vorn.2)#PERSON#LOCATION
+
+component 1006
+(nehmen_teil.1,nehmen_teil.2)#LOCATION#PERSON
+(ausbilden.1,ausbilden.2)#PERSON#LOCATION
+
+component 1007
+(einsteigen.1,einsteigen.2)#PERSON#LOCATION
+ => 848 (bedaueren.1,bedaueren.2)#PERSON#LOCATION
+ => 847 (steuern_zu.1,steuern_zu.2)#PERSON#LOCATION
+
+component 1008
+(machen_aus.1,machen_aus.2)#PERSON#LOCATION
+
+component 1009
+(amtierend.1,amtierend.2)#PERSON#LOCATION
+ => 269 (akzeptiert.1,akzeptiert.2)#LOCATION#PERSON
+ => 208 (nehmen.1,nehmen.2)#LOCATION#PERSON
+
+component 1010
+(verhindern.1,verhindern.2)#LOCATION#PERSON
+ => 665 (sehen.1,sehen.2)#LOCATION#PERSON
+
+component 1011
+(aufheben.1,aufheben.2)#LOCATION#PERSON
+(erfüllen.1,erfüllen.2)#PERSON#LOCATION
+
+component 1012
+(scheitern.1,scheitern.2)#LOCATION#PERSON
+
+component 1013
+NEG__(zählen.1,zählen.2)#PERSON#LOCATION
+ => 912 (kommen_vor_Jahr.1,kommen_vor_Jahr.2)#PERSON#LOCATION
+
+component 1014
+(bezwingen.1,bezwingen.2)#LOCATION#PERSON
+ => 456 (gewinnen.1,gewinnen.2)#LOCATION#PERSON
+
+component 1015
+(dienen.1,dienen.2)#PERSON#LOCATION
+(inszeniert.1,inszeniert.2)#PERSON#LOCATION
+
+component 1016
+(weren.1,weren.2)#PERSON#LOCATION
+ => 293 (aufrufen.1,aufrufen.2)#LOCATION#PERSON
+
+component 1017
+(bringen_in_Krankenhaus.1,bringen_in_Krankenhaus.2)#LOCATION#PERSON
+(einliefern.1,einliefern.2)#LOCATION#PERSON
+
+component 1018
+(stehen_in_Finale.1,stehen_in_Finale.2)#PERSON#LOCATION
+(stehen_zu_Mal.1,stehen_zu_Mal.2)#PERSON#LOCATION
+
+component 1019
+(kommen_sein_als.1,kommen_sein_als.2)#LOCATION#PERSON
+ => 628 (rechnen.1,rechnen.2)#LOCATION#PERSON
+
+component 1020
+(untersuchen.1,untersuchen.2)#PERSON#LOCATION
+ => 880 (benutzen.1,benutzen.2)#PERSON#LOCATION
+
+component 1021
+(bezeichnen.1,bezeichnen.2)#LOCATION#PERSON
+
+component 1022
+(gezog.1,gezog.2)#LOCATION#PERSON
+ => 603 (geben_in_Jahr.1,geben_in_Jahr.2)#PERSON#LOCATION
+ => 602 (auszeichnen.1,auszeichnen.2)#LOCATION#PERSON
+
+component 1023
+(umziehen.1,umziehen.2)#PERSON#LOCATION
+ => 271 (stecken.1,stecken.2)#PERSON#LOCATION
+
+component 1024
+(fallen|gefallen.1,fallen|gefallen.2)#PERSON#LOCATION
+(verdrängen.1,verdrängen.2)#PERSON#LOCATION
+ => 823 (rangieren.1,rangieren.2)#PERSON#LOCATION
+
+component 1025
+(tanzen.1,tanzen.2)#PERSON#LOCATION
+ => 633 (fragen.1,fragen.2)#PERSON#LOCATION
+
+component 1026
+(setzen_an.1,setzen_an.2)#PERSON#LOCATION
+ => 950 (blockieren.1,blockieren.2)#PERSON#LOCATION
+
+component 1027
+(konzentrieren.1,konzentrieren.2)#PERSON#LOCATION
+
+component 1028
+(bestellen_ein.1,bestellen_ein.2)#LOCATION#PERSON
+
+component 1029
+(heiraten.1,heiraten.2)#PERSON#LOCATION
+ => 791 (sagen_zufolge.1,sagen_zufolge.2)#PERSON#LOCATION
+
+component 1030
+(verlangen.1,verlangen.2)#LOCATION#PERSON
+ => 519 (warnen.1,warnen.2)#LOCATION#PERSON
+
+component 1031
+(wann.1,wann.2)#PERSON#LOCATION
+ => 1018 (stehen_in_Finale.1,stehen_in_Finale.2)#PERSON#LOCATION
+
+component 1032
+(interessieren.1,interessieren.2)#LOCATION#PERSON
+ => 634 (bringen_in_Jahr.1,bringen_in_Jahr.2)#PERSON#LOCATION
+
+component 1033
+(gehen_an_Start.1,gehen_an_Start.2)#PERSON#LOCATION
+
+component 1034
+(kandidieren.1,kandidieren.2)#PERSON#LOCATION
+ => 222 (antreten.1,antreten.2)#PERSON#LOCATION
+
+component 1035
+(rufen_zurück.1,rufen_zurück.2)#PERSON#LOCATION
+(produzieren.1,produzieren.2)#PERSON#LOCATION
+ => 779 (verkaufen.1,verkaufen.2)#PERSON#LOCATION
+
+component 1036
+(fördern.1,fördern.2)#LOCATION#PERSON
+ => 939 (vorangetrieben.1,vorangetrieben.2)#PERSON#LOCATION
+ => 339 (gegen.1,gegen.2)#PERSON#LOCATION
+
+component 1037
+(winken.1,winken.2)#PERSON#LOCATION
+ => 1018 (stehen_in_Finale.1,stehen_in_Finale.2)#PERSON#LOCATION
+
+component 1038
+(kippen.1,kippen.2)#PERSON#LOCATION
+ => 758 (vorstellen.1,vorstellen.2)#PERSON#LOCATION
+
+component 1039
+(auffordern.1,auffordern.2)#LOCATION#PERSON
+ => 246 (stellen.1,stellen.2)#LOCATION#PERSON
+
+component 1040
+(reißen.1,reißen.2)#PERSON#LOCATION
+ => 632 (scheinen.1,scheinen.2)#PERSON#LOCATION
+
+component 1041
+(trainieren.1,trainieren.2)#PERSON#LOCATION
+(vermelden.1,vermelden.2)#LOCATION#PERSON
+
+component 1042
+(gehen_an.1,gehen_an.2)#PERSON#LOCATION
+ => 519 (warnen.1,warnen.2)#LOCATION#PERSON
+
+component 1043
+(gelten.1,gelten.2)#LOCATION#PERSON
+
+component 1044
+(stehen_in_Endspiel.1,stehen_in_Endspiel.2)#PERSON#LOCATION
+ => 108 (präsentieren.1,präsentieren.2)#PERSON#LOCATION
+
+component 1045
+(bedrängen.1,bedrängen.2)#PERSON#LOCATION
+ => 554 (sollen.1,sollen.2)#PERSON#LOCATION
+
+component 1046
+(realisieren.1,realisieren.2)#PERSON#LOCATION
+
+component 1047
+(bewaffnet.1,bewaffnet.2)#PERSON#LOCATION
+ => 506 (attackieren.1,attackieren.2)#PERSON#LOCATION
+
+component 1048
+(stossen.1,stossen.2)#PERSON#LOCATION
+ => 512 (einstellen.1,einstellen.2)#PERSON#LOCATION
+
+component 1049
+(entführen.1,entführen.2)#PERSON#LOCATION
+(errichten.1,errichten.2)#PERSON#LOCATION
+(verüben.1,verüben.2)#PERSON#LOCATION
+(terrorisieren.1,terrorisieren.2)#PERSON#LOCATION
+ => 682 (kämpfen.1,kämpfen.2)#PERSON#LOCATION
+
+component 1050
+(kämpfen_zurück.1,kämpfen_zurück.2)#PERSON#LOCATION
+(geraten_in_Rückstand.1,geraten_in_Rückstand.2)#PERSON#LOCATION
+ => 352 (geraten.1,geraten.2)#PERSON#LOCATION
+
+component 1051
+(hinnehmen.1,hinnehmen.2)#PERSON#LOCATION
+ => 738 (klagen.1,klagen.2)#PERSON#LOCATION
+
+component 1052
+(aufwachsen.1,aufwachsen.2)#LOCATION#PERSON
+ => 1 (leben.1,leben.2)#PERSON#LOCATION
+ => 32 (gebären.1,gebären.2)#LOCATION#PERSON
+
+component 1053
+(ein_sein_in.1,ein_sein_in.2)#PERSON#LOCATION
+ => 336 (übersiedeln.1,übersiedeln.2)#PERSON#LOCATION
+
+component 1054
+(steigern.1,steigern.2)#PERSON#LOCATION
+
+component 1055
+(kommen_sein_von.1,kommen_sein_von.2)#PERSON#LOCATION
+ => 602 (auszeichnen.1,auszeichnen.2)#LOCATION#PERSON
+ => 603 (geben_in_Jahr.1,geben_in_Jahr.2)#PERSON#LOCATION
+
+component 1056
+(nennen.1,nennen.2)#LOCATION#PERSON
+ => 707 (bangen.1,bangen.2)#PERSON#LOCATION
+
+component 1057
+(legen_hin.1,legen_hin.2)#PERSON#LOCATION
+(eroberen.1,eroberen.2)#PERSON#LOCATION
+ => 1033 (gehen_an_Start.1,gehen_an_Start.2)#PERSON#LOCATION
+
+component 1058
+(veröffentlicht.1,veröffentlicht.2)#PERSON#LOCATION
+ => 849 (posieren.1,posieren.2)#PERSON#LOCATION
+
+component 1059
+(bien.1,bien.2)#PERSON#LOCATION
+ => 546 (planen.1,planen.2)#PERSON#LOCATION
+
+component 1060
+(angedrohen.1,angedrohen.2)#PERSON#LOCATION
+ => 378 (gereist.1,gereist.2)#PERSON#LOCATION
+
+component 1061
+(werfen_vor.1,werfen_vor.unterstützen.2)#PERSON#LOCATION
+ => 245 (unterstützen.1,unterstützen.2)#PERSON#LOCATION
+ => 224 (unterstützen.1,unterstützen.2)#LOCATION#PERSON
+
+component 1062
+(schlagen.1,schlagen.2)#LOCATION#PERSON
+ => 1021 (bezeichnen.1,bezeichnen.2)#LOCATION#PERSON
+
+component 1063
+(unterhalten.1,unterhalten.2)#LOCATION#PERSON
+(liefern.1,liefern.2)#LOCATION#PERSON
+ => 787 (beraten.1,beraten.2)#LOCATION#PERSON
+
+component 1064
+(stehen_fest.1,stehen_fest.2)#LOCATION#PERSON
+(ausbauen.1,ausbauen.2)#LOCATION#PERSON
+
+component 1065
+(werfen_vor.1,werfen_vor.unterstützen.2)#LOCATION#PERSON
+(fürchen.1,fürchen.2)#LOCATION#PERSON
+ => 220 (verlegen.1,verlegen.2)#LOCATION#PERSON
+ => 221 (zurückweisen.1,zurückweisen.2)#LOCATION#PERSON
+
+component 1066
+(empören.1,empören.2)#LOCATION#PERSON
+ => 722 (beklagen.1,beklagen.2)#PERSON#LOCATION
+
+component 1067
+(einziehen.1,einziehen.2)#LOCATION#PERSON
+ => 1014 (bezwingen.1,bezwingen.2)#LOCATION#PERSON
+ => 456 (gewinnen.1,gewinnen.2)#LOCATION#PERSON
+
+component 1068
+(kommen_unter.1,kommen_unter.2)#PERSON#LOCATION
+ => 559 (bewegen.1,bewegen.2)#PERSON#LOCATION
+
+component 1069
+(verhaften.1,verhaften.2)#LOCATION#PERSON
+(schweigen.1,schweigen.2)#PERSON#LOCATION
+
+component 1070
+(werten.1,werten.2)#LOCATION#PERSON
+(streiten.1,streiten.2)#LOCATION#PERSON
+
+component 1071
+(wechseln.1,wechseln.2)#LOCATION#PERSON
+ => 386 (absolvieren.1,absolvieren.2)#PERSON#LOCATION
+
+component 1072
+(abfeuern.1,abfeuern.2)#PERSON#LOCATION
+ => 171 (gehen_vor.1,gehen_vor.2)#LOCATION#PERSON
+ => 172 (erwägen.1,erwägen.2)#LOCATION#PERSON
+
+component 1073
+(bejubeln.1,bejubeln.2)#PERSON#LOCATION
+ => 593 (erreichen.1,erreichen.2)#LOCATION#PERSON
+
+component 1074
+(bestellen.1,bestellen.2)#LOCATION#PERSON
+(einbestellen.1,einbestellen.2)#LOCATION#PERSON
+ => 1028 (bestellen_ein.1,bestellen_ein.2)#LOCATION#PERSON
+
+component 1075
+(ausüben.1,ausüben.2)#LOCATION#PERSON
+ => 224 (unterstützen.1,unterstützen.2)#LOCATION#PERSON
+ => 578 (kritisieren.1,kritisieren.2)#LOCATION#PERSON
+
+component 1076
+NEG__(ausliefern.1,ausliefern.2)#LOCATION#PERSON
+(gelegen.1,gelegen.2)#LOCATION#PERSON
+ => 383 (absitzen.1,absitzen.2)#PERSON#LOCATION
+ => 60 (sitzen.1,sitzen.2)#PERSON#LOCATION
+
+component 1077
+(protestieren.1,protestieren.2)#LOCATION#PERSON
+ => 171 (gehen_vor.1,gehen_vor.2)#LOCATION#PERSON
+
+component 1078
+(erschießen.1,erschießen.2)#PERSON#LOCATION
+
+component 1079
+(durchsuchen.1,durchsuchen.2)#PERSON#LOCATION
+ => 1078 (erschießen.1,erschießen.2)#PERSON#LOCATION
+
+component 1080
+(schützen.1,schützen.2)#LOCATION#PERSON
+ => 628 (rechnen.1,rechnen.2)#LOCATION#PERSON
+
+component 1081
+(exekutieren.1,exekutieren.2)#LOCATION#PERSON
+ => 722 (beklagen.1,beklagen.2)#PERSON#LOCATION
+
+component 1082
+(sorgen.1,sorgen.2)#LOCATION#PERSON
+ => 773 (bestätigen.1,bestätigen.2)#LOCATION#PERSON
+
+component 1083
+(lassen.1,lassen.passi.2)#PERSON#LOCATION
+ => 56 (lassen.1,lassen.2)#LOCATION#PERSON
+ => 557 (öffnen.1,öffnen.2)#LOCATION#PERSON
+
+component 1084
+(gehen_vor.1,gehen_vor.2)#PERSON#LOCATION
+ => 682 (kämpfen.1,kämpfen.2)#PERSON#LOCATION
+
+component 1085
+(einführen.1,einführen.2)#PERSON#LOCATION
+(bringen_vor_Jahr.1,bringen_vor_Jahr.2)#PERSON#LOCATION
+ => 692 (beweisen.1,beweisen.2)#PERSON#LOCATION
+
+component 1086
+(verringern.1,verringern.2)#PERSON#LOCATION
+
+component 1087
+(scheiden_aus.1,scheiden_aus.2)#PERSON#LOCATION
+ => 593 (erreichen.1,erreichen.2)#LOCATION#PERSON
+
+component 1088
+(beschießen.1,beschießen.2)#PERSON#LOCATION
+ => 945 (räumen.1,räumen.2)#PERSON#LOCATION
+
+component 1089
+(haben_triumphieren.1,haben_triumphieren.2)#PERSON#LOCATION
+(stehen_fest.1,stehen_fest.2)#PERSON#LOCATION
+(knacken.1,knacken.2)#PERSON#LOCATION
+
+component 1090
+(zufrieden_sein_in.1,zufrieden_sein_in.2)#PERSON#LOCATION
+(betreffen.1,betreffen.2)#LOCATION#PERSON
+ => 282 (fallen.1,fallen.2)#PERSON#LOCATION
+
+component 1091
+(begnügen.1,begnügen.2)#PERSON#LOCATION
+ => 433 (belegen.1,belegen.2)#PERSON#LOCATION
+
+component 1092
+(ausgeschieden_sein_in.1,ausgeschieden_sein_in.2)#PERSON#LOCATION
+ => 15 (haben.1,haben.2)#PERSON#LOCATION
+ => 464 (bestreiten.1,bestreiten.2)#PERSON#LOCATION
+
+component 1093
+(eingeziehen.1,eingeziehen.2)#PERSON#LOCATION
+(verleihen.1,verleihen.2)#LOCATION#PERSON
+
+component 1094
+(passen.1,passen.2)#PERSON#LOCATION
+ => 541 (haben_verlieren.1,haben_verlieren.2)#PERSON#LOCATION
+
+component 1095
+(verspielen.1,verspielen.2)#PERSON#LOCATION
+ => 997 (ärgern.1,ärgern.2)#PERSON#LOCATION
+ => 815 (zufrieden_sein_mit.1,zufrieden_sein_mit.2)#PERSON#LOCATION
+
+component 1096
+(niessen.1,niessen.2)#PERSON#LOCATION
+
+component 1097
+(angerichten.1,angerichten.2)#PERSON#LOCATION
+ => 847 (steuern_zu.1,steuern_zu.2)#PERSON#LOCATION
+
+component 1098
+(empören.1,empören.2)#PERSON#LOCATION
+ => 481 (stoppen.1,stoppen.2)#PERSON#LOCATION
+
+component 1099
+(vermuten.1,vermuten.2)#LOCATION#PERSON
+ => 453 (überstellen.1,überstellen.2)#LOCATION#PERSON
+
+component 1100
+(fliehen.1,fliehen.2)#LOCATION#PERSON
+ => 35 (fliehen.1,fliehen.2)#PERSON#LOCATION
+
+component 1101
+(gefloh_sein_aus.1,gefloh_sein_aus.2)#PERSON#LOCATION
+ => 984 (einnehmen.1,einnehmen.2)#PERSON#LOCATION
+
+component 1102
+(gehen_in_Führung.1,gehen_in_Führung.2)#LOCATION#PERSON
+ => 657 (schließen.1,schließen.2)#PERSON#LOCATION
+
+component 1103
+(bescheren.1,bescheren.2)#PERSON#LOCATION
+(packen.1,packen.2)#PERSON#LOCATION
+ => 849 (posieren.1,posieren.2)#PERSON#LOCATION
+
+component 1104
+(wahrnehmen.1,wahrnehmen.2)#PERSON#LOCATION
+ => 279 (gelingen.1,gelingen.2)#LOCATION#PERSON
+
+component 1105
+(landet.1,landet.2)#PERSON#LOCATION
+(kommen_auf_Einwohner.1,kommen_auf_Einwohner.2)#PERSON#LOCATION
+NEG__(nehmen_auf.1,nehmen_auf.2)#LOCATION#PERSON
+
+component 1106
+(heimkehren.1,heimkehren.2)#PERSON#LOCATION
+ => 191 (fürchen.1,fürchen.2)#PERSON#LOCATION
+
+component 1107
+(ausgeben.1,ausgeben.2)#LOCATION#PERSON
+ => 940 (stehen_zu_Verfügung.1,stehen_zu_Verfügung.2)#PERSON#LOCATION
+
+component 1108
+(erlagen.1,erlagen.2)#PERSON#LOCATION
+ => 50 (sterben.1,sterben.2)#LOCATION#PERSON
+ => 289 (erkranken.1,erkranken.2)#LOCATION#PERSON
+ => 10 (sterben.1,sterben.2)#PERSON#LOCATION
+
+component 1109
+(Bemerkung.1,Bemerkung.2)#LOCATION#PERSON
+(aben.1,aben.2)#LOCATION#PERSON
+(stehen_unter_Vertrag.1,stehen_unter_Vertrag.2)#PERSON#LOCATION
+
+component 1110
+(greifen_ein.1,greifen_ein.2)#PERSON#LOCATION
+ => 1086 (verringern.1,verringern.2)#PERSON#LOCATION
+
+component 1111
+(vorhersagen.1,vorhersagen.2)#PERSON#LOCATION
+ => 592 (stehen_in_Jahr.1,stehen_in_Jahr.2)#PERSON#LOCATION
+
+component 1112
+(überholen.1,überholen.2)#PERSON#LOCATION
+ => 1086 (verringern.1,verringern.2)#PERSON#LOCATION
+
+component 1113
+(sitzen.1,sitzen.2)#LOCATION#PERSON
+ => 832 (lehnen_ab.1,lehnen_ab.2)#PERSON#LOCATION
+
+component 1114
+(entwickeln.1,entwickeln.2)#PERSON#LOCATION
+ => 703 (entlassen.1,entlassen.2)#PERSON#LOCATION
+
+component 1115
+(küren.1,küren.2)#PERSON#LOCATION
+ => 465 (suchen.1,suchen.2)#LOCATION#PERSON
+
+component 1116
+(bedrohen.1,bedrohen.2)#PERSON#LOCATION
+(überfallen.1,überfallen.2)#PERSON#LOCATION
+
+component 1117
+(gestehen.1,gestehen.2)#PERSON#LOCATION
+
+component 1118
+(brechen_ein.1,brechen_ein.2)#PERSON#LOCATION
+ => 152 (schieben.1,schieben.2)#PERSON#LOCATION
+
+component 1119
+(überholen.1,überholen.2)#LOCATION#PERSON
+(aufholen.1,aufholen.2)#PERSON#LOCATION
+
+component 1120
+(eingefahren.1,eingefahren.2)#PERSON#LOCATION
+ => 966 (überraschen.1,überraschen.2)#PERSON#LOCATION
+
+component 1121
+(wecken.1,wecken.2)#PERSON#LOCATION
+ => 365 (reagieren.1,reagieren.2)#PERSON#LOCATION
+
+component 1122
+(dominieren.1,dominieren.2)#LOCATION#PERSON
+ => 871 (begehen.1,begehen.2)#PERSON#LOCATION
+
+component 1123
+(ausbauen.1,ausbauen.2)#PERSON#LOCATION
+
+component 1124
+(machen.1,machen.schaffen.2)#PERSON#LOCATION
+(bringen_seit_Jahr.1,bringen_seit_Jahr.2)#PERSON#LOCATION
+ => 815 (zufrieden_sein_mit.1,zufrieden_sein_mit.2)#PERSON#LOCATION
+ => 997 (ärgern.1,ärgern.2)#PERSON#LOCATION
+
+component 1125
+(bescheiden.1,bescheiden.2)#PERSON#LOCATION
+ => 331 (siegen.1,siegen.2)#PERSON#LOCATION
+
+component 1126
+(beschwören.1,beschwören.2)#PERSON#LOCATION
+ => 143 (begleiten.1,begleiten.2)#PERSON#LOCATION
+
+component 1127
+(überstellen.1,überstellen.2)#PERSON#LOCATION
+ => 453 (überstellen.1,überstellen.2)#LOCATION#PERSON
+
+component 1128
+(engagieren.1,engagieren.2)#LOCATION#PERSON
+ => 386 (absolvieren.1,absolvieren.2)#PERSON#LOCATION
+
+component 1129
+(bestehen.1,bestehen.2)#PERSON#LOCATION
+ => 741 (mahnen.1,mahnen.2)#PERSON#LOCATION
+
+component 1130
+(reisen_ab.1,reisen_ab.2)#PERSON#LOCATION
+ => 518 (einsetzen.1,einsetzen.2)#PERSON#LOCATION
+
+component 1131
+(weisen.1,weisen.2)#LOCATION#PERSON
+ => 790 (auftreten.1,auftreten.2)#PERSON#LOCATION
+
+component 1132
+(locken_an.1,locken_an.2)#LOCATION#PERSON
+ => 56 (lassen.1,lassen.2)#LOCATION#PERSON
+ => 139 (gelangen|gelingen.1,gelangen|gelingen.2)#PERSON#LOCATION
+ => 310 (einschleusen.1,einschleusen.2)#LOCATION#PERSON
+
+component 1133
+(stellen_auf.1,stellen_auf.2)#PERSON#LOCATION
+ => 961 (liegen_vorn.1,liegen_vorn.2)#PERSON#LOCATION
+
+component 1134
+(stimmen_ab.1,stimmen_ab.2)#PERSON#LOCATION
+ => 803 (stimmen.1,stimmen.2)#PERSON#LOCATION
+
+component 1135
+(auskommen.1,auskommen.2)#PERSON#LOCATION
+ => 489 (abstimmen.1,abstimmen.2)#PERSON#LOCATION
+
+component 1136
+(bringen_mit_Hubschrauber.1,bringen_mit_Hubschrauber.2)#LOCATION#PERSON
+ => 612 (fliegen.1,fliegen.2)#LOCATION#PERSON
+
+component 1137
+(gegen.1,gegen.2)#LOCATION#PERSON
+ => 470 (kommen_in_Spiel.1,kommen_in_Spiel.2)#PERSON#LOCATION
+
+component 1138
+(können.1,können.2)#PERSON#LOCATION
+ => 910 (spielen_auf.1,spielen_auf.2)#PERSON#LOCATION
+ => 366 (geben_ab.1,geben_ab.2)#PERSON#LOCATION
+
+component 1139
+(gehen_in_Führung.1,gehen_in_Führung.2)#PERSON#LOCATION
+
+component 1140
+(belegte.1,belegte.2)#PERSON#LOCATION
+ => 433 (belegen.1,belegen.2)#PERSON#LOCATION
+
+component 1141
+(halten_fest.1,halten_fest.2)#LOCATION#PERSON
+ => 856 (aufgehalten.1,aufgehalten.2)#PERSON#LOCATION
+ => 855 (blockieren.1,blockieren.2)#LOCATION#PERSON
+ => 224 (unterstützen.1,unterstützen.2)#LOCATION#PERSON
+
+component 1142
+(prognostizieren.1,prognostizieren.2)#PERSON#LOCATION
+ => 405 (rechnen.1,rechnen.2)#PERSON#LOCATION
+
+component 1143
+(vernehmen.1,vernehmen.2)#LOCATION#PERSON
+ => 1027 (konzentrieren.1,konzentrieren.2)#PERSON#LOCATION
+
+component 1144
+(treten_auf.1,treten_auf.2)#LOCATION#PERSON
+ => 854 (entsenden.1,entsenden.2)#LOCATION#PERSON
+
+component 1145
+(reihen_ein.1,reihen_ein.2)#PERSON#LOCATION
+ => 821 NEG__(fahren.1,fahren.2)#PERSON#LOCATION
+
+component 1146
+(erst_sein_in.1,erst_sein_in.2)#PERSON#LOCATION
+ => 692 (beweisen.1,beweisen.2)#PERSON#LOCATION
+
+component 1147
+(vertiefen.1,vertiefen.2)#LOCATION#PERSON
+ => 263 (ankündigen.1,ankündigen.2)#LOCATION#PERSON
+
+component 1148
+(vermeiden.1,vermeiden.2)#PERSON#LOCATION
+
+component 1149
+(überreichen.1,überreichen.nachkommen.2)#LOCATION#PERSON
+ => 573 (werben.1,werben.2)#PERSON#LOCATION
+
+component 1150
+(zurücktreten.1,zurücktreten.2)#LOCATION#PERSON
+ => 480 (besitzen.1,besitzen.2)#PERSON#LOCATION
+
+component 1151
+(erwartet.1,erwartet.2)#PERSON#LOCATION
+ => 752 (bieten.1,bieten.2)#LOCATION#PERSON
+
+component 1152
+(distanzieren.1,distanzieren.2)#PERSON#LOCATION
+ => 531 (anerkennen.1,anerkennen.2)#PERSON#LOCATION
+
+component 1153
+(umgekommen_sein_in.1,umgekommen_sein_in.2)#PERSON#LOCATION
+ => 10 (sterben.1,sterben.2)#PERSON#LOCATION
+ => 37 (kosten.1,kosten.2)#PERSON#LOCATION
+
+component 1154
+(freikommen.1,freikommen.2)#PERSON#LOCATION
+ => 383 (absitzen.1,absitzen.2)#PERSON#LOCATION
+ => 60 (sitzen.1,sitzen.2)#PERSON#LOCATION
+
+component 1155
+(aben.1,aben.2)#PERSON#LOCATION
+ => 459 (teilnehmen.1,teilnehmen.2)#LOCATION#PERSON
+
+component 1156
+(bringen_mit_Rettungshubschrauber.1,bringen_mit_Rettungshubschrauber.2)#LOCATION#PERSON
+ => 612 (fliegen.1,fliegen.2)#LOCATION#PERSON
+
+component 1157
+(zeichnen.1,zeichnen.2)#PERSON#LOCATION
+(geben_ab.1,geben_ab.2)#LOCATION#PERSON
+
+component 1158
+(liegen_zurück.1,liegen_zurück.2)#LOCATION#PERSON
+ => 279 (gelingen.1,gelingen.2)#LOCATION#PERSON
+
+component 1159
+(stützen.1,stützen.2)#PERSON#LOCATION
+
+component 1160
+(versuchen.1,versuchen.2)#LOCATION#PERSON
+ => 628 (rechnen.1,rechnen.2)#LOCATION#PERSON
+
+component 1161
+(Klasen.1,Klasen.2)#LOCATION#PERSON
+ => 1109 (Bemerkung.1,Bemerkung.2)#LOCATION#PERSON
+
+component 1162
+(ziehen_zurück.1,ziehen_zurück.2)#PERSON#LOCATION
+ => 790 (auftreten.1,auftreten.2)#PERSON#LOCATION
+
+component 1163
+(stationieren_sein_in.1,stationieren_sein_in.2)#PERSON#LOCATION
+ => 220 (verlegen.1,verlegen.2)#LOCATION#PERSON
+
+component 1164
+(kooperieren.1,kooperieren.2)#PERSON#LOCATION
+ => 510 (zahlen.1,zahlen.2)#PERSON#LOCATION
+
+component 1165
+(gehen_aus.1,gehen_aus.2)#LOCATION#PERSON
+ => 743 (danken.1,danken.2)#PERSON#LOCATION
+
+component 1166
+(jubeln.1,jubeln.2)#LOCATION#PERSON
+ => 426 (hoffen.1,hoffen.2)#LOCATION#PERSON
+
+component 1167
+(verbinden.1,verbinden.2)#PERSON#LOCATION
+ => 650 (ein_sein.1,ein_sein.2)#LOCATION#PERSON
+
+component 1168
+(stehen_in_Mittelpunkt.1,stehen_in_Mittelpunkt.2)#PERSON#LOCATION
+ => 446 (durchsetzen.1,durchsetzen.2)#PERSON#LOCATION
+
+component 1169
+NEG__(gehen_aus.1,gehen_aus.2)#PERSON#LOCATION
+ => 313 (teilnehmen.1,teilnehmen.2)#PERSON#LOCATION
+
+component 1170
+NEG__(treffen.1,treffen.2)#PERSON#LOCATION
+ => 408 (bringen_in_Spiel.1,bringen_in_Spiel.2)#PERSON#LOCATION
+
+component 1171
+(säumen.1,säumen.2)#PERSON#LOCATION
+ => 293 (aufrufen.1,aufrufen.2)#LOCATION#PERSON
+
+component 1172
+(durchsetzen.1,durchsetzen.2)#LOCATION#PERSON
+ => 483 (feiern.1,feiern.2)#LOCATION#PERSON
+
+component 1173
+(rangieren.1,rangieren.2)#LOCATION#PERSON
+(gewährt.1,gewährt.2)#LOCATION#PERSON
+ => 799 (verfolgen.1,verfolgen.2)#LOCATION#PERSON
+writing Done
