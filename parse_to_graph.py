@@ -5,6 +5,7 @@ Created on Fri Jan  3 14:37:24 2020
 @author: Sabine
 """
 import networkx as nx
+import collections
 
 def constructGraphFromFile(filename):
     G = nx.DiGraph()
@@ -27,19 +28,26 @@ def constructGraphFromFile(filename):
                     passedComponent=True
                     line=line.rstrip()
                     lineSplit=line.split()
-                    number=int(lineSplit[1])
+                    try:
+                        number=int(lineSplit[1])
+                    except IndexError:
+                        print("format error in graph file")
+                        continue
                     G.add_node(number)
                 elif "component" not in line and passedComponent and line!="" and "=>" not in line and passedRightLambda:
-                    name="verb"+str(counter)
                     counter+=1
                     if line!="\n" and number!=-100:
-                        G.node[number][name]=line
+                        try:
+                            old_line=G.node[number]["verb"]
+                            G.node[number]["verb"]=line+" "+old_line
+                        except KeyError:
+                           G.node[number]["verb"]=line
                 elif "component" not in line and passedComponent and line!="" and "=>" in line and passedRightLambda:
                     line=line.rstrip()
                     lineSplit=line.split()
-                    component=lineSplit[1]
+                    component=int(lineSplit[1])
                     #G.add_edge(number, component)
-                    print("added edge between ", component, number)
+                    #print("added edge between ", component, number)
                     G.add_edge(component, number)
                 elif line=="":
                     passedComponent=False
@@ -47,13 +55,23 @@ def constructGraphFromFile(filename):
 def get_the_stats(G): 
     print("Total number of nodes: ", int(G.number_of_nodes())) 
     print("Total number of edges: ", int(G.number_of_edges())) 
-    print("List of all nodes: ", list(G.nodes())) 
-    print("List of all edges: ", list(G.edges(data = True))) 
-    print("Degree for all nodes: ", dict(G.degree())) 
+    #print("List of all nodes: ", list(G.nodes())) 
+    #print("List of all edges: ", list(G.edges(data = True))) 
+    degree_dict={}
+    for node in G.nodes():
+        degree=G.degree[node]
+        if degree in degree_dict.keys():
+            degree_dict[degree]+=1
+        else:
+            degree_dict[degree]=1
+    od = collections.OrderedDict(sorted(degree_dict.items()))
+    print("Degree for all nodes: ", od) 
+    nuG=G.to_undirected()
+    print("Number of connected components: ", nx.number_connected_components(nuG))
 
-    print("Total number of self-loops: ", int(G.number_of_selfloops())) 
+    #print("Total number of self-loops: ", int(G.number_of_selfloops())) 
     print("List of all nodes with self-loops: ", 
                  list(G.nodes_with_selfloops())) 
 
-    print("List of all nodes we can go to in a single step from node 2: ", 
-                                                     list(G.neighbors(2))) 
+    #print("List of all nodes we can go to in a single step from node 2: ", 
+                                                     #list(G.neighbors(2))) 

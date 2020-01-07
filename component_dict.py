@@ -30,6 +30,24 @@ class Component_dict:
         self.de_en_component_dict=de_en_component_dict
         self.en_de_component_dict =self.generate_en_component_to_de_components_list_dict(de_en_component_dict)
         
+    def get_keys_de_en(self):
+        return self.de_en_component_dict.keys()
+    
+    def get_keys_en_de(self):
+        return self.en_de_component_dict.keys()
+    
+    def get_node_de_en(self,node):
+        if node in self.de_en_component_dict:
+            return self.de_en_component_dict[node]
+        else:
+            return None
+    
+    def get_node_en_de(self,node):
+        if node in self.en_de_component_dict:
+            return self.en_de_component_dict[node]
+        else:
+            return None
+        
     def generate_en_component_to_de_components_list_dict(self,de_en_component_dict):
         en_de_component_dict={}
         for de_component, en_component_list in de_en_component_dict.items():
