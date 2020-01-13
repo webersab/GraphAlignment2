@@ -6,6 +6,53 @@ Created on Fri Jan  3 14:37:24 2020
 """
 import networkx as nx
 import collections
+import re
+
+def get_type_pair_from_relation(relation):
+    result = re.search('\#(.*)::.*::', relation)
+    if result!= None:
+        return result.group(1)
+    else:
+        return "noType"
+
+def parse_rel_ex_output_to_sentence_relation_dict(filename, levi_text):
+    sentence_set=set()
+    with open(levi_text, 'r') as inF:
+        for line in inF:
+            line=line.strip().split(". ")
+            for l in line:
+                sentence_set.add(l.lower())
+    print(len(sentence_set))
+    #print(sentence_set)
+    
+    sent_to_rels_dict={}
+    sentence=""
+    relation={}
+    sentence_counter=0
+    with open(filename, 'r') as inF:
+        for line in inF:
+            if "line: " in line:
+                sentence=line[6:].lower().rstrip()
+                sentence=sentence[:-2]
+                sentence_counter+=1
+                #print(sentence)
+                if sentence in sentence_set:
+                    sentence_set.remove(sentence)
+            elif line[0]=="(":
+                type_pair=get_type_pair_from_relation(line)
+                relation=line
+                relation_dict={relation:type_pair}
+            elif not line.strip():
+                if sentence in sent_to_rels_dict.keys():
+                    rel=sent_to_rels_dict[sentence]
+                    if relation not in rel.keys():
+                        rel[relation]=type_pair
+                    sent_to_rels_dict[sentence]=rel
+                else:
+                    sent_to_rels_dict[sentence]= relation_dict         
+    print(len(sentence_set))
+    print(sentence_set)
+    return sent_to_rels_dict
 
 def constructGraphFromFile(filename):
     G = nx.DiGraph()
@@ -74,4 +121,7 @@ def get_the_stats(G):
                  list(G.nodes_with_selfloops())) 
 
     #print("List of all nodes we can go to in a single step from node 2: ", 
-                                                     #list(G.neighbors(2))) 
+                                                     #list(G.neigh
+#if __name__ == '__main__':
+    #sent_to_rels_dict=parse_rel_ex_output_to_sentence_relation_dict("Levy_relations.txt")
+    #print(sent_to_rels_dict)
