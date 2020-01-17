@@ -21,7 +21,6 @@ def get_graphs_for_lambda(lambda_value,graphs_file_path):
     
     for filename in os.listdir(graphs_file_path):
         graph=parse_to_graph.constructGraphFromFile(home_path+filename,lambda_value)
-        parse_to_graph.get_the_stats(graph)
         graph_dict[filename.lower()]=graph
         parts=filename.lower().split("#")
         graph_dict[parts[1]+"#"+parts[0]]=graph
@@ -138,7 +137,7 @@ def test(sentence_to_relations_dict,lambda_value,graphs_file_path):
     if tp+tn+fn+fp!=total:
         print("somehting went wrong with the counting")
     with open(str(lambda_value)+'.txt', 'w') as f:
-        f.write(str(lambda_value))
+        f.write("\n"+str(lambda_value))
         f.write("\n tp "+str(tp)+" tn "+str(tn)+" fn "+str(fn)+" fp "+str(fp))
         f.write("\n precision: "+str(tp/(tp+fp)))
         f.write("\n recall: "+str(tp/(tp+fn)))
@@ -148,6 +147,6 @@ def test(sentence_to_relations_dict,lambda_value,graphs_file_path):
 
 if __name__ == '__main__':
     #parallel -j35 python test.py ::: 0.15 0.25 0.34 0.44 0.55 0.64 0.75 0.85 0.12 0.22 0.32 0.42 0.52 0.62 0.72 0.82 0.17 0.27 0.37 0.47 0.57 0.67 0.77 0.87 0.99
-    #lam=sys.argv[1]
+    lam=sys.argv[1]
     sentence_to_relation_dict = pickle.load( open( "relation_dict2.pickle", "rb" ) )
-    test_dict=test(sentence_to_relation_dict,0.34,"/disk/scratch_big/sweber/GraphAlignment2/justGraphs")
+    test_dict=test(sentence_to_relation_dict,lam,"/disk/scratch_big/sweber/GraphAlignment2/justGraphs")

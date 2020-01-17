@@ -8,6 +8,7 @@ import networkx as nx
 import collections
 import re
 import pickle
+import os
 
 def get_string_from_relation(relation):
     if "NEG" in relation:
@@ -122,11 +123,74 @@ def parse_rel_ex_output_to_sentence_relation_dict(filename_rel,filename_data):
     pickle.dump(external_dict, open("relation_dict2.pickle", "wb" ) )           
     return external_dict
 
-def make_one_graph_from_all_in_folder(lambda_list,folder_path,output_path):
-    #for all files in folder
-    #for all lambdas in lambda list
-    #
-    return None
+def make_one_graph_from_all_in_folder(lambda_value,folder_path,name):
+    home_path=folder_path+"/"
+    graph_list=[]
+    old_component_count=0
+    for filename in os.listdir(folder_path):
+        try:
+            graph,new_component_count=constructGraphFromFile_multi(home_path+filename,lambda_value,old_component_count)
+        except TypeError:
+            print("type error in ",lambda_value,filename)
+            continue
+        graph_list.append(graph)
+        old_component_count=new_component_count
+        #print(filename,old_component_count)
+    merged_graph=nx.DiGraph()
+    for graph in graph_list:
+        merged_graph_n=nx.compose(merged_graph,graph)
+        merged_graph=merged_graph_n
+        #get_the_stats(merged_graph)
+    pickle.dump(merged_graph, open("merged_graph"+name+str(lambda_value)+".pickle", "wb" ) ) 
+    return merged_graph
+
+def constructGraphFromFile_multi(filename,lambda_value,old_component_count):
+    G = nx.DiGraph()
+    passedComponent=False
+    passedRightLambda=False
+
+    with open(filename, 'r') as inF:
+            number=-100
+            for line in inF:
+                if "lambda: "+str(lambda_value) in line:
+                    G = nx.DiGraph()
+                    passedComponent=False
+                    passedRightLambda=True
+                    splits=line.split(" ")
+                    count=int(splits[3])
+                    component_count=old_component_count+count
+                    continue
+                #elif ("lambda" in line and passedRightLambda) or ("writing Done"in line):
+                elif ("lambda" in line and passedRightLambda):
+                    return G, component_count
+                elif "component" in line and passedRightLambda:
+                    passedComponent=True
+                    line=line.rstrip()
+                    lineSplit=line.split()
+                    try:
+                        number=int(lineSplit[1])
+                        number+=old_component_count
+                    except IndexError:
+                        print("format error in graph file")
+                        continue
+                    G.add_node(number)
+                elif "component" not in line and passedComponent and line!="" and "=>" not in line and passedRightLambda:
+                    if line!="\n" and number!=-100:
+                        try:
+                            old_line=G.node[number]["verb"]
+                            G.node[number]["verb"]=line+" "+old_line
+                        except KeyError:
+                           G.node[number]["verb"]=line
+                elif "component" not in line and passedComponent and line!="" and "=>" in line and passedRightLambda:
+                    line=line.rstrip()
+                    lineSplit=line.split()
+                    component=int(lineSplit[1])
+                    #G.add_edge(number, component)
+                    #print("added edge between ", component, number)
+                    G.add_edge(component, number)
+                elif line=="":
+                    passedComponent=False
+    
 
 def constructGraphFromFile(filename, lambda_value):
     G = nx.DiGraph()
@@ -197,6 +261,9 @@ def get_the_stats(G):
 
     #print("List of all nodes we can go to in a single step from node 2: ", 
                                                      #list(G.neigh
-#if __name__ == '__main__':
+if __name__ == '__main__':
+    lambda_list=[0.0049,0.0099,0.015,0.020,0.025,0.030,0.035,0.040,0.045,0.050,0.059,0.100,0.200]
+    for l in lambda_list:
+        make_one_graph_from_all_in_folder(l,"/disk/scratch_big/sweber/GraphAlignment2/englishGraphs/Person#Location","Person#Location")
     #sent_to_rels_dict=parse_rel_ex_output_to_sentence_relation_dict("Levy_relations.txt")
     #print(sent_to_rels_dict)
