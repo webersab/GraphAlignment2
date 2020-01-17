@@ -7,6 +7,22 @@ Created on Fri Jan  3 14:37:24 2020
 import networkx as nx
 import collections
 import re
+import pickle
+
+def get_string_from_relation(relation):
+    if "NEG" in relation:
+        result=re.search('NEG__\((.*)\.2\)', relation)
+        if result!= None:
+            return "NEG__"+result.group(1)
+        else:
+            return "noRelation"
+    else:
+        result = re.search('\((.*)\.2\)', relation)
+        if result!= None:
+            return result.group(1)
+        else:
+            return "noRelation"
+    
 
 def get_type_pair_from_relation(relation):
     result = re.search('\#(.*)::.*::', relation)
@@ -14,47 +30,105 @@ def get_type_pair_from_relation(relation):
         return result.group(1)
     else:
         return "noType"
+        
+#taken from stackexchange
+def edit_distance(s1, s2):
+    m=len(s1)+1
+    n=len(s2)+1
 
-def parse_rel_ex_output_to_sentence_relation_dict(filename, levi_text):
-    sentence_set=set()
-    with open(levi_text, 'r') as inF:
-        for line in inF:
-            line=line.strip().split(". ")
-            for l in line:
-                sentence_set.add(l.lower())
-    print(len(sentence_set))
-    #print(sentence_set)
+    tbl = {}
+    for i in range(m): tbl[i,0]=i
+    for j in range(n): tbl[0,j]=j
+    for i in range(1, m):
+        for j in range(1, n):
+            cost = 0 if s1[i-1] == s2[j-1] else 1
+            tbl[i,j] = min(tbl[i, j-1]+1, tbl[i-1, j]+1, tbl[i-1, j-1]+cost)
+
+    return tbl[i,j]
+
+def find_right_sentence(sentence_to_relations_dict,sent):
+    right_key=""
+    for key in sentence_to_relations_dict.keys():
+        ed_dist=edit_distance(key,sent)
+        #print(ed_dist)
+        if ed_dist<=4:
+            right_key=key
+            return right_key
+        
+
+def parse_rel_ex_output_to_sentence_relation_dict(filename_rel,filename_data):
     
     sent_to_rels_dict={}
+    external_dict={}
+    
     sentence=""
     relation={}
+    relation_list=[]
     sentence_counter=0
-    with open(filename, 'r') as inF:
+    with open(filename_rel, 'r') as inF:
         for line in inF:
             if "line: " in line:
+                relation_list=[]
                 sentence=line[6:].lower().rstrip()
                 sentence=sentence[:-2]
                 sentence_counter+=1
-                #print(sentence)
-                if sentence in sentence_set:
-                    sentence_set.remove(sentence)
             elif line[0]=="(":
                 type_pair=get_type_pair_from_relation(line)
-                relation=line
-                relation_dict={relation:type_pair}
+                relation=get_string_from_relation(line)
+                relation_list.append((relation,type_pair))
             elif not line.strip():
                 if sentence in sent_to_rels_dict.keys():
                     rel=sent_to_rels_dict[sentence]
-                    if relation not in rel.keys():
-                        rel[relation]=type_pair
+                    for res in relation_list:
+                        if res not in rel:
+                            rel.append((relation,type_pair))
                     sent_to_rels_dict[sentence]=rel
                 else:
-                    sent_to_rels_dict[sentence]= relation_dict         
-    print(len(sentence_set))
-    print(sentence_set)
-    return sent_to_rels_dict
+                    sent_to_rels_dict[sentence]= relation_list
+    print("done first bit")                
+    with open(filename_data, 'r') as inF:
+        for line in inF:
+            line=line.rstrip()
+            line=line.split(". ")
+            if len(line)<3:
+                continue
+            sent1=line[0].lower()
+            sent2=line[1].lower()
+            #sent2=sent2[:-1]
+            judgement=line[2]
+            if sent1 not in sent_to_rels_dict.keys():
+                try:
+                    right_key1=find_right_sentence(sent_to_rels_dict,sent1)
+                    relation_list1=sent_to_rels_dict[right_key1]
+                except KeyError:
+                    print(sent1)
+                    relation_list1=[("NoRelation","NoType")]
+            else:
+                relation_list1=sent_to_rels_dict[sent1]
+            if sent2 not in sent_to_rels_dict.keys():
+                try:
+                    right_key2=find_right_sentence(sent_to_rels_dict,sent2)
+                    relation_list2=sent_to_rels_dict[right_key2]
+                except KeyError:
+                    print(sent2)
+                    relation_list2=[("NoRelation","NoType")]
+            else:
+                relation_list2=sent_to_rels_dict[sent2]
+            internal_dict={"rel1":relation_list1,
+                            "rel2":relation_list2,
+                            "judgement":judgement}
+            external_dict[sent1+". "+sent2]=internal_dict
+                         
+    pickle.dump(external_dict, open("relation_dict2.pickle", "wb" ) )           
+    return external_dict
 
-def constructGraphFromFile(filename):
+def make_one_graph_from_all_in_folder(lambda_list,folder_path,output_path):
+    #for all files in folder
+    #for all lambdas in lambda list
+    #
+    return None
+
+def constructGraphFromFile(filename, lambda_value):
     G = nx.DiGraph()
     counter=0
     passedComponent=False
@@ -63,12 +137,13 @@ def constructGraphFromFile(filename):
     with open(filename, 'r') as inF:
             number=-100
             for line in inF:
-                if "lambda" in line:
+                if "lambda: "+str(lambda_value) in line:
                     G = nx.DiGraph()
                     passedComponent=False
                     passedRightLambda=True
                     continue
-                elif "writing Done" in line and passedRightLambda:
+                #elif ("lambda" in line and passedRightLambda) or ("writing Done"in line):
+                elif ("lambda" in line and passedRightLambda):
                     #E=nx.connected_components(G)
                     return G
                 elif "component" in line and passedRightLambda:

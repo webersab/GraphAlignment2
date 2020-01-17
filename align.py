@@ -7,6 +7,8 @@ Created on Thu Jan  2 11:11:13 2020
 from component_dict import Component_dict
 import parse_to_graph
 import copy
+import pickle
+import networkx as nx
 
 
 def align(de_graph,en_graph,comp_dict):
@@ -60,21 +62,24 @@ def align(de_graph,en_graph,comp_dict):
     return multi_graph
     #%%    
 if __name__ == '__main__':
-
+    #create the alignment dictionaries
+    #comp_dict=Component_dict("persLoc0150de.txt", "persLoc0150.txt", "vectors-de.txt", "vectors-en.txt", 5)
+    #pickle.dump(comp_dict, open("comp_dict.pickle", "wb" ) )
+    #print("tutut")
+    #%%
     print("huphup")
-    G=parse_to_graph.constructGraphFromFile("persLoc0150de.txt")
+    G=parse_to_graph.constructGraphFromFile("persLoc0150de.txt", 0.15)
     #parse_to_graph.get_the_stats(G)
-    H=parse_to_graph.constructGraphFromFile("persLoc0150.txt")
+    H=parse_to_graph.constructGraphFromFile("persLoc0150.txt", 0.015)
     #parse_to_graph.get_the_stats(H)
     print("noo")
-    #%%
-    #create the alignment dictionaries
-    comp_dict=Component_dict("persLoc0150de.txt", "persLoc0150.txt", "vectors-de.txt", "vectors-en.txt", 5)
-    print("tutut")
-    #%%
     #feed them to the alignment
+    #parse_to_graph.get_the_stats(G)
+    #parse_to_graph.get_the_stats(H)
+    comp_dict=pickle.load(open("comp_dict.pickle", "rb" ))
     multi_graph=align(G,H,comp_dict)
     #parse_to_graph.get_the_stats(multi_graph)
+    print(nx.density(G),nx.density(H),nx.density(multi_graph))
     #%%
     import parse_to_graph
     #for node in multi_graph.nodes():
