@@ -141,7 +141,7 @@ def make_one_graph_from_all_in_folder(lambda_value,folder_path,name):
         merged_graph_n=nx.compose(merged_graph,graph)
         merged_graph=merged_graph_n
         #get_the_stats(merged_graph)
-    pickle.dump(merged_graph, open("merged_graph"+name+str(lambda_value)+".pickle", "wb" ) ) 
+    pickle.dump(merged_graph, open("/disk/scratch_big/sweber/GraphAlignment2/mergedGraphPickles/"+name+"/merged_graph"+name+str(lambda_value)+".pickle", "wb" ) ) 
     return merged_graph
 
 def constructGraphFromFile_multi(filename,lambda_value,old_component_count):
@@ -260,10 +260,12 @@ def get_the_stats(G):
                  list(G.nodes_with_selfloops())) 
 
     #print("List of all nodes we can go to in a single step from node 2: ", 
-                                                     #list(G.neigh
+                                                    #list(G.neigh
+"""                                                    
 if __name__ == '__main__':
     lambda_list=[0.0049,0.0099,0.015,0.020,0.025,0.030,0.035,0.040,0.045,0.050,0.059,0.100,0.200]
-    for l in lambda_list:
-        make_one_graph_from_all_in_folder(l,"/disk/scratch_big/sweber/GraphAlignment2/englishGraphs/Person#Location","Person#Location")
-    #sent_to_rels_dict=parse_rel_ex_output_to_sentence_relation_dict("Levy_relations.txt")
-    #print(sent_to_rels_dict)
+    folder_list=["Misc#Misc","Organization#Event","Organization#Misc","Organization#Person","Misc#Person","Organization#Location","Organization#Organization","Person#Event","Person#Person"]
+    for folder in folder_list:
+        for l in lambda_list:
+            make_one_graph_from_all_in_folder(l,"/disk/scratch_big/sweber/GraphAlignment2/englishGraphs/"+folder,folder)
+"""
