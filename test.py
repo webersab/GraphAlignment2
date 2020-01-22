@@ -33,7 +33,12 @@ def get_graphs_for_lambda_multi(lambda_value,graphs_file_path):
         if str(lambda_value) in filename:
             print(filename)
             graph=pickle.load( open( graphs_file_path+filename, "rb" ) )
-            type_pair=filename.lower()[:-12]
+            if len(str(lambda_value))==6:
+                type_pair=filename.lower()[:-13]
+            elif len(str(lambda_value))==5:
+                type_pair=filename.lower()[:-12]
+            elif len(str(lambda_value))==4:
+                type_pair=filename.lower()[:-11]
             print(type_pair)
             graph_dict[type_pair]=graph
             parts=type_pair.split("#")
