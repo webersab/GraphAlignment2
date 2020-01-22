@@ -32,12 +32,14 @@ def get_graphs_for_lambda_multi(lambda_value,graphs_file_path):
     for filename in os.listdir(graphs_file_path):
         if str(lambda_value) in filename:
             graph=pickle.load( open( graphs_file_path+filename, "rb" ) )
-            type_pair=filename.lower()[:-11]
+            type_pair=filename.lower()[:-12]
             graph_dict[type_pair]=graph
             parts=type_pair.split("#")
             graph_dict[parts[1]+"#"+parts[0]]=graph
             if (parts[1]+"#"+parts[0])=="thing#thing":
                 graph_dict["noType"]=graph
+        else:
+            print(str(lambda_value)," is not in graph files")
     return graph_dict
 
 def verb_negated(relation,candidate_verb):
