@@ -31,7 +31,6 @@ def get_graphs_for_lambda_multi(lambda_value,graphs_file_path):
     graph_dict={}
     for filename in os.listdir(graphs_file_path):
         if str(lambda_value) in filename:
-            print(filename)
             graph=pickle.load( open( graphs_file_path+filename, "rb" ) )
             if len(str(lambda_value))==6:
                 type_pair=filename.lower()[:-13]
@@ -39,7 +38,6 @@ def get_graphs_for_lambda_multi(lambda_value,graphs_file_path):
                 type_pair=filename.lower()[:-12]
             elif len(str(lambda_value))==4:
                 type_pair=filename.lower()[:-11]
-            print(type_pair)
             graph_dict[type_pair]=graph
             parts=type_pair.split("#")
             graph_dict[parts[1]+"#"+parts[0]]=graph
@@ -222,7 +220,7 @@ def test(sentence_to_relations_dict,lambda_value,graphs_file_path, language_flag
 
 
 if __name__ == '__main__':
-    #parallel -j72 python test.py ::: 0.150 0.025 0.035 0.045 0.055 0.065 0.075 0.085 0.0125 0.0225 0.0325 0.0425 0.0525 0.0625 0.0725 0.0825 0.0175 0.0275 0.0375 0.0475 0.0575 0.0675 0.0775 0.0875 0.0999
+    #parallel -j72 python test.py ::: 0.015 0.025 0.035 0.045 0.055 0.065 0.075 0.085 0.0125 0.0225 0.0325 0.0425 0.0525 0.0625 0.0725 0.0825 0.0175 0.0275 0.0375 0.0475 0.0575 0.0675 0.0775 0.0875 0.0999
     #parallel -j35 python test.py ::: 0.15 0.25 0.34 0.44 0.55 0.64 0.75 0.85 0.12 0.22 0.32 0.42 0.52 0.62 0.72 0.82 0.17 0.27 0.37 0.47 0.57 0.67 0.77 0.87 0.99
     lam=sys.argv[1]
     sentence_to_relation_dict = pickle.load( open( "relation_dict2.pickle", "rb" ) )
