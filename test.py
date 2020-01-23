@@ -300,8 +300,106 @@ def debug_test(sentence_to_relations_dict,lambda_value,graphs_file_path_de, grap
         #f.write("\n recall: "+str(tp/(tp+fn)))
     #f.close()
     #return test_dict
-def debug_test_2(sentence_to_relations_dict,lambda_value,graphs_file_path_de, graphs_file_path_multi, language_flag):
-    
+def debug_test_2(lambda_list,sentence_to_relations_dict,graphs_file_path_de, graphs_file_path_multi, language_flag):
+
+    for sentence in sentence_to_relations_dict:
+        relation_dict=sentence_to_relations_dict[sentence]
+        judgement=relation_dict["judgement"]
+        types_set=set()
+        relations_list1=[]
+        relations_list2=[]
+        for relation in relation_dict["rel1"]:
+            types_set.add(relation[1])
+            relations_list1.append(relation[0])
+        for relation in relation_dict["rel2"]:
+            types_set.add(relation[1])
+            relations_list2.append(relation[0])
+            
+        #for each of the type pairs get a graph
+        candidate_graphs_de=set()
+        candidate_graphs_multi=set()
+        for lam in lambda_list:
+            for type_pair in types_set:
+                try:
+                    candidate_graphs_de.add(graph_dict_de[type_pair])
+                    candidate_graphs_multi.add(graph_dict_multi[type_pair])
+                except KeyError:
+                    candidate_graphs_de.add(graph_dict_de["thing#thing"])
+                    candidate_graphs_multi.add(graph_dict_multi["thing#thing"])
+                    continue
+        
+            #get all combinations of relations
+            our_judgement_set=set()
+            both_in_graph_set=set()
+            if "noRelation" in relations_list1:
+                relations_list1.remove("noRelation")
+            if "noRelation" in relations_list2:
+                relations_list2.remove("noRelation")
+            all_possible_combinations_of_relations= [(x,y) for x in relations_list1 for y in relations_list2]
+            for graph in candidate_graphs_de:
+                for relation_tuple in all_possible_combinations_of_relations:
+                    both_in_graph,our_judgement=find_entailment(graph, relation_tuple)
+                    our_judgement_set.add(our_judgement)
+                    both_in_graph_set.add(both_in_graph)
+            #if none of the candidates in same graph, check all the other graphs too
+            if True not in both_in_graph_set:
+                for type_pair,graph in graph_dict_de.items():
+                    for relation_tuple in all_possible_combinations_of_relations:
+                        both_in_graph,our_judgement=find_entailment(graph, relation_tuple)
+            #compare our judgement with annotation
+               
+            total+=1
+            if judgement=="y":
+                if "y" in our_judgement_set:
+                    tp+=1
+                    #print("-----------------True positive-----------------")
+                    #print(sentence, relations_list1, relations_list2)
+                else:
+                    print("------False negative, DE---------------")
+                    print(sentence, judgement, our_judgement_set)
+                    print(relations_list1, relations_list2)
+                    for graph in candidate_graphs_de:
+                        print(nx.density(graph))
+                        print(analyze_errors(graph, relation_tuple))
+                    fn+=1
+            else:
+                if "y" in our_judgement_set:
+                    fp+=1
+                else:
+                    tn+=1
+        
+            for graph in candidate_graphs_multi:
+                for relation_tuple in all_possible_combinations_of_relations:
+                    both_in_graph,our_judgement=find_entailment(graph, relation_tuple)
+                    our_judgement_set.add(our_judgement)
+                    both_in_graph_set.add(both_in_graph)
+            #if none of the candidates in same graph, check all the other graphs too
+            if True not in both_in_graph_set:
+                for type_pair,graph in graph_dict_multi.items():
+                    for relation_tuple in all_possible_combinations_of_relations:
+                        both_in_graph,our_judgement=find_entailment(graph, relation_tuple)
+            #compare our judgement with annotation
+               
+            total+=1
+            if judgement=="y":
+                if "y" in our_judgement_set:
+                    tp+=1
+                    #print("-----------------True positive-----------------")
+                    #print(sentence, relations_list1, relations_list2)
+                else:
+                    print("------False negative, MULTI---------------")
+                    print(sentence, judgement, our_judgement_set)
+                    print(relations_list1, relations_list2)
+                    for graph in candidate_graphs_multi:
+                        print(nx.density(graph))
+                        print(analyze_errors(graph, relation_tuple))
+                    fn+=1
+            else:
+                if "y" in our_judgement_set:
+                    fp+=1
+                else:
+                    tn+=1
+                    
 def test(sentence_to_relations_dict,lambda_value,graphs_file_path, language_flag):
     #test_dict=Test_dict(lambda_value)
     if language_flag=="german":
