@@ -7,12 +7,13 @@ Created on Thu Jan  2 12:18:27 2020
 import re
 import io
 import numpy as np
+import pickle
 
 class Component_dict:
     
     def __init__(self, de_graph_txt, en_graph_txt, de_vectors_txt, en_vectors_txt, number_of_nearest_neighbors):
         component_to_string_list_dict_de, string_to_component_list_dict_de=self.parse_graph_from_txt(de_graph_txt)
-        component_to_string_list_dict_en, string_to_component_list_dict_en=self.parse_graph_from_txt(en_graph_txt)
+        component_to_string_list_dict_en, string_to_component_list_dict_en=self.parse_graph_from_pickle(en_graph_txt)
         self.component_to_string_list_dict_de=component_to_string_list_dict_de
         self.component_to_string_list_dict_en=component_to_string_list_dict_en
         self.string_to_component_list_dict_de=string_to_component_list_dict_de
@@ -47,7 +48,7 @@ class Component_dict:
             return self.en_de_component_dict[node]
         else:
             return None
-        
+    
     def generate_en_component_to_de_components_list_dict(self,de_en_component_dict):
         en_de_component_dict={}
         for de_component, en_component_list in de_en_component_dict.items():
@@ -115,6 +116,37 @@ class Component_dict:
             #print('%.4f - %s' % (scores[idx], tgt_id2word[idx]))
             ret_best.append(tgt_id2word[idx])
         return ret_best
+    
+    
+    def parse_graph_from_pickle(self,filename):
+        component_to_string_list_dict={}
+        string_to_component_list_dict={}
+
+        graph=pickle.load(open(filename, "rb" ))
+
+        for n in graph.nodes():
+            string_list=[]
+            verbs_string=graph.nodes[n]["verb"]
+            verbs_string=verbs_string.split("\n")
+            for verb in verbs_string:
+                try:
+                    first_verb=re.search(r'\((.*?)\.1', verb).group(1)
+                except AttributeError:
+                    try:
+                        first_verb=re.search(r'\((.*?)\.2', verb).group(1)
+                    except:
+                        first_verb="None"
+                string_list.append(first_verb)
+            component_to_string_list_dict[n]=string_list
+            for s in string_list:
+                if s in string_to_component_list_dict.keys():
+                    component_list=string_to_component_list_dict[s]
+                    component_list.append(n)
+                    string_to_component_list_dict[s]=component_list
+                else:
+                    string_to_component_list_dict[s]=[n]
+
+        return component_to_string_list_dict, string_to_component_list_dict
     
     def parse_graph_from_txt(self,filename):
         passedComponent=False

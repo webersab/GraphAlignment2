@@ -11,7 +11,7 @@ import os
 precision_values=[]
 recall_values=[]
 
-for filename in os.listdir("/disk/scratch_big/sweber/GraphAlignment2/combinedTestResults/"):
+for filename in os.listdir("/disk/scratch_big/sweber/GraphAlignment2/testResultsMulti2/"):
     with open("/disk/scratch_big/sweber/GraphAlignment2/combinedTestResults/"+filename, 'r') as inF:
         for line in inF:
             if "precision" in line:
@@ -25,4 +25,4 @@ for filename in os.listdir("/disk/scratch_big/sweber/GraphAlignment2/combinedTes
                 
 pl.plot(recall_values, precision_values, "ro")
 pl.show()
-pl.savefig('prec_recDE.png')
+pl.savefig('prec_recMULT2.png')

@@ -66,6 +66,7 @@ def find_english_graph_with_similar_density(german_graph,english_graph_directory
     density=nx.density(german_graph)
     min_difference=100
     chosen_graph=None
+    graph_name=""
     for filename in os.listdir(english_graph_directory):
         graph=pickle.load(open(english_graph_directory+filename,"rb"))
         english_density=nx.density(graph)
@@ -75,13 +76,14 @@ def find_english_graph_with_similar_density(german_graph,english_graph_directory
         if difference<min_difference:
             min_difference=difference
             chosen_graph=graph
+            graph_name=english_graph_directory+filename
                 
-    return chosen_graph
+    return chosen_graph, graph_name
 
 def align_all_german_to_english(german_input_folder,english_input_folder,german_lambda_list, output_folder):
-    comp_dict=pickle.load(open("comp_dict.pickle", "rb" ))
     for filename in os.listdir(german_input_folder):
         for lam in german_lambda_list:
+            print("processing " , filename,lam)
             G=parse_to_graph.constructGraphFromFile(german_input_folder+filename, lam)
             if G == None:
                 print("g is none")
@@ -95,20 +97,39 @@ def align_all_german_to_english(german_input_folder,english_input_folder,german_
             if type_pair not in os.listdir(english_input_folder):
                 pair=type_pair.split("#")
                 type_pair=pair[1]+"#"+pair[0]
-            H=find_english_graph_with_similar_density(G,english_input_folder+type_pair+"/")
+            H, H_filename=find_english_graph_with_similar_density(G,english_input_folder+type_pair+"/")
+            print("pairing with ",H_filename)
+            #This is where we need do create a new comp dict!!
+            comp_dict=Component_dict(german_input_folder+filename, H_filename, "vectors-de.txt", "vectors-en.txt", 5)
+            print("done building comp dict")
             multi_graph=align(G,H,comp_dict)
+            print("done aligning")
             pickle.dump(multi_graph, open(output_folder+filename+str(lam)+".pickle", "wb" ) ) 
-            print(nx.density(G),nx.density(H),nx.density(multi_graph))
+            print("de density: ",nx.density(G),"en density: ",nx.density(H),"mul density: ",nx.density(multi_graph))
             print("Pickled ",filename+str(lam))
     return None
 
-    #%%    
+def translate_english_graph_to_german(english_input_folder,english_lambda_list, output_folder):
+    #generate an reverse component dict for this one!
+    comp_dict=pickle.load(open("comp_dict.pickle", "rb" ))
+    for filename in os.listdir(english_input_folder):
+        for lam in english_lambda_list:
+            return None
+   
 if __name__ == '__main__':
+    #graph=pickle.load(open("/disk/scratch_big/sweber/GraphAlignment2/mergedGraphPickles/event#misc/merged_graphEvent#Misc0.059.pickle", "rb" ))
+    #for n in graph.nodes():
+        #print("-------------")
+        #print(n)
+        #print(graph.nodes[n])                       
+    #comp_dict=pickle.load(open("comp_dict.pickle", "rb" ))
+    #print(comp_dict.component_to_string_list_dict_de)
     #create the alignment dictionaries
     #comp_dict=Component_dict("persLoc0150de.txt", "persLoc0150.txt", "vectors-de.txt", "vectors-en.txt", 5)
     #pickle.dump(comp_dict, open("comp_dict.pickle", "wb" ) )
     #print("tutut")
-    #german_lambda_list=[0.15,0.25,0.34,0.44,0.55,0.64,0.75,0.85,0.12,0.22,0.32,0.42,0.52,0.62,0.72,0.82,0.17,
-                        #0.27,0.37,0.47,0.57,0.67,0.77,0.87,0.99]
-    german_lambda_list=[0.015, 0.025, 0.035, 0.045, 0.055, 0.065, 0.075, 0.085, 0.0125, 0.0225, 0.0325, 0.0425, 0.0525, 0.0625, 0.0725, 0.0825, 0.0175, 0.0275, 0.0375, 0.0475, 0.0575, 0.0675, 0.0775, 0.0875, 0.0999]
-    align_all_german_to_english("/disk/scratch_big/sweber/GraphAlignment2/justGraphsLowL/","/disk/scratch_big/sweber/GraphAlignment2/mergedGraphPickles/",german_lambda_list, "/disk/scratch_big/sweber/GraphAlignment2/multilingual_graphs_low_l/")
+    german_lambda_list=[0.15,0.25,0.34,0.44,0.55,0.64,0.75,0.85,0.12,0.22,0.32,0.42,0.52,0.62,0.72,0.82,0.17,
+                        0.27,0.37,0.47,0.57,0.67,0.77,0.87,0.99]
+    
+    #german_lambda_list=[0.015, 0.025, 0.035, 0.045, 0.055, 0.065, 0.075, 0.085, 0.0125, 0.0225, 0.0325, 0.0425, 0.0525, 0.0625, 0.0725, 0.0825, 0.0175, 0.0275, 0.0375, 0.0475, 0.0575, 0.0675, 0.0775, 0.0875, 0.0999]
+    align_all_german_to_english("/disk/scratch_big/sweber/GraphAlignment2/justGraphsHighL/","/disk/scratch_big/sweber/GraphAlignment2/mergedGraphPickles/",german_lambda_list, "/disk/scratch_big/sweber/GraphAlignment2/multilingual_graphs/")

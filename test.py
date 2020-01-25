@@ -103,7 +103,9 @@ def analyze_errors(graph, relation_tuple):
             for j in rel2_nodes:
                 if j in connected_component:
                     print("in conn comp")
-                    return
+                    print(len(connected_component))
+                    print("shortest path",nx.shortest_path_length(graph.to_undirected(),source=k,target=j))
+                    return both_in_graph, "n"
     return both_in_graph,"n"    
     
 
@@ -300,8 +302,14 @@ def debug_test(sentence_to_relations_dict,lambda_value,graphs_file_path_de, grap
         #f.write("\n recall: "+str(tp/(tp+fn)))
     #f.close()
     #return test_dict
-def debug_test_2(lambda_list,sentence_to_relations_dict,graphs_file_path_de, graphs_file_path_multi, language_flag):
+def debug_test_2(lambda_list,sentence_to_relations_dict,graphs_file_path_de, graphs_file_path_multi):
 
+    total=0
+    tp=0
+    tn=0
+    fp=0
+    fn=0
+    
     for sentence in sentence_to_relations_dict:
         relation_dict=sentence_to_relations_dict[sentence]
         judgement=relation_dict["judgement"]
@@ -316,18 +324,19 @@ def debug_test_2(lambda_list,sentence_to_relations_dict,graphs_file_path_de, gra
             relations_list2.append(relation[0])
             
         #for each of the type pairs get a graph
-        candidate_graphs_de=set()
-        candidate_graphs_multi=set()
+        candidate_graphs_de={}
+        candidate_graphs_multi={}
         for lam in lambda_list:
+            graph_dict_de=get_graphs_for_lambda(lam,graphs_file_path_de)
+            graph_dict_multi=get_graphs_for_lambda_multi(lam,graphs_file_path_multi)
             for type_pair in types_set:
                 try:
-                    candidate_graphs_de.add(graph_dict_de[type_pair])
-                    candidate_graphs_multi.add(graph_dict_multi[type_pair])
+                    candidate_graphs_de[type_pair]=graph_dict_de[type_pair]
+                    candidate_graphs_multi[type_pair]=graph_dict_multi[type_pair]
                 except KeyError:
-                    candidate_graphs_de.add(graph_dict_de["thing#thing"])
-                    candidate_graphs_multi.add(graph_dict_multi["thing#thing"])
+                    candidate_graphs_de[type_pair]=graph_dict_de["thing#thing"]
+                    candidate_graphs_multi[type_pair]=graph_dict_multi["thing#thing"]                                    
                     continue
-        
             #get all combinations of relations
             our_judgement_set=set()
             both_in_graph_set=set()
@@ -336,7 +345,7 @@ def debug_test_2(lambda_list,sentence_to_relations_dict,graphs_file_path_de, gra
             if "noRelation" in relations_list2:
                 relations_list2.remove("noRelation")
             all_possible_combinations_of_relations= [(x,y) for x in relations_list1 for y in relations_list2]
-            for graph in candidate_graphs_de:
+            for type_pair, graph in candidate_graphs_de.items():
                 for relation_tuple in all_possible_combinations_of_relations:
                     both_in_graph,our_judgement=find_entailment(graph, relation_tuple)
                     our_judgement_set.add(our_judgement)
@@ -348,19 +357,21 @@ def debug_test_2(lambda_list,sentence_to_relations_dict,graphs_file_path_de, gra
                         both_in_graph,our_judgement=find_entailment(graph, relation_tuple)
             #compare our judgement with annotation
                
-            total+=1
             if judgement=="y":
                 if "y" in our_judgement_set:
                     tp+=1
                     #print("-----------------True positive-----------------")
                     #print(sentence, relations_list1, relations_list2)
                 else:
-                    print("------False negative, DE---------------")
-                    print(sentence, judgement, our_judgement_set)
-                    print(relations_list1, relations_list2)
-                    for graph in candidate_graphs_de:
-                        print(nx.density(graph))
-                        print(analyze_errors(graph, relation_tuple))
+                    if True in both_in_graph_set:
+                        print("------False negative, DE"+str(lam)+"---------------")
+                        print(sentence, judgement, our_judgement_set)
+                        print(relations_list1, relations_list2)
+                        for type_pair , graph in candidate_graphs_de.items():
+                            both_in_graph, our_judgement=analyze_errors(graph, relation_tuple)
+                            if both_in_graph:
+                                print("both in ",lam,type_pair)
+                                print(nx.density(graph))
                     fn+=1
             else:
                 if "y" in our_judgement_set:
@@ -368,7 +379,7 @@ def debug_test_2(lambda_list,sentence_to_relations_dict,graphs_file_path_de, gra
                 else:
                     tn+=1
         
-            for graph in candidate_graphs_multi:
+            for type_pair, graph in candidate_graphs_multi.items():
                 for relation_tuple in all_possible_combinations_of_relations:
                     both_in_graph,our_judgement=find_entailment(graph, relation_tuple)
                     our_judgement_set.add(our_judgement)
@@ -380,19 +391,21 @@ def debug_test_2(lambda_list,sentence_to_relations_dict,graphs_file_path_de, gra
                         both_in_graph,our_judgement=find_entailment(graph, relation_tuple)
             #compare our judgement with annotation
                
-            total+=1
             if judgement=="y":
                 if "y" in our_judgement_set:
                     tp+=1
                     #print("-----------------True positive-----------------")
                     #print(sentence, relations_list1, relations_list2)
                 else:
-                    print("------False negative, MULTI---------------")
-                    print(sentence, judgement, our_judgement_set)
-                    print(relations_list1, relations_list2)
-                    for graph in candidate_graphs_multi:
-                        print(nx.density(graph))
-                        print(analyze_errors(graph, relation_tuple))
+                    if True in both_in_graph_set:
+                        print("------False negative, MULTI"+str(lam)+"---------------")
+                        print(sentence, judgement, our_judgement_set)
+                        print(relations_list1, relations_list2)
+                        for type_pair, graph in candidate_graphs_multi.items():
+                            both_in_graph, our_judgement=analyze_errors(graph, relation_tuple)
+                            if both_in_graph:
+                                print("both in ",lam,type_pair)
+                                print(nx.density(graph))
                     fn+=1
             else:
                 if "y" in our_judgement_set:
@@ -414,7 +427,8 @@ def test(sentence_to_relations_dict,lambda_value,graphs_file_path, language_flag
     tn=0
     fp=0
     fn=0
-
+    #not_in_graph_count=0
+    print(len(sentence_to_relations_dict.keys()))
     for sentence in sentence_to_relations_dict:
         relation_dict=sentence_to_relations_dict[sentence]
         judgement=relation_dict["judgement"]
@@ -458,36 +472,46 @@ def test(sentence_to_relations_dict,lambda_value,graphs_file_path, language_flag
                 for relation_tuple in all_possible_combinations_of_relations:
                     both_in_graph,our_judgement=find_entailment(graph, relation_tuple)
         #compare our judgement with annotation
-           
-        total+=1
-        if judgement=="y":
-            if "y" in our_judgement_set:
-                tp+=1
-                #print("-----------------True positive-----------------")
-                #print(sentence, relations_list1, relations_list2)
-            else:
-                #print("------False negative---------------")
-                #print(sentence, judgement, our_judgement_set)
-                #print(relations_list1, relations_list2)
-                #print(analyze_errors(graph, relation_tuple))
-                fn+=1
+        """
+        if True not in both_in_graph_set:
+            not_in_graph_count+=1
+            print(not_in_graph_count)
+        """    
+        
+        if True not in both_in_graph_set:
+            continue
         else:
-            if "y" in our_judgement_set:
-                fp+=1
+            if judgement=="y":
+                if "y" in our_judgement_set:
+                    tp+=1
+                    #print("-----------------True positive-----------------")
+                    #print(sentence, relations_list1, relations_list2)
+                else:
+                    #print("------False negative---------------")
+                    #print(sentence, judgement, our_judgement_set)
+                    #print(relations_list1, relations_list2)
+                    #print(analyze_errors(graph, relation_tuple))
+                    fn+=1
             else:
-                tn+=1
+                if "y" in our_judgement_set:
+                    fp+=1
+                else:
+                    tn+=1
+            total+=1
         
     #fill test_dict object with stats
-    #print("tp ",tp, " tn ",tn," fn ",fn," fp ", fp)
-    #print("\n precision: "+str(tp/(tp+fp)))
-    #print("\n recall: "+str(tp/(tp+fn)))
-    #if tp+tn+fn+fp!=total:
-        #print("somehting went wrong with the counting")
-    with open("/disk/scratch_big/sweber/GraphAlignment2/testResultsMulti2/"+str(lambda_value)+'.txt', 'w') as f:
+    print("tp ",tp, " tn ",tn," fn ",fn," fp ", fp)
+    print("\n precision: "+str(tp/(tp+fp)))
+    print("\n recall: "+str(tp/(tp+fn)))
+    if tp+tn+fn+fp!=total:
+        print("somehting went wrong with the counting")
+    #print(not_in_graph_count)
+    with open("/disk/scratch_big/sweber/GraphAlignment2/adjustedTestDe/"+str(lambda_value)+'.txt', 'w') as f:
         f.write("\n"+str(lambda_value))
         f.write("\n tp "+str(tp)+" tn "+str(tn)+" fn "+str(fn)+" fp "+str(fp))
         f.write("\n precision: "+str(tp/(tp+fp)))
         f.write("\n recall: "+str(tp/(tp+fn)))
+        f.write("\n total: "+str(total))
     f.close()
     #return test_dict
 
@@ -495,6 +519,7 @@ def test(sentence_to_relations_dict,lambda_value,graphs_file_path, language_flag
 if __name__ == '__main__':
     #parallel -j72 python test.py ::: 0.015 0.025 0.035 0.045 0.055 0.065 0.075 0.085 0.0125 0.0225 0.0325 0.0425 0.0525 0.0625 0.0725 0.0825 0.0175 0.0275 0.0375 0.0475 0.0575 0.0675 0.0775 0.0875 0.0999
     #parallel -j35 python test.py ::: 0.15 0.25 0.34 0.44 0.55 0.64 0.75 0.85 0.12 0.22 0.32 0.42 0.52 0.62 0.72 0.82 0.17 0.27 0.37 0.47 0.57 0.67 0.77 0.87 0.99
-    #lam=sys.argv[1]
+    lam=sys.argv[1]
+    #lambda_list=[ 0.15, 0.25, 0.34, 0.44]
     sentence_to_relation_dict = pickle.load( open( "relation_dict2.pickle", "rb" ) )
-    test_dict=debug_test(sentence_to_relation_dict,0.25,"/disk/scratch_big/sweber/GraphAlignment2/justGraphsHighL/","/disk/scratch_big/sweber/GraphAlignment2/multilingual_graphs_combined/", "multi")
+    test_dict=test(sentence_to_relation_dict,lam,"/disk/scratch_big/sweber/GraphAlignment2/justGraphsLowL/","german")
