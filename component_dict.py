@@ -126,7 +126,10 @@ class Component_dict:
 
         for n in graph.nodes():
             string_list=[]
-            verbs_string=graph.nodes[n]["verb"]
+            try:
+                verbs_string=graph.nodes[n]["verb"]
+            except KeyError:
+                continue
             verbs_string=verbs_string.split("\n")
             for verb in verbs_string:
                 try:

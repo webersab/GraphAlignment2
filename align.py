@@ -81,7 +81,9 @@ def find_english_graph_with_similar_density(german_graph,english_graph_directory
     return chosen_graph, graph_name
 
 def align_all_german_to_english(german_input_folder,english_input_folder,german_lambda_list, output_folder):
-    for filename in os.listdir(german_input_folder):
+    list_of_missing=["LOCATION#EVENT","ORGANIZATION#EVENT","ORGANIZATION#ORGANIZATION","ORGANIZATION#PERSON","PERSON#LOCATION"]
+    #for filename in os.listdir(german_input_folder):
+    for filename in list_of_missing:
         for lam in german_lambda_list:
             print("processing " , filename,lam)
             G=parse_to_graph.constructGraphFromFile(german_input_folder+filename, lam)
