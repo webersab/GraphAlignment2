@@ -10,6 +10,7 @@ import copy
 import pickle
 import networkx as nx
 import os
+import sys
 
 
 def align(de_graph,en_graph,comp_dict):
@@ -80,35 +81,34 @@ def find_english_graph_with_similar_density(german_graph,english_graph_directory
                 
     return chosen_graph, graph_name
 
-def align_all_german_to_english(german_input_folder,english_input_folder,german_lambda_list, output_folder):
+def align_all_german_to_english(german_input_folder,english_input_folder,lam, output_folder):
     list_of_missing=["LOCATION#EVENT","ORGANIZATION#EVENT","ORGANIZATION#ORGANIZATION","ORGANIZATION#PERSON","PERSON#LOCATION"]
     #for filename in os.listdir(german_input_folder):
     for filename in list_of_missing:
-        for lam in german_lambda_list:
-            print("processing " , filename,lam)
-            G=parse_to_graph.constructGraphFromFile(german_input_folder+filename, lam)
-            if G == None:
-                print("g is none")
-                continue
-            if nx.density(G)==0:
-                print(filename, lam)
-                continue
-            type_pair=filename.lower()
-            if "thing" in type_pair:
-                type_pair=type_pair.replace("thing","misc")
-            if type_pair not in os.listdir(english_input_folder):
-                pair=type_pair.split("#")
-                type_pair=pair[1]+"#"+pair[0]
-            H, H_filename=find_english_graph_with_similar_density(G,english_input_folder+type_pair+"/")
-            print("pairing with ",H_filename)
-            #This is where we need do create a new comp dict!!
-            comp_dict=Component_dict(german_input_folder+filename, H_filename, "vectors-de.txt", "vectors-en.txt", 5)
-            print("done building comp dict")
-            multi_graph=align(G,H,comp_dict)
-            print("done aligning")
-            pickle.dump(multi_graph, open(output_folder+filename+str(lam)+".pickle", "wb" ) ) 
-            print("de density: ",nx.density(G),"en density: ",nx.density(H),"mul density: ",nx.density(multi_graph))
-            print("Pickled ",filename+str(lam))
+        print("processing " , filename,lam)
+        G=parse_to_graph.constructGraphFromFile(german_input_folder+filename, lam)
+        if G == None:
+            print("g is none")
+            continue
+        if nx.density(G)==0:
+            print(filename, lam)
+            continue
+        type_pair=filename.lower()
+        if "thing" in type_pair:
+            type_pair=type_pair.replace("thing","misc")
+        if type_pair not in os.listdir(english_input_folder):
+            pair=type_pair.split("#")
+            type_pair=pair[1]+"#"+pair[0]
+        H, H_filename=find_english_graph_with_similar_density(G,english_input_folder+type_pair+"/")
+        print("pairing with ",H_filename)
+        #This is where we need do create a new comp dict!!
+        comp_dict=Component_dict(german_input_folder+filename, H_filename, "vectors-de.txt", "vectors-en.txt", 5)
+        print("done building comp dict")
+        multi_graph=align(G,H,comp_dict)
+        print("done aligning")
+        pickle.dump(multi_graph, open(output_folder+filename+str(lam)+".pickle", "wb" ) ) 
+        print("de density: ",nx.density(G),"en density: ",nx.density(H),"mul density: ",nx.density(multi_graph))
+        print("Pickled ",filename+str(lam))
     return None
 
 def translate_english_graph_to_german(english_input_folder,english_lambda_list, output_folder):
@@ -132,6 +132,6 @@ if __name__ == '__main__':
     #print("tutut")
     german_lambda_list=[0.15,0.25,0.34,0.44,0.55,0.64,0.75,0.85,0.12,0.22,0.32,0.42,0.52,0.62,0.72,0.82,0.17,
                         0.27,0.37,0.47,0.57,0.67,0.77,0.87,0.99]
-    
+    german_lambda=sys.argv[1]
     #german_lambda_list=[0.015, 0.025, 0.035, 0.045, 0.055, 0.065, 0.075, 0.085, 0.0125, 0.0225, 0.0325, 0.0425, 0.0525, 0.0625, 0.0725, 0.0825, 0.0175, 0.0275, 0.0375, 0.0475, 0.0575, 0.0675, 0.0775, 0.0875, 0.0999]
-    align_all_german_to_english("/disk/scratch_big/sweber/GraphAlignment2/justGraphsHighL/","/disk/scratch_big/sweber/GraphAlignment2/mergedGraphPickles/",german_lambda_list, "/disk/scratch_big/sweber/GraphAlignment2/multilingual_graphs/")
+    align_all_german_to_english("/disk/scratch_big/sweber/GraphAlignment2/justGraphsHighL/","/disk/scratch_big/sweber/GraphAlignment2/mergedGraphPickles/",german_lambda, "/disk/scratch_big/sweber/GraphAlignment2/multilingual_graphs/")
