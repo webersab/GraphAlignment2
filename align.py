@@ -81,10 +81,25 @@ def find_english_graph_with_similar_density(german_graph,english_graph_directory
                 
     return chosen_graph, graph_name
 
-def align_all_german_to_english(german_input_folder,english_input_folder,lam, output_folder):
-    list_of_missing=["LOCATION#EVENT","ORGANIZATION#EVENT","ORGANIZATION#ORGANIZATION","ORGANIZATION#PERSON","PERSON#LOCATION"]
-    #for filename in os.listdir(german_input_folder):
-    for filename in list_of_missing:
+def find_english_graph_with_highest_density(german_graph,english_graph_directory):
+    max_density=0
+    chosen_graph=None
+    graph_name=""
+    for filename in os.listdir(english_graph_directory):
+        graph=pickle.load(open(english_graph_directory+filename,"rb"))
+        english_density=nx.density(graph)
+        if english_density==0:
+            continue
+        if english_density>max_density:
+            max_density=english_density
+            chosen_graph=graph
+            graph_name=english_graph_directory+filename
+    return chosen_graph, graph_name
+
+def align_all_german_to_english(german_input_folder,english_input_folder,lam, output_folder, densityMatch="equal"):
+    #list_of_missing=["LOCATION#EVENT","ORGANIZATION#EVENT","ORGANIZATION#ORGANIZATION","ORGANIZATION#PERSON","PERSON#LOCATION"]
+    for filename in os.listdir(german_input_folder):
+    #for filename in list_of_missing:
         print("processing " , filename,lam)
         G=parse_to_graph.constructGraphFromFile(german_input_folder+filename, lam)
         if G == None:
@@ -99,7 +114,10 @@ def align_all_german_to_english(german_input_folder,english_input_folder,lam, ou
         if type_pair not in os.listdir(english_input_folder):
             pair=type_pair.split("#")
             type_pair=pair[1]+"#"+pair[0]
-        H, H_filename=find_english_graph_with_similar_density(G,english_input_folder+type_pair+"/")
+        if densityMatch=="equal":
+            H, H_filename=find_english_graph_with_similar_density(G,english_input_folder+type_pair+"/")
+        elif densityMatch=="highest":
+            H, H_filename=find_english_graph_with_highest_density(G,english_input_folder+type_pair+"/")
         print("pairing with ",H_filename)
         #This is where we need do create a new comp dict!!
         comp_dict=Component_dict(german_input_folder+filename, H_filename, "vectors-de.txt", "vectors-en.txt", 5)
