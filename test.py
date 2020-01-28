@@ -164,6 +164,11 @@ def find_entailment(graph, relation_tuple):
         both_in_graph=True
     else: 
         return both_in_graph,"n"
+    
+    #hacky solutiion for too many things with "be"
+    if "sein" in rel1 or "sein" in rel2:
+        return both_in_graph, "n"
+    
     #are they in same cluster? 
     overlap = [value for value in rel1_nodes if value in rel2_nodes] 
     if len(overlap)>0:
@@ -506,7 +511,7 @@ def test(sentence_to_relations_dict,lambda_value,graphs_file_path, language_flag
     if tp+tn+fn+fp!=total:
         print("somehting went wrong with the counting")
     #print(not_in_graph_count)
-    with open("/disk/scratch_big/sweber/GraphAlignment2/adjustedTestDe/"+str(lambda_value)+'.txt', 'w') as f:
+    with open("/disk/scratch_big/sweber/GraphAlignment2/testResults/MultiNoSein/"+str(lambda_value)+'.txt', 'w') as f:
         f.write("\n"+str(lambda_value))
         f.write("\n tp "+str(tp)+" tn "+str(tn)+" fn "+str(fn)+" fp "+str(fp))
         f.write("\n precision: "+str(tp/(tp+fp)))
@@ -522,4 +527,4 @@ if __name__ == '__main__':
     lam=sys.argv[1]
     #lambda_list=[ 0.15, 0.25, 0.34, 0.44]
     sentence_to_relation_dict = pickle.load( open( "relation_dict2.pickle", "rb" ) )
-    test_dict=test(sentence_to_relation_dict,lam,"/disk/scratch_big/sweber/GraphAlignment2/justGraphsLowL/","german")
+    test_dict=test(sentence_to_relation_dict,lam,"/disk/scratch_big/sweber/GraphAlignment2/multilingual_graphs/","multi")
