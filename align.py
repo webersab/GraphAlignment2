@@ -129,12 +129,9 @@ def align_all_german_to_english(german_input_folder,english_input_folder,lam, ou
         print("Pickled ",filename+str(lam))
     return None
 
-def translate_english_graph_to_german(english_input_folder,english_lambda_list, output_folder):
-    #generate an reverse component dict for this one!
-    comp_dict=pickle.load(open("comp_dict.pickle", "rb" ))
-    for filename in os.listdir(english_input_folder):
-        for lam in english_lambda_list:
-            return None
+def translate_english_graph_to_german(english_graph, verctors_de, vectors_en, number_of_nearest_neighbors):
+
+    return None
    
 if __name__ == '__main__':
     #graph=pickle.load(open("/disk/scratch_big/sweber/GraphAlignment2/mergedGraphPickles/event#misc/merged_graphEvent#Misc0.059.pickle", "rb" ))

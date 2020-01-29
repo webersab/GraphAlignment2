@@ -166,8 +166,8 @@ def find_entailment(graph, relation_tuple):
         return both_in_graph,"n"
     
     #hacky solutiion for too many things with "be"
-    if "sein" in rel1 or "sein" in rel2:
-        return both_in_graph, "n"
+    #if "sein" in rel1 or "sein" in rel2:
+        #return both_in_graph, "n"
     
     #are they in same cluster? 
     overlap = [value for value in rel1_nodes if value in rel2_nodes] 
