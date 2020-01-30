@@ -216,7 +216,7 @@ def translate_all_english_graphs(english_graph_folder, vectors_de, vectors_en, n
    
 if __name__ == '__main__':
     english_graph_folder=sys.argv[1]
-    translate_all_english_graphs(english_graph_folder, "vectors-de.txt", "vectors-en", 3, "translatedGraphsEnDe")
+    translate_all_english_graphs(english_graph_folder, "vectors-de.txt", "vectors-en.txt", 3, "translatedGraphsEnDe")
     #en_graph=parse_to_graph.constructGraphFromFile("persLoc0150.txt", 0.0150)
     #print(len(en_graph))
     #translated_graph=translate_graph(en_graph,"vectors-de.txt", "vectors-en.txt", 3)
