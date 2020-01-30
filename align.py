@@ -16,7 +16,6 @@ import re
 
 #custom
 import parse_to_graph
-import dict_utils
 
 
 def align(de_graph,en_graph,comp_dict):
@@ -159,7 +158,7 @@ def translate_graph(source_graph, vectors_tgt, vectors_src, number_of_nearest_ne
             string_list.append(first_verb)
         new_verb_set=set()
         for v in string_list:
-            new_verbs=dict_utils.get_nn(v, src_emb, src_id2word, tgt_emb, tgt_id2word, number_of_nearest_neighbors)
+            new_verbs=get_nn(v, src_emb, src_id2word, tgt_emb, tgt_id2word, number_of_nearest_neighbors)
             if new_verbs!="out of vocabulary":
                 for vs in new_verbs:
                     new_verb_set.add(vs)
@@ -186,6 +185,21 @@ def load_vec(emb_path, nmax=50000):
     id2word = {v: k for k, v in word2id.items()}
     embeddings = np.vstack(vectors)
     return embeddings, id2word, word2id
+
+def get_nn(word, src_emb, src_id2word, tgt_emb, tgt_id2word, K=5):
+    #print("Nearest neighbors of \"%s\":" % word)
+    word2id = {v: k for k, v in src_id2word.items()}
+    try:
+        word_emb = src_emb[word2id[word]]
+    except KeyError:
+        return "out of vocabulary"
+    scores = (tgt_emb / np.linalg.norm(tgt_emb, 2, 1)[:, None]).dot(word_emb / np.linalg.norm(word_emb))
+    k_best = scores.argsort()[-K:][::-1]
+    ret_best=[]
+    for i, idx in enumerate(k_best):
+        #print('%.4f - %s' % (scores[idx], tgt_id2word[idx]))
+        ret_best.append(tgt_id2word[idx])
+    return ret_best
 
 def translate_all_english_graphs(english_graph_folder, vectors_de, vectors_en, number_of_neighbours, output_folder):
     for filename in os.listdir(english_graph_folder):
