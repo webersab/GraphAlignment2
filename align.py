@@ -5,12 +5,18 @@ Created on Thu Jan  2 11:11:13 2020
 @author: Sabine
 """
 from component_dict import Component_dict
-import parse_to_graph
 import copy
 import pickle
 import networkx as nx
 import os
 import sys
+import io
+import numpy as np
+import re
+
+#custom
+import parse_to_graph
+import dict_utils
 
 
 def align(de_graph,en_graph,comp_dict):
@@ -129,11 +135,77 @@ def align_all_german_to_english(german_input_folder,english_input_folder,lam, ou
         print("Pickled ",filename+str(lam))
     return None
 
-def translate_english_graph_to_german(english_graph, verctors_de, vectors_en, number_of_nearest_neighbors):
+def translate_graph(source_graph, vectors_tgt, vectors_src, number_of_nearest_neighbors):
+    nmax = 50000  # maximum number of word embeddings to load
+    src_emb, src_id2word, src_word2id = load_vec(vectors_src, nmax)
+    tgt_emb, tgt_id2word, tgt_word2id = load_vec(vectors_tgt, nmax)
+    for node in source_graph.nodes():
+        try:
+            english_verbs=source_graph.nodes[node]["verb"]
+        except KeyError:
+            print("verbless node ",node)
+            continue
+        english_verbs_split=english_verbs.split("\n")
+        german_verbs=""
+        string_list=[]
+        for verb in english_verbs_split:
+            try:
+                first_verb=re.search(r'\((.*?)\.1', verb).group(1)
+            except AttributeError:
+                try:
+                    first_verb=re.search(r'\((.*?)\.2', verb).group(1)
+                except:
+                    first_verb="None"
+            string_list.append(first_verb)
+        new_verb_set=set()
+        for v in string_list:
+            new_verbs=dict_utils.get_nn(v, src_emb, src_id2word, tgt_emb, tgt_id2word, number_of_nearest_neighbors)
+            if new_verbs!="out of vocabulary":
+                for vs in new_verbs:
+                    new_verb_set.add(vs)
+        for verb in new_verb_set:
+            if not verb[0].isupper():
+                german_verbs+="("+verb+".1,"+verb+".2)\n"
+        #print(english_verbs+german_verbs)
+        source_graph.nodes[node]["verb"]=english_verbs+german_verbs
+    return source_graph
 
+def load_vec(emb_path, nmax=50000):
+    vectors = []
+    word2id = {}
+    with io.open(emb_path, 'r', encoding='utf-8', newline='\n', errors='ignore') as f:
+        next(f)
+        for i, line in enumerate(f):
+            word, vect = line.rstrip().split(' ', 1)
+            vect = np.fromstring(vect, sep=' ')
+            assert word not in word2id, 'word found twice'
+            vectors.append(vect)
+            word2id[word] = len(word2id)
+            if len(word2id) == nmax:
+                break
+    id2word = {v: k for k, v in word2id.items()}
+    embeddings = np.vstack(vectors)
+    return embeddings, id2word, word2id
+
+def translate_all_english_graphs(english_graph_folder, vectors_de, vectors_en, number_of_neighbours, output_folder):
+    for filename in os.listdir(english_graph_folder):
+        G=pickle.load(open(english_graph_folder+filename, "r"))
+        if G == None:
+            print("g is none")
+            continue
+        if nx.density(G)==0:
+            continue
+        translated_graph=translate_graph(G,vectors_de, vectors_en, number_of_neighbours)
+        pickle.dump(translated_graph, open(output_folder+filename, "wb" ) )
     return None
    
 if __name__ == '__main__':
+    english_graph_folder=sys.argv[1]
+    translate_all_english_graphs(english_graph_folder, "vectors-de.txt", "vectors-en", 3, "translatedGraphsEnDe")
+    #en_graph=parse_to_graph.constructGraphFromFile("persLoc0150.txt", 0.0150)
+    #print(len(en_graph))
+    #translated_graph=translate_graph(en_graph,"vectors-de.txt", "vectors-en.txt", 3)
+    #pickle.dump(open("translatedEnglishToGerman.pickle","w"))
     #graph=pickle.load(open("/disk/scratch_big/sweber/GraphAlignment2/mergedGraphPickles/event#misc/merged_graphEvent#Misc0.059.pickle", "rb" ))
     #for n in graph.nodes():
         #print("-------------")
@@ -142,11 +214,11 @@ if __name__ == '__main__':
     #comp_dict=pickle.load(open("comp_dict.pickle", "rb" ))
     #print(comp_dict.component_to_string_list_dict_de)
     #create the alignment dictionaries
-    #comp_dict=Component_dict("persLoc0150de.txt", "persLoc0150.txt", "vectors-de.txt", "vectors-en.txt", 5)
+    #comp_dict=Component_dict("persLoc0150de.txt", "merged_graphPerson#Location0.02.pickle", "vectors-de.txt", "vectors-en.txt", 5)
     #pickle.dump(comp_dict, open("comp_dict.pickle", "wb" ) )
     #print("tutut")
-    german_lambda_list=[0.15,0.25,0.34,0.44,0.55,0.64,0.75,0.85,0.12,0.22,0.32,0.42,0.52,0.62,0.72,0.82,0.17,
-                        0.27,0.37,0.47,0.57,0.67,0.77,0.87,0.99]
-    german_lambda=sys.argv[1]
+    #german_lambda_list=[0.15,0.25,0.34,0.44,0.55,0.64,0.75,0.85,0.12,0.22,0.32,0.42,0.52,0.62,0.72,0.82,0.17,
+                        #0.27,0.37,0.47,0.57,0.67,0.77,0.87,0.99]
+    #german_lambda=sys.argv[1]
     #german_lambda_list=[0.015, 0.025, 0.035, 0.045, 0.055, 0.065, 0.075, 0.085, 0.0125, 0.0225, 0.0325, 0.0425, 0.0525, 0.0625, 0.0725, 0.0825, 0.0175, 0.0275, 0.0375, 0.0475, 0.0575, 0.0675, 0.0775, 0.0875, 0.0999]
-    align_all_german_to_english("/disk/scratch_big/sweber/GraphAlignment2/justGraphsHighL/","/disk/scratch_big/sweber/GraphAlignment2/mergedGraphPickles/",german_lambda, "/disk/scratch_big/sweber/GraphAlignment2/multilingual_graphs/")
+    #align_all_german_to_english("/disk/scratch_big/sweber/GraphAlignment2/justGraphsHighL/","/disk/scratch_big/sweber/GraphAlignment2/mergedGraphPickles/",german_lambda, "/disk/scratch_big/sweber/GraphAlignment2/multilingual_graphs/")
