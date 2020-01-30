@@ -203,6 +203,7 @@ def get_nn(word, src_emb, src_id2word, tgt_emb, tgt_id2word, K=5):
 
 def translate_all_english_graphs(english_graph_folder, vectors_de, vectors_en, number_of_neighbours, output_folder):
     for filename in os.listdir(english_graph_folder):
+        print(english_graph_folder+filename)
         G=pickle.load(open(english_graph_folder+filename, "r"))
         if G == None:
             print("g is none")
