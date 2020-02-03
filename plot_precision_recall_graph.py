@@ -8,21 +8,53 @@ Created on Wed Jan 22 13:00:49 2020
 import matplotlib.pyplot as pl
 import os
  
-precision_values=[]
-recall_values=[]
+precision_values1=[]
+recall_values1=[]
 
-for filename in os.listdir("/disk/scratch_big/sweber/GraphAlignment2/adjustedTestDe/"):
-    with open("/disk/scratch_big/sweber/GraphAlignment2/adjustedTestDe/"+filename, 'r') as inF:
+for filename in os.listdir("/disk/scratch_big/sweber/GraphAlignment2/testResults/DeMitSein/"):
+    with open("/disk/scratch_big/sweber/GraphAlignment2/testResults/DeMitSein/"+filename, 'r') as inF:
         for line in inF:
             if "precision" in line:
                 parts=line.split(" ")
                 value=parts[2]
-                precision_values.append(float(value))
+                precision_values1.append(float(value))
             elif "recall" in line: 
                 parts=line.split(" ")
                 value=parts[2]
-                recall_values.append(float(value))
+                recall_values1.append(float(value))
+
+precision_values2=[]
+recall_values2=[]
+
+for filename in os.listdir("/disk/scratch_big/sweber/GraphAlignment2/testResults/MultiMitSein/"):
+    with open("/disk/scratch_big/sweber/GraphAlignment2/testResults/MultiMitSein/"+filename, 'r') as inF:
+        for line in inF:
+            if "precision" in line:
+                parts=line.split(" ")
+                value=parts[2]
+                precision_values2.append(float(value))
+            elif "recall" in line: 
+                parts=line.split(" ")
+                value=parts[2]
+                recall_values2.append(float(value))
+
+precision_values3=[]
+recall_values3=[]
+
+for filename in os.listdir("/disk/scratch_big/sweber/GraphAlignment2/testResults/translatedEnDe/"):
+    with open("/disk/scratch_big/sweber/GraphAlignment2/testResults/translatedEnDe/"+filename, 'r') as inF:
+        for line in inF:
+            if "precision" in line:
+                parts=line.split(" ")
+                value=parts[2]
+                precision_values3.append(float(value))
+            elif "recall" in line: 
+                parts=line.split(" ")
+                value=parts[2]
+                recall_values3.append(float(value))
                 
-pl.plot(recall_values, precision_values, "ro")
+pl.plot(recall_values1, precision_values1, "ro")
+pl.plot(recall_values2, precision_values2, "bo")
+pl.plot(recall_values3, precision_values3, "go")
 pl.show()
-pl.savefig('prec_recAdjustedDe.png')
+pl.savefig('prec_recDeMul.png')

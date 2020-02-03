@@ -9,6 +9,7 @@ import collections
 import re
 import pickle
 import os
+import sys
 
 def get_string_from_relation(relation):
     if "NEG" in relation:
@@ -260,12 +261,17 @@ def get_the_stats(G):
                  list(G.nodes_with_selfloops())) 
 
     #print("List of all nodes we can go to in a single step from node 2: ", 
-                                                    #list(G.neigh
-"""                                                    
+                                                    #list(G.neigh                                                    
 if __name__ == '__main__':
-    lambda_list=[0.0049,0.0099,0.015,0.020,0.025,0.030,0.035,0.040,0.045,0.050,0.059,0.100,0.200]
-    folder_list=["Misc#Misc","Organization#Event","Organization#Misc","Organization#Person","Misc#Person","Organization#Location","Organization#Organization","Person#Event","Person#Person"]
-    for folder in folder_list:
-        for l in lambda_list:
-            make_one_graph_from_all_in_folder(l,"/disk/scratch_big/sweber/GraphAlignment2/englishGraphs/"+folder,folder)
-"""
+    #german_lambda_list=[0.015, 0.025, 0.035, 0.045, 0.055, 0.065, 0.075, 0.085, 0.0125, 0.0225, 0.0325, 0.0425, 0.0525, 0.0625, 0.0725, 0.0825, 0.0175, 0.0275, 0.0375, 0.0475, 0.0575, 0.0675, 0.0775, 0.0875, 0.0999]
+    lam=sys.argv[1]
+    #lam=0.025
+    for filename in os.listdir("/disk/scratch_big/sweber/GraphAlignment2/justGraphsLowL/"):
+        G=constructGraphFromFile("/disk/scratch_big/sweber/GraphAlignment2/justGraphsLowL/"+filename, lam)
+        if G!=None:
+            pickle.dump(G,open("/disk/scratch_big/sweber/GraphAlignment2/justGraphsLowLPickles/"+filename+str(lam)+".pickle","wb"))
+    #lambda_list=[0.0049,0.0099,0.015,0.020,0.025,0.030,0.035,0.040,0.045,0.050,0.059,0.100,0.200]
+    #folder_list=["Misc#Misc","Organization#Event","Organization#Misc","Organization#Person","Misc#Person","Organization#Location","Organization#Organization","Person#Event","Person#Person"]
+    #for folder in folder_list:
+        #for l in lambda_list:
+            #make_one_graph_from_all_in_folder(l,"/disk/scratch_big/sweber/GraphAlignment2/englishGraphs/"+folder,folder)
