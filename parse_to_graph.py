@@ -264,14 +264,18 @@ def get_the_stats(G):
                                                     #list(G.neigh                                                    
 if __name__ == '__main__':
     #german_lambda_list=[0.015, 0.025, 0.035, 0.045, 0.055, 0.065, 0.075, 0.085, 0.0125, 0.0225, 0.0325, 0.0425, 0.0525, 0.0625, 0.0725, 0.0825, 0.0175, 0.0275, 0.0375, 0.0475, 0.0575, 0.0675, 0.0775, 0.0875, 0.0999]
-    lam=sys.argv[1]
-    #lam=0.025
-    for filename in os.listdir("/disk/scratch_big/sweber/GraphAlignment2/justGraphsLowL/"):
-        G=constructGraphFromFile("/disk/scratch_big/sweber/GraphAlignment2/justGraphsLowL/"+filename, lam)
-        if G!=None:
-            pickle.dump(G,open("/disk/scratch_big/sweber/GraphAlignment2/justGraphsLowLPickles/"+filename+str(lam)+".pickle","wb"))
-    #lambda_list=[0.0049,0.0099,0.015,0.020,0.025,0.030,0.035,0.040,0.045,0.050,0.059,0.100,0.200]
-    #folder_list=["Misc#Misc","Organization#Event","Organization#Misc","Organization#Person","Misc#Person","Organization#Location","Organization#Organization","Person#Event","Person#Person"]
-    #for folder in folder_list:
-        #for l in lambda_list:
-            #make_one_graph_from_all_in_folder(l,"/disk/scratch_big/sweber/GraphAlignment2/englishGraphs/"+folder,folder)
+    #lam=sys.argv[1]
+    #parallel -j72 python test.py ::: 0.0049 0.0099 0.015 0.025 0.03 0.035 0.04 0.045 0.59 0.5 0.1
+    lam=0.025
+    for filename in os.listdir("/disk/scratch_big/sweber/GraphAlignment2/justGraphsLowLPickles/"):
+        for filenameEn in os.listdir("/disk/scratch_big/sweber/GraphAlignment2/translatedGraphsEnDe/"):
+            if str(lam) in filename and str(lam) in filenameEn:
+                deGraph=pickle.load(open("/disk/scratch_big/sweber/GraphAlignment2/justGraphsLowLPickles/"+filename,"rb"))
+                enGraph=pickle.load(open("/disk/scratch_big/sweber/GraphAlignment2/translatedGraphsEnDe/"+filenameEn,"rb"))
+                deLenght=len(deGraph)
+                mapping={}
+                for n in enGraph.nodes():
+                    mapping[n]=n+deLenght
+                newGraph=nx.relabel_nodes(enGraph,mapping)
+                combinedGraph=nx.compose(deGraph,newGraph)
+                pickle.dump(combinedGraph,open("/disk/scratch_big/sweber/GraphAlignment2/combinedDeEnTranslated/"+filename,"wb"))
