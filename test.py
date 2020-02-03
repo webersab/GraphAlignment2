@@ -27,6 +27,27 @@ def get_graphs_for_lambda(lambda_value,graphs_file_path):
             graph_dict["noType"]=graph
     return graph_dict
 
+def get_graphs_for_lambda_translated(lambda_value,graphs_file_path):
+    graph_dict={}
+    for filename in os.listdir(graphs_file_path):
+        if str(lambda_value) in filename:
+            graph=pickle.load( open( graphs_file_path+filename, "rb" ) )
+            filename=filename[12:]
+            if len(str(lambda_value))==6:
+                type_pair=filename.lower()[:-13]
+            elif len(str(lambda_value))==5:
+                type_pair=filename.lower()[:-12]
+            elif len(str(lambda_value))==4:
+                type_pair=filename.lower()[:-11]
+            if "misc" in type_pair:
+                type_pair=type_pair.replace("misc","thing")
+            graph_dict[type_pair]=graph
+            parts=type_pair.split("#")
+            graph_dict[parts[1]+"#"+parts[0]]=graph
+            if (parts[1]+"#"+parts[0])=="thing#thing":
+                graph_dict["noType"]=graph
+    return graph_dict
+
 def get_graphs_for_lambda_multi(lambda_value,graphs_file_path):
     graph_dict={}
     for filename in os.listdir(graphs_file_path):
@@ -422,8 +443,12 @@ def test(sentence_to_relations_dict,lambda_value,graphs_file_path, language_flag
     #test_dict=Test_dict(lambda_value)
     if language_flag=="german":
         graph_dict=get_graphs_for_lambda(lambda_value,graphs_file_path)
-    if language_flag=="multi":
+    elif language_flag=="multi":
         graph_dict=get_graphs_for_lambda_multi(lambda_value,graphs_file_path)
+        if graph_dict=={}:
+            print("something is wrong dict building")
+    elif language_flag=="translated":
+        graph_dict=get_graphs_for_lambda_translated(lambda_value,graphs_file_path)
         if graph_dict=={}:
             print("something is wrong dict building")
         
@@ -511,7 +536,7 @@ def test(sentence_to_relations_dict,lambda_value,graphs_file_path, language_flag
     if tp+tn+fn+fp!=total:
         print("somehting went wrong with the counting")
     #print(not_in_graph_count)
-    with open("/disk/scratch_big/sweber/GraphAlignment2/testResults/MultiMitSein/"+str(lambda_value)+'.txt', 'w') as f:
+    with open("/disk/scratch_big/sweber/GraphAlignment2/testResults/translatedEnDe/"+str(lambda_value)+'.txt', 'w') as f:
         f.write("\n"+str(lambda_value))
         f.write("\n tp "+str(tp)+" tn "+str(tn)+" fn "+str(fn)+" fp "+str(fp))
         f.write("\n precision: "+str(tp/(tp+fp)))
@@ -524,7 +549,8 @@ def test(sentence_to_relations_dict,lambda_value,graphs_file_path, language_flag
 if __name__ == '__main__':
     #parallel -j72 python test.py ::: 0.015 0.025 0.035 0.045 0.055 0.065 0.075 0.085 0.0125 0.0225 0.0325 0.0425 0.0525 0.0625 0.0725 0.0825 0.0175 0.0275 0.0375 0.0475 0.0575 0.0675 0.0775 0.0875 0.0999
     #parallel -j35 python test.py ::: 0.15 0.25 0.34 0.44 0.55 0.64 0.75 0.85 0.12 0.22 0.32 0.42 0.52 0.62 0.72 0.82 0.17 0.27 0.37 0.47 0.57 0.67 0.77 0.87 0.99
+    #parallel -j72 python test.py ::: 0.0049 0.0099 0.015 0.025 0.03 0.035 0.04 0.045 0.59 0.5 0.1
     lam=sys.argv[1]
     #lambda_list=[ 0.15, 0.25, 0.34, 0.44]
     sentence_to_relation_dict = pickle.load( open( "relation_dict2.pickle", "rb" ) )
-    test_dict=test(sentence_to_relation_dict,lam,"/disk/scratch_big/sweber/GraphAlignment2/multilingual_graphs/","multi")
+    test_dict=test(sentence_to_relation_dict,lam,"/disk/scratch_big/sweber/GraphAlignment2/translatedGraphsEnDe/","translated")
