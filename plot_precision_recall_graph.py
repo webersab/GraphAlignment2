@@ -52,9 +52,27 @@ for filename in os.listdir("/disk/scratch_big/sweber/GraphAlignment2/testResults
                 parts=line.split(" ")
                 value=parts[2]
                 recall_values3.append(float(value))
-                
+
+precision_values4=[]
+recall_values4=[]
+
+for filename in os.listdir("/disk/scratch_big/sweber/GraphAlignment2/testResults/translatedCombinedEnDe/"):
+    with open("/disk/scratch_big/sweber/GraphAlignment2/testResults/translatedCombinedEnDe/"+filename, 'r') as inF:
+        for line in inF:
+            if "precision" in line:
+                parts=line.split(" ")
+                value=parts[2]
+                precision_values4.append(float(value))
+            elif "recall" in line: 
+                parts=line.split(" ")
+                value=parts[2]
+                recall_values4.append(float(value)) 
+               
 pl.plot(recall_values1, precision_values1, "ro")
 pl.plot(recall_values2, precision_values2, "bo")
 pl.plot(recall_values3, precision_values3, "go")
-pl.show()
+pl.plot(recall_values4, precision_values4, "yo")
+print(len(recall_values4))
 pl.savefig('prec_recDeMul.png')
+pl.show()
+
