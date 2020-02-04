@@ -66,6 +66,26 @@ def get_graphs_for_lambda_multi(lambda_value,graphs_file_path):
                 graph_dict["noType"]=graph
     return graph_dict
 
+def get_graphs_for_lambda_trans_comb(lambda_value,graphs_file_path):
+    graph_dict={}
+    for filename in os.listdir(graphs_file_path):
+        if str(lambda_value) in filename:
+            graph=pickle.load( open( graphs_file_path+filename, "rb" ) )
+            if len(str(lambda_value))==6:
+                type_pair=filename.lower()[:-13]
+            elif len(str(lambda_value))==5:
+                type_pair=filename.lower()[:-12]
+            elif len(str(lambda_value))==4:
+                type_pair=filename.lower()[:-11]
+            if "misc" in type_pair:
+                type_pair=type_pair.replace("misc","thing")
+            graph_dict[type_pair]=graph
+            parts=type_pair.split("#")
+            graph_dict[parts[1]+"#"+parts[0]]=graph
+            if (parts[1]+"#"+parts[0])=="thing#thing":
+                graph_dict["noType"]=graph
+    return graph_dict
+
 def verb_negated(relation,candidate_verb):
     result = re.search('(.*)'+relation, candidate_verb)
     if result!=None:
@@ -451,6 +471,10 @@ def test(sentence_to_relations_dict,lambda_value,graphs_file_path, language_flag
         graph_dict=get_graphs_for_lambda_translated(lambda_value,graphs_file_path)
         if graph_dict=={}:
             print("something is wrong dict building")
+    elif language_flag=="trans_comb":
+        graph_dict=get_graphs_for_lambda_trans_comb(lambda_value,graphs_file_path)
+        if graph_dict=={}:
+            print("something is wrong dict building")
         
     total=0
     tp=0
@@ -536,7 +560,7 @@ def test(sentence_to_relations_dict,lambda_value,graphs_file_path, language_flag
     if tp+tn+fn+fp!=total:
         print("somehting went wrong with the counting")
     #print(not_in_graph_count)
-    with open("/disk/scratch_big/sweber/GraphAlignment2/testResults/translatedEnDe/"+str(lambda_value)+'.txt', 'w') as f:
+    with open("/disk/scratch_big/sweber/GraphAlignment2/test_results/translatedCombinedEnDe/"+str(lambda_value)+'.txt', 'w') as f:
         f.write("\n"+str(lambda_value))
         f.write("\n tp "+str(tp)+" tn "+str(tn)+" fn "+str(fn)+" fp "+str(fp))
         f.write("\n precision: "+str(tp/(tp+fp)))
@@ -552,5 +576,6 @@ if __name__ == '__main__':
     #parallel -j72 python test.py ::: 0.0049 0.0099 0.015 0.025 0.03 0.035 0.04 0.045 0.59 0.5 0.1
     lam=sys.argv[1]
     #lambda_list=[ 0.15, 0.25, 0.34, 0.44]
+    #lam=0.015
     sentence_to_relation_dict = pickle.load( open( "relation_dict2.pickle", "rb" ) )
-    test_dict=test(sentence_to_relation_dict,lam,"/disk/scratch_big/sweber/GraphAlignment2/translatedGraphsEnDe/","translated")
+    test_dict=test(sentence_to_relation_dict,lam,"/disk/scratch_big/sweber/GraphAlignment2/combinedDeEnTranslated/","trans_comb")

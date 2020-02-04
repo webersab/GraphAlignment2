@@ -261,16 +261,34 @@ def get_the_stats(G):
                  list(G.nodes_with_selfloops())) 
 
     #print("List of all nodes we can go to in a single step from node 2: ", 
-                                                    #list(G.neigh                                                    
-if __name__ == '__main__':
-    #german_lambda_list=[0.015, 0.025, 0.035, 0.045, 0.055, 0.065, 0.075, 0.085, 0.0125, 0.0225, 0.0325, 0.0425, 0.0525, 0.0625, 0.0725, 0.0825, 0.0175, 0.0275, 0.0375, 0.0475, 0.0575, 0.0675, 0.0775, 0.0875, 0.0999]
-    #lam=sys.argv[1]
-    #parallel -j72 python test.py ::: 0.0049 0.0099 0.015 0.025 0.03 0.035 0.04 0.045 0.59 0.5 0.1
-    lam=0.025
-    for filename in os.listdir("/disk/scratch_big/sweber/GraphAlignment2/justGraphsLowLPickles/"):
-        for filenameEn in os.listdir("/disk/scratch_big/sweber/GraphAlignment2/translatedGraphsEnDe/"):
-            if str(lam) in filename and str(lam) in filenameEn:
-                deGraph=pickle.load(open("/disk/scratch_big/sweber/GraphAlignment2/justGraphsLowLPickles/"+filename,"rb"))
+                                                    #list(G.neigh      
+
+def combine_german_and_tanslated_english_graphs(lam,de_input_folder,en_input_folder):
+    #all the string cutting is just due to me messing up filenaming.
+    for filenameDe in os.listdir(de_input_folder):
+        for filenameEn in os.listdir(en_input_folder):
+            #english filename
+            cutFilenameEn=filenameEn[12:]
+            cutFilenameEn=cutFilenameEn.replace(".pickle","")
+            cutFilenameEn=''.join([i for i in cutFilenameEn if not i.isdigit()])
+            cutFilenameEn=cutFilenameEn.replace(".","")
+            cutFilenameEn=cutFilenameEn.upper()
+            elementsOfEnFilename=cutFilenameEn.split("#")
+            elementsOfEnFilename=set(elementsOfEnFilename)                                         
+            #german filename
+            if "THING" in filenameDe:
+                betterFilename=filenameDe.replace("THING","MISC")
+            else:
+                betterFilename=filenameDe
+            betterFilename=betterFilename.replace(".pickle","")
+            betterFilename=''.join([i for i in betterFilename if not i.isdigit()])
+            betterFilename=betterFilename.replace(".","")
+            elementsOfBetterFilename=betterFilename.split("#")
+            elementsOfBetterFilename=set(elementsOfBetterFilename)    
+            
+            if str(lam) in filenameDe and str(lam) in filenameEn and elementsOfBetterFilename==elementsOfEnFilename:
+                print(filenameEn,filenameDe)
+                deGraph=pickle.load(open("/disk/scratch_big/sweber/GraphAlignment2/justGraphsLowLPickles/"+filenameDe,"rb"))
                 enGraph=pickle.load(open("/disk/scratch_big/sweber/GraphAlignment2/translatedGraphsEnDe/"+filenameEn,"rb"))
                 deLenght=len(deGraph)
                 mapping={}
@@ -278,4 +296,11 @@ if __name__ == '__main__':
                     mapping[n]=n+deLenght
                 newGraph=nx.relabel_nodes(enGraph,mapping)
                 combinedGraph=nx.compose(deGraph,newGraph)
-                pickle.dump(combinedGraph,open("/disk/scratch_big/sweber/GraphAlignment2/combinedDeEnTranslated/"+filename,"wb"))
+                pickle.dump(combinedGraph,open("/disk/scratch_big/sweber/GraphAlignment2/combinedDeEnTranslated/"+filenameEn[12:],"wb"))
+
+
+#if __name__ == '__main__':
+    #german_lambda_list=[0.015, 0.025, 0.035, 0.045, 0.055, 0.065, 0.075, 0.085, 0.0125, 0.0225, 0.0325, 0.0425, 0.0525, 0.0625, 0.0725, 0.0825, 0.0175, 0.0275, 0.0375, 0.0475, 0.0575, 0.0675, 0.0775, 0.0875, 0.0999]
+    #lam=sys.argv[1]
+    #parallel -j72 python test.py ::: 0.0049 0.0099 0.015 0.025 0.03 0.035 0.04 0.045 0.59 0.5 0.1
+    #lam=0.08
