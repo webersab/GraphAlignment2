@@ -68,6 +68,61 @@ def align(de_graph,en_graph,comp_dict):
                 list_of_added_english_nodes.append(neighbour)
     return multi_graph
 
+def align_and_translate(de_graph,en_graph,comp_dict,src_emb, src_id2word, src_word2id,tgt_emb, tgt_id2word, tgt_word2id):
+    #de_en_alignment_dict=comp_dict.de_en_component_dict
+    #en_de_alignment_dict=comp_dict.de_en_component_dict
+    #step 1, node alignment
+    multi_graph=copy.deepcopy(de_graph)
+    list_of_added_english_nodes=[]
+    
+    for node in de_graph.nodes():
+        if node in comp_dict.get_keys_de_en():
+            for comp in comp_dict.get_node_de_en(node):
+                aligned_node_of_en=comp
+                list_of_added_english_nodes.append(aligned_node_of_en)
+                #merge nodes in new graph
+                try:
+                    english_verbs=en_graph.node[aligned_node_of_en]["verb"]
+                except KeyError:
+                    #print("key error a")
+                    english_verbs=""
+                multi_graph.node[node]["verb"]+=" "+english_verbs
+    #step 2, adding missing nodes and edges from english graph
+    new_node_number=de_graph.number_of_nodes()+1
+    for node in en_graph.nodes():
+        if node not in list_of_added_english_nodes:
+            new_component_number=new_node_number
+            new_node_number+=1
+            multi_graph.add_node(new_component_number)
+            try:
+                #this is where we append the translation, NOT the english verbs!
+                english_verbs=en_graph.node[node]["verb"]
+                number_of_nearest_neighbors=3
+                german_verbs=translate_english_verbs_to_german(src_emb, src_id2word, src_word2id,tgt_emb, tgt_id2word, tgt_word2id,
+                                      number_of_nearest_neighbors,english_verbs)
+                multi_graph.node[new_component_number]["verb"]=german_verbs
+            except KeyError:
+                print("key error ",node)
+            list_of_added_english_nodes.append(node)
+        neighbors_nodes=en_graph.neighbors(node)
+        for neighbour in neighbors_nodes:
+            if node not in list_of_added_english_nodes and neighbour not in list_of_added_english_nodes:
+                multi_graph.add_node(new_node_number)
+                multi_graph.node[new_node_number]["verb"]=en_graph.node[neighbour]["verb"]
+                multi_graph.add_edge(new_component_number, new_node_number)
+                new_node_number+=1
+                list_of_added_english_nodes.append(neighbour)
+            elif node in list_of_added_english_nodes and neighbour not in list_of_added_english_nodes:
+                corresponding_German_nodes=comp_dict.get_node_en_de(node)
+                if corresponding_German_nodes!=None:
+                    multi_graph.add_node(new_node_number)
+                    multi_graph.node[new_node_number]["verb"]=en_graph.node[neighbour]["verb"]
+                    new_node_number+=1
+                    for nds in corresponding_German_nodes:
+                        multi_graph.add_edge(nds, new_node_number)
+                list_of_added_english_nodes.append(neighbour)
+    return multi_graph
+
 def find_english_graph_with_similar_density(german_graph,english_graph_directory):
     density=nx.density(german_graph)
     min_difference=100
@@ -101,8 +156,11 @@ def find_english_graph_with_highest_density(german_graph,english_graph_directory
             graph_name=english_graph_directory+filename
     return chosen_graph, graph_name
 
-def align_all_german_to_english(german_input_folder,english_input_folder,lam, output_folder, densityMatch="equal"):
-    #list_of_missing=["LOCATION#EVENT","ORGANIZATION#EVENT","ORGANIZATION#ORGANIZATION","ORGANIZATION#PERSON","PERSON#LOCATION"]
+def align_all_german_to_english(german_input_folder,english_input_folder,lam, output_folder, densityMatch="equal",translate="nonTr"):
+    if translate=="translate":
+        nmax = 50000  # maximum number of word embeddings to load
+        src_emb, src_id2word, src_word2id = load_vec("vectors-de.txt", nmax)
+        tgt_emb, tgt_id2word, tgt_word2id = load_vec("vectors-en.txt", nmax)
     for filename in os.listdir(german_input_folder):
     #for filename in list_of_missing:
         print("processing " , filename,lam)
@@ -119,20 +177,49 @@ def align_all_german_to_english(german_input_folder,english_input_folder,lam, ou
         if type_pair not in os.listdir(english_input_folder):
             pair=type_pair.split("#")
             type_pair=pair[1]+"#"+pair[0]
-        if densityMatch=="equal":
-            H, H_filename=find_english_graph_with_similar_density(G,english_input_folder+type_pair+"/")
+        if densityMatch=="equal" and translate=="translate":
+            H, H_filename=find_english_graph_with_similar_density(G,english_input_folder)
         elif densityMatch=="highest":
             H, H_filename=find_english_graph_with_highest_density(G,english_input_folder+type_pair+"/")
         print("pairing with ",H_filename)
         #This is where we need do create a new comp dict!!
         comp_dict=Component_dict(german_input_folder+filename, H_filename, "vectors-de.txt", "vectors-en.txt", 5)
         print("done building comp dict")
-        multi_graph=align(G,H,comp_dict)
+        if translate=="translate":
+             multi_graph=align_and_translate(G,H,comp_dict,src_emb, src_id2word, src_word2id,tgt_emb, tgt_id2word, tgt_word2id)
+        else:
+            multi_graph=align(G,H,comp_dict)
         print("done aligning")
         pickle.dump(multi_graph, open(output_folder+filename+str(lam)+".pickle", "wb" ) ) 
         print("de density: ",nx.density(G),"en density: ",nx.density(H),"mul density: ",nx.density(multi_graph))
         print("Pickled ",filename+str(lam))
     return None
+
+
+def translate_english_verbs_to_german(src_emb, src_id2word, src_word2id,tgt_emb, tgt_id2word, tgt_word2id,
+                                      number_of_nearest_neighbors,english_verbs):
+    english_verbs_split=english_verbs.split("\n")
+    german_verbs=""
+    string_list=[]
+    for verb in english_verbs_split:
+        try:
+            first_verb=re.search(r'\((.*?)\.1', verb).group(1)
+        except AttributeError:
+            try:
+                first_verb=re.search(r'\((.*?)\.2', verb).group(1)
+            except:
+                first_verb="None"
+        string_list.append(first_verb)
+    new_verb_set=set()
+    for v in string_list:
+        new_verbs=get_nn(v, src_emb, src_id2word, tgt_emb, tgt_id2word, number_of_nearest_neighbors)
+        if new_verbs!="out of vocabulary":
+            for vs in new_verbs:
+                new_verb_set.add(vs)
+    for verb in new_verb_set:
+        if not verb[0].isupper():
+            german_verbs+="("+verb+".1,"+verb+".2)\n"
+    return german_verbs
 
 def translate_graph(source_graph, vectors_tgt, vectors_src, number_of_nearest_neighbors):
     nmax = 50000  # maximum number of word embeddings to load
@@ -211,12 +298,17 @@ def translate_all_english_graphs(english_graph_folder, vectors_de, vectors_en, n
         if nx.density(G)==0:
             continue
         translated_graph=translate_graph(G,vectors_de, vectors_en, number_of_neighbours)
+        print("pickling ",filename)
         pickle.dump(translated_graph, open(output_folder+filename, "wb" ) )
     return None
    
 if __name__ == '__main__':
-    english_graph_folder=sys.argv[1]
-    translate_all_english_graphs(english_graph_folder, "vectors-de.txt", "vectors-en.txt", 3, "translatedGraphsEnDe/")
+    lam=sys.argv[1]
+    folder_list=["event#misc","location#location","misc#misc","organization#event","organization#misc","organization#person","person#location","location#event","location#misc","misc#person","organization#location","organization#organization","person#event","person#person"]
+    for folder in folder_list:
+        align_all_german_to_english("justGraphsLowL/","mergedGraphPickles/"+folder+"/",lam, "translatedAlignedGraphsDeEn2", "equal","translate")
+    #english_graph_folder=sys.argv[1]
+    #translate_all_english_graphs("/disk/scratch_big/sweber/GraphAlignment2/multilingual_graphs/testTranslate/", "vectors-de.txt", "vectors-en.txt", 3, "translatedAlignedGraphsEnDe/")
     #en_graph=parse_to_graph.constructGraphFromFile("persLoc0150.txt", 0.0150)
     #print(len(en_graph))
     #translated_graph=translate_graph(en_graph,"vectors-de.txt", "vectors-en.txt", 3)
@@ -236,4 +328,4 @@ if __name__ == '__main__':
                         #0.27,0.37,0.47,0.57,0.67,0.77,0.87,0.99]
     #german_lambda=sys.argv[1]
     #german_lambda_list=[0.015, 0.025, 0.035, 0.045, 0.055, 0.065, 0.075, 0.085, 0.0125, 0.0225, 0.0325, 0.0425, 0.0525, 0.0625, 0.0725, 0.0825, 0.0175, 0.0275, 0.0375, 0.0475, 0.0575, 0.0675, 0.0775, 0.0875, 0.0999]
-    #align_all_german_to_english("/disk/scratch_big/sweber/GraphAlignment2/justGraphsHighL/","/disk/scratch_big/sweber/GraphAlignment2/mergedGraphPickles/",german_lambda, "/disk/scratch_big/sweber/GraphAlignment2/multilingual_graphs/")
+    #align_all_german_to_english("/disk/scratch_big/sweber/GraphAlignment2/justGraphsLowL/","/disk/scratch_big/sweber/GraphAlignment2/mergedGraphPickles/",german_lambda, "/disk/scratch_big/sweber/GraphAlignment2/multilingual_graphs/")
