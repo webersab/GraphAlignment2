@@ -55,7 +55,7 @@ def get_graphs_for_lambda_multi(lambda_value,graphs_file_path):
     for filename in os.listdir(graphs_file_path):
         if str(lambda_value) in filename:
             graph=pickle.load( open( graphs_file_path+filename, "rb" ) )
-            filename=filename[28:]
+            #filename=filename[28:]
             if len(str(lambda_value))==6:
                 type_pair=filename.lower()[:-13]
             elif len(str(lambda_value))==5:
@@ -583,5 +583,5 @@ if __name__ == '__main__':
     lam=sys.argv[1]
     #lambda_list=[ 0.15, 0.25, 0.34, 0.44]
     #lam=0.0125
-    sentence_to_relation_dict = pickle.load( open( "relation_dict4.pickle", "rb" ) )
-    test_dict=test(sentence_to_relation_dict,lam,"translatedGraphsEnDe/","testResults/HumanTranslatedEnDe/","translated")
+    sentence_to_relation_dict = pickle.load( open( "relation_dict3.pickle", "rb" ) )
+    test_dict=test(sentence_to_relation_dict,lam,"multilingual_graphs/","testResults/HumanMultiMitSeinFull/","multi")
