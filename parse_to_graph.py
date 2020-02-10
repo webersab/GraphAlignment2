@@ -121,7 +121,7 @@ def parse_rel_ex_output_to_sentence_relation_dict(filename_rel,filename_data):
                             "judgement":judgement}
             external_dict[sent1+". "+sent2]=internal_dict
                          
-    pickle.dump(external_dict, open("relation_dict2.pickle", "wb" ) )           
+    pickle.dump(external_dict, open("relation_dict3.pickle", "wb" ) )           
     return external_dict
 
 def make_one_graph_from_all_in_folder(lambda_value,folder_path,name):
@@ -297,9 +297,48 @@ def combine_german_and_tanslated_english_graphs(lam,de_input_folder,en_input_fol
                 newGraph=nx.relabel_nodes(enGraph,mapping)
                 combinedGraph=nx.compose(deGraph,newGraph)
                 pickle.dump(combinedGraph,open("/disk/scratch_big/sweber/GraphAlignment2/combinedDeEnTranslated/"+filenameEn[12:],"wb"))
+                
+def create_txt_from_multilingual_graph(input_folder,filename, lam):
+    graph=pickle.load(open(input_folder+filename,"rb"))
+    outF=open("javadsInput/"+filename[:-7], 'w')
+    outF.write("lambda: "+str(lam)+" N: "+str(len(graph))+"\n")
+    outF.write("\n")
+    
+    for n in graph.nodes():
+        outF.write("component "+str(n)+"\n")
+        try:
+            verbs=graph.nodes[n]["verb"]
+            if "writing Done\n" in verbs:
+                verbs=verbs.replace("writing Done\n","")
+            outF.write(verbs)
+        except KeyError:
+            print("key error")
+            outF.write("(none.1,none.2)\n")
+        pred=graph.predecessors(n)
+        for p in pred:
+            try:
+                verbs_of_pred=graph.nodes[p]["verb"].split("\n")
+                first_verb=verbs_of_pred[0]
+                if "writing Done" in first_verb:
+                    first_verb=verbs_of_pred[1]
+                outF.write(" => "+str(p)+" "+first_verb+"\n")
+            except KeyError:
+                continue
+        outF.write("\n")
+    
+    outF.write("writing Done")
+    outF.close()  
+    return None
 
 
-#if __name__ == '__main__':
+if __name__ == '__main__':
+    parse_rel_ex_output_to_sentence_relation_dict("relations_Levy_humanTr.txt","TurkTranslationOfLevyDataset")
+    
+    #lam=sys.argv[1]
+    #input_folder="multilingual_graphs/"
+    #for filename in os.listdir(input_folder):
+        #if str(lam)+".pickle" in filename:
+            #create_txt_from_multilingual_graph(input_folder,filename,lam)
     #german_lambda_list=[0.015, 0.025, 0.035, 0.045, 0.055, 0.065, 0.075, 0.085, 0.0125, 0.0225, 0.0325, 0.0425, 0.0525, 0.0625, 0.0725, 0.0825, 0.0175, 0.0275, 0.0375, 0.0475, 0.0575, 0.0675, 0.0775, 0.0875, 0.0999]
     #lam=sys.argv[1]
     #parallel -j72 python test.py ::: 0.0049 0.0099 0.015 0.025 0.03 0.035 0.04 0.045 0.59 0.5 0.1

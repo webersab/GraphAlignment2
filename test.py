@@ -6,7 +6,7 @@ Created on Thu Jan  9 10:42:32 2020
 @author: s1782911
 """
 
-from test_dict import Test_dict
+#from test_dict import Test_dict
 import parse_to_graph
 import pickle
 import networkx as nx
@@ -94,7 +94,8 @@ def verb_negated(relation,candidate_verb):
     if result!=None:
         string_before=result.group(1)
         try:
-            if "NEG" in string_before[-5:]:
+            #if "NEG" in string_before[-5:]:
+            if "NEG" in string_before:
                 return True
         except:
             print(relation,candidate_verb)
@@ -462,7 +463,7 @@ def debug_test_2(lambda_list,sentence_to_relations_dict,graphs_file_path_de, gra
                 else:
                     tn+=1
                     
-def test(sentence_to_relations_dict,lambda_value,graphs_file_path, language_flag):
+def test(sentence_to_relations_dict,lambda_value,graphs_file_path,  output_file_path, language_flag):
     #test_dict=Test_dict(lambda_value)
     if language_flag=="german":
         graph_dict=get_graphs_for_lambda(lambda_value,graphs_file_path)
@@ -477,16 +478,17 @@ def test(sentence_to_relations_dict,lambda_value,graphs_file_path, language_flag
     elif language_flag=="trans_comb":
         graph_dict=get_graphs_for_lambda_trans_comb(lambda_value,graphs_file_path)
         if graph_dict=={}:
-            print("something is wrong dict building")
-        
+            print("something is wrong dict building")    
     total=0
     tp=0
     tn=0
     fp=0
     fn=0
     #not_in_graph_count=0
-    print(len(sentence_to_relations_dict.keys()))
+    sentence_counter=0
     for sentence in sentence_to_relations_dict:
+        print("in sentence ",sentence_counter, " of ", len(sentence_to_relations_dict.keys()))
+        sentence_counter+=1
         relation_dict=sentence_to_relations_dict[sentence]
         judgement=relation_dict["judgement"]
         #print(judgement)
@@ -535,27 +537,27 @@ def test(sentence_to_relations_dict,lambda_value,graphs_file_path, language_flag
             print(not_in_graph_count)
         """    
         
-        if True not in both_in_graph_set:
-            continue
-        else:
-            if judgement=="y":
-                if "y" in our_judgement_set:
-                    tp+=1
-                    #print("-----------------True positive-----------------")
-                    #print(sentence, relations_list1, relations_list2)
-                else:
-                    #print("------False negative---------------")
-                    #print(sentence, judgement, our_judgement_set)
-                    #print(relations_list1, relations_list2)
-                    #print(analyze_errors(graph, relation_tuple))
-                    fn+=1
+        #if True not in both_in_graph_set:
+            #continue
+        #else:
+        if judgement=="y":
+            if "y" in our_judgement_set:
+                tp+=1
+                #print("-----------------True positive-----------------")
+                #print(sentence, relations_list1, relations_list2)
             else:
-                if "y" in our_judgement_set:
-                    fp+=1
-                else:
-                    tn+=1
-            total+=1
-        
+                #print("------False negative---------------")
+                #print(sentence, judgement, our_judgement_set)
+                #print(relations_list1, relations_list2)
+                #print(analyze_errors(graph, relation_tuple))
+                fn+=1
+        else:
+            if "y" in our_judgement_set:
+                fp+=1
+            else:
+                tn+=1
+        total+=1
+
     #fill test_dict object with stats
     print("tp ",tp, " tn ",tn," fn ",fn," fp ", fp)
     print("\n precision: "+str(tp/(tp+fp)))
@@ -563,7 +565,7 @@ def test(sentence_to_relations_dict,lambda_value,graphs_file_path, language_flag
     if tp+tn+fn+fp!=total:
         print("somehting went wrong with the counting")
     #print(not_in_graph_count)
-    with open("/disk/scratch_big/sweber/GraphAlignment2/testResults/MultiAlignedAndTranslated/"+str(lambda_value)+'.txt', 'w') as f:
+    with open(output_file_path+str(lambda_value)+'.txt', 'w') as f:
         f.write("\n"+str(lambda_value))
         f.write("\n tp "+str(tp)+" tn "+str(tn)+" fn "+str(fn)+" fp "+str(fp))
         f.write("\n precision: "+str(tp/(tp+fp)))
@@ -580,6 +582,6 @@ if __name__ == '__main__':
     #parallel -j72 python test.py ::: 0.0049 0.0099 0.015 0.025 0.03 0.035 0.04 0.045 0.59 0.5 0.1
     lam=sys.argv[1]
     #lambda_list=[ 0.15, 0.25, 0.34, 0.44]
-    #lam=0.15
-    sentence_to_relation_dict = pickle.load( open( "relation_dict2.pickle", "rb" ) )
-    test_dict=test(sentence_to_relation_dict,lam,"/disk/scratch_big/sweber/GraphAlignment2/translatedAlignedGraphsDeEn2/","multi")
+    #lam=0.0125
+    sentence_to_relation_dict = pickle.load( open( "relation_dict4.pickle", "rb" ) )
+    test_dict=test(sentence_to_relation_dict,lam,"justGraphsLowL/","testResults/HumanDeMitSein/","german")
