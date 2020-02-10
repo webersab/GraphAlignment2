@@ -584,4 +584,4 @@ if __name__ == '__main__':
     #lambda_list=[ 0.15, 0.25, 0.34, 0.44]
     #lam=0.0125
     sentence_to_relation_dict = pickle.load( open( "relation_dict4.pickle", "rb" ) )
-    test_dict=test(sentence_to_relation_dict,lam,"justGraphsLowL/","testResults/HumanDeMitSein/","german")
+    test_dict=test(sentence_to_relation_dict,lam,"translatedGraphsEnDe/","testResults/HumanTranslatedEnDe/","translated")

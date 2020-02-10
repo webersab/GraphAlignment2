@@ -11,8 +11,8 @@ import os
 precision_values1=[]
 recall_values1=[]
 
-for filename in os.listdir("/disk/scratch_big/sweber/GraphAlignment2/testResults/DeMitSein/"):
-    with open("/disk/scratch_big/sweber/GraphAlignment2/testResults/DeMitSein/"+filename, 'r') as inF:
+for filename in os.listdir("/disk/scratch_big/sweber/GraphAlignment2/testResults/HumanDeMitSein/"):
+    with open("/disk/scratch_big/sweber/GraphAlignment2/testResults/HumanDeMitSein/"+filename, 'r') as inF:
         for line in inF:
             if "precision" in line:
                 parts=line.split(" ")
@@ -22,12 +22,16 @@ for filename in os.listdir("/disk/scratch_big/sweber/GraphAlignment2/testResults
                 parts=line.split(" ")
                 value=parts[2]
                 recall_values1.append(float(value))
+#precision_values1.sort()
+#recall_values1.sort()
+print(precision_values1)
+print(recall_values1)
 
 precision_values2=[]
 recall_values2=[]
 
-for filename in os.listdir("/disk/scratch_big/sweber/GraphAlignment2/testResults/MultiMitSein/"):
-    with open("/disk/scratch_big/sweber/GraphAlignment2/testResults/MultiMitSein/"+filename, 'r') as inF:
+for filename in os.listdir("/disk/scratch_big/sweber/GraphAlignment2/testResults/HumanMultiMitSein/"):
+    with open("/disk/scratch_big/sweber/GraphAlignment2/testResults/HumanMultiMitSein/"+filename, 'r') as inF:
         for line in inF:
             if "precision" in line:
                 parts=line.split(" ")
@@ -41,8 +45,8 @@ for filename in os.listdir("/disk/scratch_big/sweber/GraphAlignment2/testResults
 precision_values3=[]
 recall_values3=[]
 
-for filename in os.listdir("/disk/scratch_big/sweber/GraphAlignment2/testResults/translatedEnDe/"):
-    with open("/disk/scratch_big/sweber/GraphAlignment2/testResults/translatedEnDe/"+filename, 'r') as inF:
+for filename in os.listdir("/disk/scratch_big/sweber/GraphAlignment2/testResults/HumanTranslatedEnDe/"):
+    with open("/disk/scratch_big/sweber/GraphAlignment2/testResults/HumanTranslatedEnDe/"+filename, 'r') as inF:
         for line in inF:
             if "precision" in line:
                 parts=line.split(" ")
@@ -54,11 +58,11 @@ for filename in os.listdir("/disk/scratch_big/sweber/GraphAlignment2/testResults
                 recall_values3.append(float(value))
 
 
-               
+             
 pl.plot(recall_values1, precision_values1, "ro")
 pl.plot(recall_values2, precision_values2, "bv")
 pl.plot(recall_values3, precision_values3, "gs")
-pl.savefig('prec_recDeMul.png')
-#pl.show()
+pl.savefig('prec_recHumanDeMul.png')
+pl.show()
 
 
