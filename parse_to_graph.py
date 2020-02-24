@@ -142,7 +142,7 @@ def make_one_graph_from_all_in_folder(lambda_value,folder_path,name):
         merged_graph_n=nx.compose(merged_graph,graph)
         merged_graph=merged_graph_n
         #get_the_stats(merged_graph)
-    pickle.dump(merged_graph, open("/disk/scratch_big/sweber/GraphAlignment2/mergedGraphPickles/"+name+"/merged_graph"+name+str(lambda_value)+".pickle", "wb" ) ) 
+    pickle.dump(merged_graph, open("/disk/scratch_big/sweber/GraphAlignment2/mergedGlobalGraphPickles/"+name+str(lambda_value)+".pickle", "wb" ) ) 
     return merged_graph
 
 def constructGraphFromFile_multi(filename,lambda_value,old_component_count):
@@ -161,10 +161,12 @@ def constructGraphFromFile_multi(filename,lambda_value,old_component_count):
                     count=int(splits[3])
                     component_count=old_component_count+count
                     continue
+                elif "writing Done"in line:
+                    continue
                 #elif ("lambda" in line and passedRightLambda) or ("writing Done"in line):
                 elif ("lambda" in line and passedRightLambda):
                     return G, component_count
-                elif "component" in line and passedRightLambda:
+                elif "component " in line and passedRightLambda:
                     passedComponent=True
                     line=line.rstrip()
                     lineSplit=line.split()
@@ -173,6 +175,7 @@ def constructGraphFromFile_multi(filename,lambda_value,old_component_count):
                         number+=old_component_count
                     except IndexError:
                         print("format error in graph file")
+                        print(lineSplit)
                         continue
                     G.add_node(number)
                 elif "component" not in line and passedComponent and line!="" and "=>" not in line and passedRightLambda:
@@ -332,7 +335,15 @@ def create_txt_from_multilingual_graph(input_folder,filename, lam):
 
 
 if __name__ == '__main__':
-    parse_rel_ex_output_to_sentence_relation_dict("relations_Levy_humanTr.txt","TurkTranslationOfLevyDataset")
+    #name=sys.argv[1]
+    name="thing#thing"
+    folder_path="globalEnglishGraphs/"+name
+    lambda_list=[ 0.004, 0.008, 0.012, 0.016, 0.020, 0.024, 0.028, 0.032, 0.036,
+                 0.040, 0.044, 0.048, 0.052, 0.056, 0.060, 0.064, 0.068, 0.072, 
+                 0.076, 0.080, 0.084, 0.088, 0.092]
+    for lambda_value in lambda_list:
+        make_one_graph_from_all_in_folder(lambda_value,folder_path,name)
+    #parse_rel_ex_output_to_sentence_relation_dict("relations_Levy_humanTr.txt","TurkTranslationOfLevyDataset")
     
     #lam=sys.argv[1]
     #input_folder="multilingual_graphs/"
