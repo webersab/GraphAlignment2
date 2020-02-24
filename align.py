@@ -177,7 +177,7 @@ def align_all_german_to_english(german_input_folder,english_input_folder,lam, ou
         if type_pair not in os.listdir(english_input_folder):
             pair=type_pair.split("#")
             type_pair=pair[1]+"#"+pair[0]
-        if densityMatch=="equal" and translate=="translate":
+        if densityMatch=="equal":
             H, H_filename=find_english_graph_with_similar_density(G,english_input_folder)
         elif densityMatch=="highest":
             H, H_filename=find_english_graph_with_highest_density(G,english_input_folder+type_pair+"/")
@@ -303,10 +303,14 @@ def translate_all_english_graphs(english_graph_folder, vectors_de, vectors_en, n
     return None
    
 if __name__ == '__main__':
-    lam=sys.argv[1]
-    folder_list=["event#misc","location#location","misc#misc","organization#event","organization#misc","organization#person","person#location","location#event","location#misc","misc#person","organization#location","organization#organization","person#event","person#person"]
-    for folder in folder_list:
-        align_all_german_to_english("justGraphsHighL/","mergedGraphPickles/"+folder+"/",lam, "translatedAlignedGraphsDeEn2", "equal","translate")
+    lambda_list=[0.0149, 0.025, 0.035, 0.045, 0.054, 0.064, 0.075, 0.085, 0.0125, 0.0225, 
+                 0.0324, 0.0425, 0.0524, 0.0625, 0.0724, 0.0825, 0.0175, 0.0274, 0.0375, 
+                 0.0474, 0.0575, 0.0675, 0.0775, 0.0874]
+    #lam=sys.argv[1]
+    #folder_list=["event#misc","location#location","misc#misc","organization#event","organization#misc","organization#person","person#location","location#event","location#misc","misc#person","organization#location","organization#organization","person#event","person#person"]
+    #for folder in folder_list:
+    for lam in lambda_list:
+        align_all_german_to_english("justGraphsLowL/","mergedGlobalGraphPickles/",lam, "newAligned/", "equal")
     #english_graph_folder=sys.argv[1]
     #translate_all_english_graphs("/disk/scratch_big/sweber/GraphAlignment2/multilingual_graphs/testTranslate/", "vectors-de.txt", "vectors-en.txt", 3, "translatedAlignedGraphsEnDe/")
     #en_graph=parse_to_graph.constructGraphFromFile("persLoc0150.txt", 0.0150)

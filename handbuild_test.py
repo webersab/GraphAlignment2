@@ -173,13 +173,13 @@ if __name__ == '__main__':
         rec_list.append(t[1])
     pl.plot(rec_list, prec_list, "ro", label='German')
     """ 
-    positives, negatives=parse("/disk/scratch_big/sweber/manual_german_graph_test/person#person_EN")
+    positives, negatives=parse("person#person_EN")
     lambda_list=[0.0125,  0.0375,  0.0675,  0.12,  0.27,  0.44,  0.62,  0.0175,  0.0425,  
                  0.075,   0.15,  0.32,  0.47,  0.64,  0.85, 0.0225,  0.045,   0.0775,  0.17,  
                  0.34,  0.52,  0.67,  0.87, 0.025,   0.0575,  0.0825,  0.22,  0.37,  0.55,  
                  0.75, 0.035,   0.0625,  0.085,   0.25,  0.42,  0.57,  0.77]
     
-    return_list1=test_multi(lambda_list,"multilingual_graphs/", "PERSON#PERSON", positives, negatives)
+    return_list1=test_multi(lambda_list,"newAligned/", "PERSON#PERSON", positives, negatives)
     
     rec_list1=[]
     prec_list1=[]
@@ -200,7 +200,13 @@ if __name__ == '__main__':
     for t in return_list:
         prec_list3.append(t[0])
         rec_list3.append(t[1])
-    pl.plot(rec_list3, prec_list3, "go", label='English') 
+    pl.plot(rec_list3, prec_list3, "go", label='English')
+    
+    pl.legend(loc='upper right')
+    pl.xlabel('recall')
+    pl.ylabel("precision")
+    pl.savefig('prec_recMinimal.pdf')
+    pl.show()
     #positives_en, negatives_en=parse("/disk/scratch_big/sweber/manual_german_graph_test/person#person_en")
                                  
                                  
