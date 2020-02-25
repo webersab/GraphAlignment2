@@ -188,10 +188,7 @@ if __name__ == '__main__':
         rec_list1.append(t[1])
     pl.plot(rec_list1, prec_list1, "bv", label='MultiAll') 
     
-    lambda_list=[0.0125,  0.0375,  0.0675,  0.12,  0.27,  0.44,  0.62,  0.0175,  0.0425,  
-                 0.075,   0.15,  0.32,  0.47,  0.64,  0.85, 0.0225,  0.045,   0.0775,  0.17,  
-                 0.34,  0.52,  0.67,  0.87, 0.025,   0.0575,  0.0825,  0.22,  0.37,  0.55,  
-                 0.75, 0.035,   0.0625,  0.085,   0.25,  0.42,  0.57,  0.77]
+    lambda_list=[0.012,  0.052,  0.072,   0.032,  0.064  ]
     
     return_list2=test_multi(lambda_list,"newAlignedHighest/", "PERSON#PERSON", positives, negatives)
     
