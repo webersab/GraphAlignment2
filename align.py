@@ -310,7 +310,7 @@ if __name__ == '__main__':
     #folder_list=["event#misc","location#location","misc#misc","organization#event","organization#misc","organization#person","person#location","location#event","location#misc","misc#person","organization#location","organization#organization","person#event","person#person"]
     #for folder in folder_list:
     #for lam in lambda_list:
-    align_all_german_to_english("justGraphsLowL/","mergedGlobalGraphPicklesHighest/",lam, "newAlignedHighest/", "equal")
+    align_all_german_to_english("justGraphsLowL/Person#Person/","mergedGlobalGraphPicklesHighest/",lam, "newAlignedHighest/", "equal")
     #english_graph_folder=sys.argv[1]
     #translate_all_english_graphs("/disk/scratch_big/sweber/GraphAlignment2/multilingual_graphs/testTranslate/", "vectors-de.txt", "vectors-en.txt", 3, "translatedAlignedGraphsEnDe/")
     #en_graph=parse_to_graph.constructGraphFromFile("persLoc0150.txt", 0.0150)
